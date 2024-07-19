@@ -22,10 +22,11 @@ export const Getproducts = async () => {
     // ,{next:{revalidate:0}}
   );
   const data = await res.json();
+  if (!data) return null;
   return data;
 }
 catch(err) {
   console.log('err: ', err);
-
+  return null;
 }
 };

@@ -40,7 +40,7 @@ export default function BasicModal({openModal,setOpenModal}:IModal) {
            What are you looking for?
         </Typography>
         <SearchInput
-        sx={{width:'fit-content',mx:'auto',mt:1}}
+        sx={{width:'fit-content',display:'flex !Important',mx:'auto',mt:1}}
          />
         </Box>
         {/* 

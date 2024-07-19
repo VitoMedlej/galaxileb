@@ -10,6 +10,8 @@ import {useCategoriesContext} from '@/context/Contexts'
 import HomeProductCollection from './HomeProductCollection/HomeProductCollection'
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
+import ContentBlock from './ContentBlock/ContentBlock'
 // import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
 
 function getCategorizedProducts(data : any, categories : any) {
@@ -23,21 +25,6 @@ function getCategorizedProducts(data : any, categories : any) {
     .filter((categoryProducts:any) => categoryProducts !== null);
 }
 
-const ids = [
-  '66814a77bfb7cfd8bc18e46b',
-  '66814c15657cbf644b6ca4be',
-  '66814cac657cbf644b6ca4bf',
-  '6681a64e88894bbf2dcf8557',
-  '6681a6c788894bbf2dcf8558'
-];
-
-function divideProducts(data: any) {
-  if (!data) return {includedProducts: [], excludedProduct: []};
-  const includedProducts = data?.filter((product: any) => ids.includes(product?._id));
-  const excludedProducts = data?.filter((product: any) => !ids.includes(product?._id));
-
-  return { includedProducts, excludedProducts };
-}
 
 
 
@@ -53,10 +40,8 @@ const PreLoader = ({data, resImages, categories} : any) => {
     // const collection2 = data?.slice(7, 10)
     // const carouselProducts = data?.slice(Number(data?.length / 2), 50)
 
-  const {includedProducts, excludedProducts} = divideProducts(data)
-  console.log('includedProducts, excludedProducts: ', includedProducts, excludedProducts);
 
-    const categorizedProducts = getCategorizedProducts(excludedProducts, categories);
+    // const categorizedProducts = getCategorizedProducts(excludedProducts, categories);
 
 
     useEffect(() => {
@@ -89,7 +74,7 @@ const PreLoader = ({data, resImages, categories} : any) => {
 
             <MainCarousel resImages={resImages}/> 
 
-            <Box
+            {/* <Box
                 className="flex justify-between col center text-center auto"
                 sx={{
                 px: 1,
@@ -109,7 +94,7 @@ const PreLoader = ({data, resImages, categories} : any) => {
                     padding: .5,
                     fontWeight: '700'
                 }}>
-                   Twinkle like star
+                  New Arrivals
                 </Typography>
 
                 <Typography
@@ -118,244 +103,74 @@ const PreLoader = ({data, resImages, categories} : any) => {
                     sx={{
                     fontWeight: '200'
                 }}>
-                    {/* {`The perfect way to elevate your style is with a personalized, handcrafted bag from Mirach.`} */}
                     {
-                      `Mirach is a Lebanese handbag line that creates unique and luxury hand crafted bags and accessories. Proudly crafted and produced in Lebanon, our pieces are manufactured with high quality materials, making each item a unique presentation.`
+                      `Urban Gentleman is a Lebanese handbag line that creates unique and luxury hand crafted bags and accessories. Proudly crafted and produced in Lebanon, our pieces are manufactured with high quality materials, making each item a unique presentation.`
                     }
                 </Typography>
 
-            </Box>
+            </Box> */}
 
-            <HomeProductCollection products={includedProducts}/>
+            <HomeProductsCarousel 
+            delay={4500} 
+            Collectiontitle='New Arrivals'
+             text={'Our latest gear to drop. Don’t miss out on new CE products.'}
+              data={data}/>
             {/* <HomeProductsCarousel delay={4000} Collectiontitle={'Best Sellers'}  data={collection}/> */}
 
-                  {
-                    categorizedProducts && categorizedProducts.map((i:any)=> {
+                  {/* {
+                    data && data.map((i:any)=> {
                       if (!i?.categoryName || !i?.data) return;
                       return <HomeProductCollection key={i?.categoryName} title={`${i?.categoryName}`} products={i?.data}/> 
                        
                     })
-                  }
+                  } */}
                       {/* <HomeProductCollection title={`A LA LIBANAISE`} products={collection1}/> */}
                     
                       {/* <HomeProductCollection title={`Clutch`} products={collection2}/> */}
                       
-            {/* <Typography
-                sx={{
-                pt: {
-                    xs: 8,
-                    md: 14
-                },
-                mt: {
-                    xs: 4,
-                    sm: 12
-                },
-                mx: 'auto',
-                maxWidth: '1200px',
-                pb: 1,
-                px: 1,
-                fontWeight: '400',
-                fontSize: {
-                    xs: '1.5em',
-                    sm: '1.8em'
-                }
-            }}
-                component='h1'
-                className=' animate-on-scroll color '>
+      
+
+          <Grid className='space-evenly' container>
+               {
+               [
                 {
-                      `A LA LIBANAISE`
-                    }
-            </Typography>
-            <Grid
-  container
-  className='flex auto space-evenly row wrap'
-  sx={{
-    px: 1,
-    maxWidth: '1200px'
-  }}
->
-  {categories && categories.slice(0, 3).map((category : any, index : any) => {
-    if (index === 0) {
-      return (
-        <Grid
-          key={category?.categoryName}
-          sx={{
-            height: {
-              xs: '100%',
-              sm: '550px',
-              md: '750px'
-            }
-          }}
-          item
-          xs={12}
-          sm={7.5}
-          md={6.6}
-        >
-          <CategoryItem
-            href={`${encodeURIComponent(category?.categoryName?.toLowerCase())}/products`}
-            title={category?.categoryName}
-            imgHeights={{
-              xs: '100%',
-              md: '730px'
-            }}
-            img={category?.img}
-            sx={{
-              width: '100%',
-              height: {
-                xs: '100%',
-                sm: '100%',
-                md: '730px'
-              }
-            }}
-          />
-        </Grid>
-      );
-    } else if (index === 1) {
-      return (
-        <Grid
-          key="small-items-container"
-          className='flex justify-between'
-          sx={{
-            height: {
-              xs: '100%',
-              sm: '550px',
-              md: '750px'
-            },
-            mt: {
-              xs: 1,
-              sm: 0
-            },
-            flexDirection: {
-              xs: 'row',
-              sm: 'column'
-            }
-          }}
-          item
-          xs={12}
-          sm={4}
-          md={4.8}
-        >
-          <CategoryItem
-            href={`${encodeURIComponent(category?.categoryName?.toLowerCase())}/products`}
-            title={category?.categoryName}
-            imgHeights={{
-              xs: '100%',
-              sm: '230px',
-              md: '325px'
-            }}
-            img={category?.img}
-            sx={{
-              width: {
-                xs: '49%',
-                sm: '100%'
-              },
-              height: {
-                xs: '100%',
-                sm: '50%'
-              }
-            }}
-          />
-          {categories[2] && (
-            <CategoryItem
-              href={`${encodeURIComponent(categories[2]?.categoryName?.toLowerCase())}/products`}
-              title={categories[2]?.categoryName}
-              imgHeights={{
-                xs: '100%',
-                sm: '230px',
-                md: '325px'
-              }}
-              img={categories[2]?.img}
-              sx={{
-                width: {
-                  xs: '49%',
-                  sm: '100%'
+                  title: 'Elegant Watch Box',
+                  description: 'Our watch box features a versatile design that holds any watch securely. Crafted with fine materials for a sophisticated look, it ensures your timepiece is always ready to wear.',
+                  CTA: 'Shop Now',
+                  img: 'https://caseelegance.com/cdn/shop/files/IMG_0220.png?v=1707554788&width=700'
                 },
-                height: {
-                  xs: '100%',
-                  sm: '50%'
+                {
+                  title: 'Luxury Watch Stand',
+                  description: 'Display your watch with pride on our luxury watch stand. Designed to complement any decor, it offers a stylish way to keep your watch accessible and beautifully showcased.',
+                  CTA: 'Explore Collection',
+                  img: 'https://caseelegance.com/cdn/shop/files/Photo-41.png?v=1707554788&width=700'
+                },
+                {
+                  title: 'Premium Leather Watch Case',
+                  description: 'Protect and organize your watches with our premium leather watch case. Its sleek design and durable construction make it an essential accessory for any watch lover.',
+                  CTA: 'Buy Now',
+                  img: 'https://caseelegance.com/cdn/shop/files/CE-WIND-1-BLK-Listing-02.png?v=1712248374&width=700'
+                },
+                {
+                  title: 'Modern Watch Holder',
+                  description: 'Keep your watch in pristine condition with our modern watch holder. Featuring a minimalist design, it blends functionality with elegance, making it a perfect addition to your collection.',
+                  CTA: 'Discover More',
+                  img: 'https://caseelegance.com/cdn/shop/files/Cylindor-Brown-02.png?v=1706519803&width=700'
                 }
-              }}
-            />
-          )}
-        </Grid>
-      );
-    }
-  })}
-</Grid> */}
+              ].map(i=>{
 
-            {/* <Grid
-                className='auto'
-                sx={{
-                px: 1,
-                pt: {
-                    xs: 8,
-                    md: 14
-                },
-                mt: {
-                    xs: 4,
-                    sm: 12
-                },
-                maxWidth: '1200px'
-            }}>
-                <Typography
-                    sx={{
-                     
-                    maxWidth: '1200px',
-                    pb: 1,
-                    px: 1,
-                    fontWeight: '400',
-                    fontSize: {
-                        xs: '1.5em',
-                        sm: '1.8em'
-                    }
-                }}
-                    component='h1'
-                    className=' auto animate-on-scroll color '>
-                    {
-                      `A LA LIBANAISE`
-                    }
-                </Typography>
-                <Box className="flex space-evenly auto wrap gap gap1">
+                 return <Grid key={i.title} item xs={11.4} md={5.5} >
+                      <ContentBlock href={'/collection/products'}
+                       title={i.title}
+                       img={`${i.img}`}
+                       text={`${i?.description}`} 
+                       CTA={i.CTA}                      />
+                  </Grid> })}
+          </Grid>
 
-                    {categories && categories.slice(3,25)
-                        ?.map((category : any) => {
-                            return <CategoryItem
-                                href={`${encodeURIComponent(category
-                                ?.categoryName
-                                    ?.toLowerCase())}/products`}
-                                key={category
-                                ?.categoryName}
-                                title={category
-                                ?.categoryName}
-                                imgHeights={{
-                                xs: '200px',
-                                sm: '100%',
-                                md: '400px'
-                            }}
-                                sx={{
-                                my: 1,
-                                minWidth: {
-                                    xs: '100px',
-                                    sm: '120px'
-                                },
-                                width: {
-                                    xs: '49%',
-                                    sm: '350px',
-                                    md: '380px'
-                                }
-                            }}
-                                img={`${category
-                                ?.img}`}/>
-                        })
-}
-                </Box>
-
-            </Grid> */}
-
-            {/* <HomeProductsCarousel 
-                Collectiontitle="A la Libanaise"
-                data={carouselProducts} 
-                delay={2500} /> */}
+          <Box className='bg3'>
+                <HomeProductCollection products={data} title=''/> 
+          </Box>
 
             {/* <Box
                 className="w100 "
@@ -440,7 +255,7 @@ const PreLoader = ({data, resImages, categories} : any) => {
                                 mt: 2
                             }}
                                 className='flex left animate-on-scroll'>
-                                {`Shop our collection in Beirut and discover the perfect accessory to elevate your wardrobe. Experience the luxury and authenticity of Lebanese-made bags with Mirach.`
+                                {`Shop our collection in Beirut and discover the perfect accessory to elevate your wardrobe. Experience the luxury and authenticity of Lebanese-made bags with Urban Gentleman.`
 }
                             </Typography>
                             <Btn
@@ -462,6 +277,62 @@ const PreLoader = ({data, resImages, categories} : any) => {
                 </Grid>
 
             </Box> */}
+
+            <Box className='relative' sx={{my:8,height:{xs:'500px',sm:'100%'}}}>
+            <Box sx={{position:'relative', height: '100%', width:'100%'}}>
+                      <Box className='overlay'>
+                
+                </Box>
+                          <img
+                              className={`img `}
+                              src={`https://caseelegance.com/cdn/shop/files/Action-1_copy.png?v=1707554788&width=1500`}
+                            //   src={`${item?.img}/-/resize/${imageSize}/`}
+                              alt="Main Carousel Image"
+                          />
+                      </Box>
+                      <Box className='absolute text-center w100  ' sx={{
+                            transform: `translate(50%,-50%)`,
+                        top:{xs:'50%',md:'50%'},right:'50%',zIndex:'1234'}}>
+                             <Typography sx={{color:'white',fontSize:{xs:'.8em',md:'1em'},
+                             fontWeight:500}}>
+                                Urban Gentleman
+                            </Typography>
+                            <Typography sx={{pt:1,color:'white',fontSize:{xs:'1.5em',md:'2em'},fontWeight:700}}>
+                            Stylish essentials for the modern man
+                            </Typography>
+                            <Btn  v2 className='center ' sx={{mt:'2em',mx:'auto'}}>
+                                Shop Now
+                            </Btn>
+                      </Box>
+            </Box>
+
+            <Grid sx={{mt:8}} className='space-evenly' container>
+               {
+                [
+                {
+                    title: 'Classic Watch Organizer',
+                    description: 'Organize your watch collection with our classic watch organizer. Its multiple compartments and elegant finish provide both style and functionality, perfect for any watch enthusiast.',
+                    CTA: 'Shop Now',
+                    img: 'https://caseelegance.com/cdn/shop/files/Cylindor-Brown-02.png?v=1706519803&width=700'
+                  },
+                  {
+                    title: 'Sleek Watch Display Case',
+                    description: 'Showcase your favorite watches in our sleek display case. Designed with a clear top and soft interior lining, it offers a premium display solution that protects and highlights your timepieces.',
+                    CTA: 'View Collection',
+                    img: 'https://caseelegance.com/cdn/shop/files/Luca-Brown-Listing-Layout_EBC-02.png?v=1707554789&width=700'
+                  }
+                ].map(i=>{
+
+                 return <Grid key={i.title} item xs={11.4} md={5.5} >
+                      <ContentBlock href={'/collection/products'}
+                       title={i.title}
+                       img={`${i.img}`}
+                       text={`${i.description}`} 
+                       CTA={i.CTA}                      />
+                  </Grid> })}
+          </Grid>
+
+                <HomeProductCollection products={data} title=''/> 
 
         </Box>
     )

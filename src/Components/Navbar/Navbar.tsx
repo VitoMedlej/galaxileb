@@ -10,6 +10,8 @@ import { Typography} from '@mui/material';
 import {useRouter} from 'next/navigation';
 
 import { useCartContext, useCategoriesContext, useDrawerContext, useLangContext } from '@/context/Contexts';
+import NavButtom from './NavButtom';
+import SearchInput from './SearchInput';
 
 
 
@@ -31,7 +33,7 @@ export default function Navbar() {
         <>
             <Box
                 id='navy'
-                className='center auto relative bg flex'
+                className='center auto relative bg2 flex'
                 sx={{
                     zIndex: 12,
                     flexWrap: 'wrap',
@@ -45,7 +47,7 @@ export default function Navbar() {
             >
                 <AppBar
                     id='navy2'
-                    className='center col relative flex'
+                    className='center col bg2 relative flex'
                     sx={{
                         boxShadow: 'none',
                         background: 'transparent',
@@ -53,19 +55,25 @@ export default function Navbar() {
                         margin: '0 auto'
                     }}
                 >
-                    <Box className='center bg3  w100 text-center' sx={{ minWidth: '90vw', background: 'white', width: '100%', py: 0.25 }}>
-                        <Typography className='uppercase clr' component='h1'
+                    {/* <Box className='center bg white  w100 text-center' sx={{ minWidth: '90vw', 
+                        background: 'white', width: '100%', py: 0.25 }}>
+                        <Typography className='uppercase ' component='h1'
                          sx={{ textTransform: 'uppercase',
                             fontWeight:500,
-                          color: '#0f0f0f', py: 0.2, fontSize: { xs: '.65em', sm: '.75em' } }}>
+                          color: 'white', py: 0.2, fontSize: { xs: '.65em', sm: '.75em' } }}>
                         Shipping anywhere in Lebanon & Worldwide 📍
                         </Typography>
-                    </Box>
+                    </Box> */}
 
-                    <Toolbar className='flex relative center items-center'
+                    <Toolbar className='flex bg2 relative center items-center'
                     
                     sx={{ boxShadow:'1px 1px 3px #857a5b4a', py: 1, background: 'white' }}>
                         {/* Logo on the far left */}
+
+
+                            <SearchInput mobileHidden/>
+
+
                         <Box
                             onClick={() => router.push('/')}
                             className='cursor pointer'
@@ -78,42 +86,18 @@ export default function Navbar() {
                             }}
                         >
                             <img 
-                            src="https://ucarecdn.com/83ee755f-e11f-40b6-9761-65b4b5ecd627/-/resize/200/" alt="MIRACH-LBLOGO" className="img contain" />
+                            src="https://ucarecdn.com/67d27952-152a-456f-ab9f-b99e9c566f10/-/resize/300/" alt="Urban Gentleman-LBLOGO" className="img contain" />
                         </Box>
 
 
 
-                        <Box className='row' sx={{ display:{xs:'none',md:'flex'}, color: 'black' }}>
-                       
-                        <Link className='decor-none nav-link' href="/" >
-        <Box component="p" sx={{ fontWeight:500, color: 'black', ml: 2, textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}>
-            Home
-        </Box>
-    </Link>
-    <Link className='decor-none nav-link' href="/collection/products" >
-        <Box component="p" sx={{ fontWeight:500, 
-            color: 'black', ml: 2, textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}>
-            Collection
-        </Box>
-    </Link>
-                       
-                        {categories && categories?.slice(0,2)?.map((category : any,  index : any)  => (
-        <Link className=' decor-none nav-link' key={category?.categoryName} href={`/${encodeURIComponent(category?.categoryName?.toLowerCase())}/products`} >
-            <Box component="p" sx={{fontWeight:500, color: 'black', ml: 2, textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}>
-                {category?.categoryName}
-            </Box>
-        </Link>
-    ))}
-
-   
- 
-                        </Box>
+                      
 
                         <Box className="flex flex1 flex-end">
                             <Box
                                 onClick={() => setOpenModal(!openModal)}
                                 className='cursor pointer flex center items-center'
-                                sx={{ width: '20px', padding: 1 }}
+                                sx={{ display:{xs:'flex',md:'none'}, width: '20px', padding: 1 }}
                             >
                                 <img style={{ filter: 'invert(0)' }} src="https://cdn-icons-png.flaticon.com/128/9177/9177086.png" alt="" className="img" />
                             </Box>
@@ -129,7 +113,8 @@ export default function Navbar() {
                             <Box
                                 onClick={() => setOpen(!open)}
                                 className='cursor pointer center items-center'
-                                sx={{ width: '20px', padding: 1, display: { xs: 'flex', sm: 'none' } }}
+                                sx={{ width: '20px', padding: 1, 
+                                    display: { xs: 'flex', md: 'none' } }}
                             >
                                 <img style={{ filter: 'invert(0)' }} src="https://cdn-icons-png.flaticon.com/128/10513/10513594.png" alt="" className="img" />
                             </Box>
@@ -140,6 +125,8 @@ export default function Navbar() {
                     <SearchModal openModal={openModal} setOpenModal={setOpenModal} />
 
                 </AppBar>
+
+                <NavButtom/>
             </Box>
 
         </>

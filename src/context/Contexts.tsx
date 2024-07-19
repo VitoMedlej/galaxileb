@@ -18,6 +18,9 @@ const ContextWrapper = ({ children }: { children: React.ReactNode }) => {
         const fetchCategories = async () => {
             if (!categories || categories.length === 0) {
                 const categoriesData = await Getcategories();
+                if (!categoriesData || categoriesData?.success === false) {
+                    return null;
+                }
                 const fetchedCategories = categoriesData?.Categories[0]?.cateArray || [];
                 setCategories(fetchedCategories);
             }

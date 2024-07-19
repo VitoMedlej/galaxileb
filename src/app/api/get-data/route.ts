@@ -8,14 +8,14 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
 try {
 
     const ProductsCollection = await client
-        .db("MRCH")
+        .db("URBG")
         .collection("Products");
     let featuredProducts : any = [];
     let products : any = []
 
     const featuredProductsQuery = await ProductsCollection
-        .find({isFeatured: true})
-        // .find({})
+        // .find({isFeatured: true})
+        .find({})
         .limit(30)
     // const ProductsQuery = await ProductsCollection
     //     // .find({isFeatured: false})

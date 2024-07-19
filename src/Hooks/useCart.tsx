@@ -9,7 +9,7 @@ const useCart = () => {
     const {cartOpen, setCartOpen} = useCartContext();
     const incrementQty = (_id:string,newValue ?: number,productselectedSize?:string, productselectedColor?:any) => {
        
-        const state = loadState('Vtjx2j7-zni3651n2iuxf-G8sfv1zY6') || [];
+        const state = loadState('BlmbX3zmGB') || [];
         let foundIndex = state.findIndex((value:ICartItem) => value._id === _id);
         let selectedItem = state[foundIndex];
         
@@ -28,7 +28,7 @@ const useCart = () => {
             }
             state[foundIndex] = selectedItem
             
-           saveState('Vtjx2j7-zni3651n2iuxf-G8sfv1zY6', state)           
+           saveState('BlmbX3zmGB', state)           
            return true
        }
        return false;
@@ -44,7 +44,7 @@ const useCart = () => {
         }
         
             //if we do not have the item in cart, insert it
-        pushState('Vtjx2j7-zni3651n2iuxf-G8sfv1zY6',
+        pushState('BlmbX3zmGB',
         {qty:selectedQuantity || 1,img:product.img,
             category:product?.category || 'Collection',
             title:product.title

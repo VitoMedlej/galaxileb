@@ -6,7 +6,13 @@ import MenuHover from './MenuHover'
 // import MenuHover from './MenuHover'
 
 
-
+// {categories && categories?.slice(0,2)?.map((category : any,  index : any)  => (
+//     <Link className=' decor-none nav-link' key={category?.categoryName} href={`/${encodeURIComponent(category?.categoryName?.toLowerCase())}/products`} >
+//     <Box component="p" sx={{fontWeight:600, color: 'black', ml: 2, textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}>
+//     {category?.categoryName}
+//     </Box>
+//     </Link>
+//     ))}
 
 
 const NavButtom = ({categories}:any) => {
@@ -14,12 +20,14 @@ const NavButtom = ({categories}:any) => {
 
   return (
     <Box
-        className=' items-center wrap   space-evenly'
+        className=' items-center wrap    space-evenly'
         sx={{
             flex:1,
             position:'relative',
         // width: '100%',
-        background:'black',
+        borderBottom:'1px solid #0000002e',
+        py:.5,
+        background:'white',
         // maxWidth:'lg',/
         mx: 0,
         display : {xs:'none',md:'flex'}
@@ -38,42 +46,42 @@ const NavButtom = ({categories}:any) => {
                     Sale
                     </Typography>
                 </Link> */}
-                <Link className='white decor-none ' href={`/`}>
+                <Link className='black decor-none ' href={`/`}>
 
 <Typography 
-className=' cursor center flex gap1 white decor-none captialize'
+className=' cursor center flex gap1 black decor-none captialize'
 
 component='h1' sx={{width:'max-content',
 mx:'1em',
 alignItems: 'center',
 
-fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
+fontWeight:600,fontSize:{xs:'.86em',sm:'.95em'}}}>
 Home
 </Typography>
 </Link>
-<Link className='white decor-none ' href={`/about`}>
+<Link className='black decor-none ' href={`/about`}>
 
 <Typography 
-className=' cursor center flex gap1 white decor-none captialize'
+className=' cursor center flex gap1 black decor-none captialize'
 
 component='h1' sx={{width:'max-content',
 mx:'1em',
 alignItems: 'center',
 
-fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
+fontWeight:600,fontSize:{xs:'.86em',sm:'.95em'}}}>
 About
 </Typography>
 </Link>
-{/* <Link className='white decor-none ' href={`/#shop`}>
+{/* <Link className='black decor-none ' href={`/#shop`}>
 
 <Typography 
-className=' cursor center flex gap1 white decor-none captialize'
+className=' cursor center flex gap1 black decor-none captialize'
 
 component='h1' sx={{width:'max-content',
 mx:'1em',
 alignItems: 'center',
 
-fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
+fontWeight:600,fontSize:{xs:'.86em',sm:'.95em'}}}>
 Shop
 </Typography>
 </Link> */}
@@ -81,17 +89,17 @@ Shop
     categories && categories.map((cate:any)=>{
             // if (cate?.subcategories?.length == 0){ return      <Link 
                 if (false){ return      <Link 
-            key={cate?.categoryName} className='white decor-none'
+            key={cate?.categoryName} className='black decor-none'
              href={`/${cate?.categoryName?.toLocaleLowerCase()}/products`}>
 
 <Typography 
-className=' cursor center flex gap1 white decor-none captialize'
+className=' cursor center flex gap1 black decor-none captialize'
 
 component='h1' sx={{width:'max-content',
 mx:'1em',
 alignItems: 'center',
 
-fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
+fontWeight:600,fontSize:{xs:'.86em',sm:'.95em'}}}>
 {`${cate?.categoryName}`}
 </Typography>
 </Link>}
@@ -110,16 +118,16 @@ fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
 {/* <MenuHover img={'https://irrelevantlvng.com/img/cms/IMG_1323.JPG'} category={'collections'} subcategories={['22','33']} /> */}
 
 
-{/* <Link className='white decor-none ' href={`/about`}>
+{/* <Link className='black decor-none ' href={`/about`}>
 
 <Typography 
-className=' cursor center flex gap1 white decor-none captialize'
+className=' cursor center flex gap1 black decor-none captialize'
 
 component='h1' sx={{width:'max-content',
 mx:'1em',
 alignItems: 'center',
 
-fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
+fontWeight:600,fontSize:{xs:'.86em',sm:'.95em'}}}>
 About US
 </Typography>
 </Link> */}
@@ -136,69 +144,69 @@ About US
             // `Sporty Streets`,
         ]
             .map(i=>{
-        return <Link key={i} className='white decor-none ' href={`/${i.toLocaleLowerCase()}/products`}>
+        return <Link key={i} className='black decor-none ' href={`/${i.toLocaleLowerCase()}/products`}>
 
         <Typography 
         component='h1'
-        className=' cursor center flex gap1 white decor-none captialize'
+        className=' cursor center flex gap1 black decor-none captialize'
         
         sx={{width:'max-content',
         mx:'1em',
         alignItems: 'center',
-        fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
+        fontWeight:600,fontSize:{xs:'.86em',sm:'.95em'}}}>
         {i.toUpperCase()}
         </Typography>
         </Link>
     })
 } */}
 
-{/* <Link className='white decor-none ' href={`/organic herbs/products`}>
+{/* <Link className='black decor-none ' href={`/organic herbs/products`}>
 
 <Typography 
-className=' cursor center flex gap1 white decor-none captialize'
+className=' cursor center flex gap1 black decor-none captialize'
 
 component='p' sx={{width:'max-content',
 mx:'1em',
 alignItems: 'center',
 
-fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
+fontWeight:600,fontSize:{xs:'.86em',sm:'.95em'}}}>
 Organic Herbs
 </Typography>
 </Link>
-<Link className='white decor-none ' href={`/natural supplements/products`}>
+<Link className='black decor-none ' href={`/natural supplements/products`}>
 
 <Typography 
-className=' cursor center flex gap1 white decor-none captialize'
+className=' cursor center flex gap1 black decor-none captialize'
 
 component='p' sx={{width:'max-content',
 mx:'1em',
 alignItems: 'center',
 
-fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
+fontWeight:600,fontSize:{xs:'.86em',sm:'.95em'}}}>
 Natural Supplements
 </Typography>
 </Link> */}
 
 
 
-{/* <Link className='white decor-none ' href={`/about`}>
+{/* <Link className='black decor-none ' href={`/about`}>
 
 <Typography 
-className=' cursor center flex gap1 white decor-none '
+className=' cursor center flex gap1 black decor-none '
 
 component='p' sx={{width:'max-content',
 mx:'1em',
 alignItems: 'center',
 
-fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
+fontWeight:600,fontSize:{xs:'.86em',sm:'.95em'}}}>
 About Us
 </Typography>
 </Link> */}
 
-{/* <Link className='white decor-none uppercase' href={`/new-arrivals/products`}>
+{/* <Link className='black decor-none uppercase' href={`/new-arrivals/products`}>
 
 <Typography 
-className=' cursor center flex gap1 white decor-none uppercase'
+className=' cursor center flex gap1 black decor-none uppercase'
 
 component='p' sx={{width:'max-content',
 alignItems: 'center',
@@ -208,10 +216,10 @@ fontWeight:600,fontSize:{xs:'.6em',sm:'.75em'}}}>
 New Arrivals
 </Typography>
 </Link> */}
-                {/* <Link className='white decor-none uppercase' href={`/birds/products`}>
+                {/* <Link className='black decor-none uppercase' href={`/birds/products`}>
 
                 <Typography 
-      className=' cursor center flex gap1 white decor-none uppercase'
+      className=' cursor center flex gap1 black decor-none uppercase'
         
         component='p' sx={{width:'max-content',
         mx:'1em',

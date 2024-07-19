@@ -5,6 +5,7 @@ import ProductCard from '../ProductCard/ProductCard'
 import { IProduct } from '@/Types/Types'
 // import Btn from '../Btn/Btn'
 import { useRouter } from 'next/navigation'
+import Btn from '../Btn/Btn'
 
 const HomeProductCollection = ({products,title} : {title?:string,products:IProduct[] | never[]}) => {
  const router = useRouter()
@@ -13,21 +14,19 @@ const HomeProductCollection = ({products,title} : {title?:string,products:IProdu
         
          <Box className="flex justify-between col auto" sx={{px:1,pt:4,pb:0,maxWidth:'lg'}}>
 
-         <Typography
+        {title &&  <Typography
          onClick={()=>router.push(`/${encodeURIComponent(`${title ? title : 'collection'}`)?.toLocaleLowerCase()}/products`)}
          sx={{
     pt:{xs:2,sm:6},
     maxWidth:'1200px',
     pb:0,
     px:1,
-    ':hover':{
-      textDecoration:'underline',
-    },
+   
     fontWeight:'400',
     fontSize:{xs:'1.5em',sm:'1.8em'},
     }} component='h1' className='color2 cusror pointer animate-on-scroll   '>
-       {title || 'Best Sellers'}
-    </Typography>
+       {title }
+    </Typography>}
 
 
 
@@ -50,13 +49,12 @@ const HomeProductCollection = ({products,title} : {title?:string,products:IProdu
 
 
 
-              {/* <Btn 
-              className='bg3'
-sx={{width:'fit-content',border:'1px solid black',mt:6,mx:'auto'}}
+              <Btn 
+sx={{width:'fit-content',border:'1px solid black',mb:2,mx:'auto'}}
 onClick={()=>router.push('/collections/products')}
 >
    View More
-</Btn> */}
+</Btn>
             </Box>
   )
 }

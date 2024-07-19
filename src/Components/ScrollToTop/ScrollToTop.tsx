@@ -23,7 +23,8 @@ const ScrollUp = () => {
     </IconButton>
 </Paper>
     </Box> */}
-    <a style={{textDecoration:'none',borderRadius:'2000px',background:'white'}} href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} target='_blank' rel='noopener'>
+    <a style={{textDecoration:'none',borderRadius:'2000px',background:'white'}}
+     href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} target='_blank' rel='noopener'>
     
     <Btn sx={{ border:'1px solid transparent',
     borderRadius:25,
@@ -34,7 +35,7 @@ const ScrollUp = () => {
       <img src="https://www.7979.org.my/uploads/1/2/6/3/126376279/whatsapp-icon_1.png" alt="Whatsapp Icon" className="img" />
       </Box>
          <Box sx={{mr:1,background:'white',py:1,px:2,borderRadius:25,color:'black'}}>
-         +961 79 111 760
+         +961 123 456 789
       </Box>
    
     </Btn>

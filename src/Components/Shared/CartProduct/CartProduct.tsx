@@ -76,8 +76,8 @@ const CartProduct = ({onChange,_id,price,category,title,remove,qty,img,productse
                     
                     className='flex  center items-center align-center row gap1'
                     
-                    sx={{fontSize:'11px',right:'5%',background:productselectedColor}}>
-                            {productselectedColor ? productselectedColor : ''}
+                    sx={{fontSize:'11px',right:'5%'}}>
+                            {productselectedColor ? `| ${productselectedColor}` : ''}
                        </Box>}
 
                        
@@ -114,7 +114,7 @@ const CartProduct = ({onChange,_id,price,category,title,remove,qty,img,productse
                    
                     <Btn 
                     onClick={()=>remove(_id)}
-                    v2={true} sx={{border:'none',padding:0,mx:0,mt:1,':hover':{background:'white'},fontSize:'.6em'}}>
+                     sx={{border:'none',padding:0,mx:0,mt:1,':hover':{background:'white'},fontSize:'.6em'}}>
                         <AiOutlineDelete 
                         color='red'
                        size='1.25em'

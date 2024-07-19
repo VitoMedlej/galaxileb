@@ -25,17 +25,17 @@ export default function ProductCard({ setselectedSize, selectedSize, sizes }: an
                   px:0,py:0,
                   border:'1px solid black',
                   ':hover':{
-                    background:selectedSize?.size?.toLocaleLowerCase() === option.size?.toLocaleLowerCase() ? '#7eb0b0' : 'transparent'
+                    background:selectedSize?.size?.toLocaleLowerCase() === option.size?.toLocaleLowerCase() ? '#9fa092' : 'transparent'
                     ,color:selectedSize?.size?.toLocaleLowerCase() === option.size?.toLocaleLowerCase() ? 'black' : 'black'
 
                   },
-                  background:selectedSize?.size?.toLocaleLowerCase() === option.size?.toLocaleLowerCase() ? '#7eb0b0' : 'transparent'
+                  background:selectedSize?.size?.toLocaleLowerCase() === option.size?.toLocaleLowerCase() ? '#9fa092' : 'transparent'
                   ,color:selectedSize?.size?.toLocaleLowerCase() === option.size?.toLocaleLowerCase() ? 'black' : 'black'
                 
                 }}
                 onClick={() => handleSizeClick(option?.size)}
               >
-                {option.size}
+                {option?.size}
               </Btn>
             ))}
         </Box>

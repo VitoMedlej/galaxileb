@@ -9,7 +9,7 @@ import {IoIosSearch} from 'react-icons/io'
 import { useRouter } from 'next/navigation';
 // import DirectionsIcon from '@mui/icons-material/Directions';
 // 
-export default function SearchInput({sx,mobile,handleSubmit,newValue}:{newValue?:string,mobile?:boolean,sx?:any,handleSubmit?:any}) {
+export default function SearchInput({sx,mobileHidden,handleSubmit,newValue}:{newValue?:string,mobileHidden?:boolean,sx?:any,handleSubmit?:any}) {
   const router = useRouter()
   
   const [value,
@@ -28,21 +28,23 @@ export default function SearchInput({sx,mobile,handleSubmit,newValue}:{newValue?
       component="form"
       className='searchinput '
       sx={{
+        background:'transparent',
         py:'.25em',
         mx:2,
         // my:'.25em',
-        mb: mobile ? '.25em' : '0',
+        mb: mobileHidden ? '.25em' : '0',
         px:'.5em',
         // mb:'.5em',
-        flex:1,
-        flexBasis:'100%',
+        // flex:1,
+        // flexBasis:'100%',
         boxShadow:'none',
         border:'1px solid #00000036',
-        borderRadius:'4000px',
+        borderRadius:'0px',
         
-        //  display: mobile ? {xs:'flex',md:'none'} : {xs:'none',md:'flex'},
-         display:'flex',
-         alignItems: 'center',maxWidth:{xs:'100%',md:'600px',lg:'60%'}
+         display: mobileHidden ? {xs:'none',md:'flex'} :  {xs:'flex',md:'none'},
+        //  display:'flex',
+         alignItems: 'center',
+         width:{xs:'100%',md:'300px',lg:'30%'}
          ,...sx
         }}
     >

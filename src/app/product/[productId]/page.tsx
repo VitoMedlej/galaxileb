@@ -110,9 +110,6 @@ const Index = () => {
 
 
 
-
-
-
       const [swiper, setSwiper] = useState<any>(null);
 
       // const goToSlide  = (index: number) => {
@@ -123,10 +120,10 @@ const Index = () => {
   return (
      
     
-      <Box sx={{mt:4}}>
+      <Box sx={{mt:0}}>
  
 {!loading && data?.product !== undefined && data?.product?.title ? 
- <Grid sx={{maxWidth:'lg',mx:1,pt:{sm:15,md:15,lg:9}}} className='auto' container>
+ <Grid sx={{maxWidth:'lg',mx:1,pt:{sm:5,md:5,lg:5}}} className='auto' container>
 <Grid  item xs={12}  md={6} >
          <ProductImageCarousel setSwiper={setSwiper} images={data?.product?.images}/>
         {/* <Box className="flex wrap justify-between between space-around" sx={{mt:1}}>
@@ -157,6 +154,18 @@ const Index = () => {
         // border:'1px solid #00000029',
         px:{xs:1,sm:1.5}}} item xs={12}  md={5}>
          <Box sx={{pt:{xs:3,sm:0}}}>
+         {data?.product?.category &&
+          <Typography
+          className='bg2 center flex items-center' component={'h2'} 
+          sx={{
+            width:'fit-content',
+            px:2,
+            py:1,
+            borderRadius:'400px',
+            textAlign:'center',color:'white',
+            fontWeight:700,fontSize:{xs:'.8em',sm:'.85em',md:'.8em'}}}>
+              {data?.product?.category }
+             </Typography>}
              <Typography component={'h1'} sx={{fontWeight:600,pt:1,fontSize:{xs:'1.2em',sm:'1.7em',md:'2em'}}}>
               {data?.product?.title || 'Loading Product Details'}
              </Typography>
@@ -170,8 +179,7 @@ const Index = () => {
             } */}
           {data?.product?.inStock !== false &&   <Typography 
                  component={'h1'} sx={{
-          color:'green',
-                  my:.25,fontWeight:500,fontSize:{xs:'1em',sm:'1.55em'}}}>
+                  my:.25,fontWeight:600,fontSize:{xs:'.9em',sm:'1em'}}}>
                  ${
                  selectedSize?.price ||
                  data?.product?.price || 0}
@@ -218,12 +226,13 @@ const Index = () => {
                     min={1} max={10} value={selectedQuantity}/>
             
              <Btn 
-                     onClick={()=>addToCart(selectedQuantity,`${data?.product?._id}`,{title : data.product.title ,category: data.product.category,img:data.product.images[0], _id : data.product._id,price:selectedSize?.price ? selectedSize?.price : data?.product?.price, productselectedSize:selectedSize?.size,productselectedColor: productselectedColor || null},true,true)}
+             v2
+                     onClick={()=>addToCart(selectedQuantity,`${data?.product?._id}`,{title : data.product.title ,category: data.product.category,img:data.product.images[0], _id : data.product._id,price:selectedSize?.price ? selectedSize?.price : data?.product?.price, productselectedSize:selectedSize?.size,productselectedColor: productselectedColor || `${data?.product?.colors ? data?.product?.colors[0] : null}`},true,true)}
              
               sx={{gap:.5,
                 borderRadius:0,
                 px:{xs:0.1,sm:2},
-                border:'1px solid black',
+              
              width:{xs:'100%',sm:'100%'}}}>
                  ADD TO CART
                 

@@ -9,9 +9,10 @@ import { useRouter } from 'next/navigation'
 
 
 
-const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
+const ProductCollection = ({sx,delay,text,Collectiontitle,data,setQuickView} : {
     Collectiontitle: string,
     delay : number,
+    text : string,
     data?: IProduct[],
     sx ?: any;
     setQuickView ?: Dispatch<SetStateAction<{
@@ -30,30 +31,34 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
             // width :'99%',
             margin: '0 auto',
             // my: '3em',
-            mt:'0em',
+            mt:'3em',
             mb:'3em',
             ...sx,
         }}>
-             <Box className="flex justify-between col   "
-              sx={{pt:4,pb:0,maxWidth:'lg'}}>
+             <Box className="flex center auto justify-between col   "
+              sx={{pb:0,maxWidth:'lg'}}>
 
 
 <Typography sx={{
-      pt: {
-        xs: 8,
-        md: 14
-    },
-    mt: {
-        xs: 4,
-        sm: 12
-    },
+  
+  
     maxWidth:'1200px',
     pb:0,
     px:1,
     fontWeight:'400',
     fontSize:{xs:'1.5em',sm:'1.8em'},
-    }} component='h1' className='animate-on-scroll  clr '>
+    }} component='h1' className='animate-on-scroll text-center  '>
        {Collectiontitle}
+    </Typography>
+    <Typography sx={{
+  
+    maxWidth:'1200px',
+    pb:0,
+    px:1,
+    fontWeight:'400',
+    fontSize:{xs:'.8em',sm:'1em'},
+    }} component='p' className='animate-on-scroll text-center  '>
+       {text}
     </Typography>
 
 

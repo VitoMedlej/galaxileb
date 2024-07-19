@@ -1,7 +1,7 @@
 footer {
 
   .container {
-      background: #7eb0b0;
+      background: black;
       max-width: 1200px;
       margin: 0 auto;
       padding: 1em;
@@ -43,9 +43,12 @@ footer {
     color:rgba(22, 22, 22, 0.87);
   }
   .site-footer__bottom {
+    background: black;
       div {
+    background: black;
+
           p{
-            color:rgba(36, 36, 36, 0.87);
+            color:rgba(255, 255, 255, 0.87);
       align-items: center;
       text-align: center;
       width: 100%;
@@ -55,7 +58,8 @@ footer {
 }
 }
 .logos {
-  max-width: 120px;
+  max-width: 250px;
+  margin: 0 auto;
 }
 .auto {
   margin: 0 auto  !important;
@@ -260,6 +264,7 @@ $breakpoint-value: map-get($breakpoints, $breakpoint);
     }
   }
   .site-footer__bottom {
+    background: black;
     padding: 10px 0;
     border-top: 1px solid #EBEBEB;
     @include breakpoint(phone) {

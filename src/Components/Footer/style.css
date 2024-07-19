@@ -1,5 +1,5 @@
 footer .container {
-  background: #7eb0b0;
+  background: black;
   max-width: 1200px;
   margin: 0 auto;
   padding: 1em;
@@ -40,8 +40,14 @@ footer .site-footer__links ul .link-title {
 footer .footer-p {
   color: rgba(22, 22, 22, 0.87);
 }
+footer .site-footer__bottom {
+  background: black;
+}
+footer .site-footer__bottom div {
+  background: black;
+}
 footer .site-footer__bottom div p {
-  color: rgba(36, 36, 36, 0.87);
+  color: rgba(255, 255, 255, 0.87);
   align-items: center;
   text-align: center;
   width: 100%;
@@ -49,7 +55,8 @@ footer .site-footer__bottom div p {
 }
 
 .logos {
-  max-width: 120px;
+  max-width: 250px;
+  margin: 0 auto;
 }
 
 .auto {
@@ -231,6 +238,7 @@ button[disabled] {
   text-decoration: underline;
 }
 .site-footer .site-footer__bottom {
+  background: black;
   padding: 10px 0;
   border-top: 1px solid #EBEBEB;
 }

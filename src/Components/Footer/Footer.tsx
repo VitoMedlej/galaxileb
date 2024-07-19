@@ -8,8 +8,8 @@ import SMicons from '../SMicons/SMicons';
 
 
 const Footer = () => (
-  <footer className="site-footer " style={{color:'black',background:'white'}}>
-    <div className="container " style={{color:'black',background:'white'}}>
+  <footer className="site-footer bg2 " style={{color:'black'}}>
+    <div className="container bg2" style={{color:'black'}}>
       <div className="site-footer__top ">
         <div className="site-footer__description">
           <div className='logos cursor'>
@@ -20,14 +20,13 @@ const Footer = () => (
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675713948/logo_sktnut_1_jwy2hk.png */}
             <img className='img contain'
             
-            src='https://ucarecdn.com/83ee755f-e11f-40b6-9761-65b4b5ecd627/-/resize/200/' alt="Pets Town Lebanon Logo" />
+            src='https://ucarecdn.com/67d27952-152a-456f-ab9f-b99e9c566f10/-/resize/300/' alt="Pets Town Lebanon Logo" />
             </Link>
           </div>
           <Typography component='p' sx={{ fontSize: '.85em',color:"black" }}  className='footer-p '>
-         We offer a unique selection of personalized, handcrafted bags,
-          proudly made in Lebanon. From the elegant IVY and vera tote bags to the culturally inspired A La Libanaise and Koufiya designs, each piece is a statement of Lebanese craftsmanship and style.
-           Customize your clutch, Vera, Vee, or any other design to reflect your personal taste. 
-           Visit us in our atelier to experience the beauty and quality of Mirach bags. Shop local, embrace authenticity, and carry a piece of Lebanon with you.
+      {
+        `Urban Gentleman: Your destination for men's accessories in Lebanon. Discover our collection of watch boxes and stands, designed to elevate your style. Shop now and enjoy fast shipping across Lebanon. For any inquiries, contact our support team.`
+      }
           </Typography>
           <SMicons/>
 
@@ -63,7 +62,7 @@ const Footer = () => (
               </li>
         
 
-            <li><a href="https://www.instagram.com/mirach_lb_/" target="_blank" rel="noreferrer" >@mirach_lb_</a></li>
+            <li><a href={`${process.env.NEXT_PUBLIC_INSTA}`} target="_blank" rel="noreferrer" >@Urban Gentleman_lb_</a></li>
             <li><a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} rel="noreferrer" target='_blank' >+{process.env.NEXT_PUBLIC_WA}</a></li>
             {/* <li><a href={`http://tiktok.com/@thecraftroomlb`} rel="noreferrer" target='_blank' >TikTok</a></li> */}
           </ul>
@@ -72,10 +71,10 @@ const Footer = () => (
       </div>
     </div>
         <Divider color='gray'></Divider>
-    <div className="site-footer__bottom bg3 " style={{color:'black',borderTop:"1px solid #0000001f"}}>
-      <div className="container " style={{color:'black'}}>
+    <div className="site-footer__bottom  " style={{color:'white',borderTop:"1px solid #0000001f"}}>
+      <div className="container " style={{color:'white'}}>
         <p>Website Developed By{' '}
-          <a style={{ color: 'black' }} href={`${'https://www.onbeirut.com'}`}>OnBeirut Agency </a></p>
+          <a style={{ color: 'white' }} href={`${'https://www.onbeirut.com'}`}>OnBeirut Agency </a></p>
       </div>
     </div>
   </footer>

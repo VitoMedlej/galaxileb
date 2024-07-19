@@ -8,10 +8,10 @@ import QuickCart from '@/Components/Shared/QuickCart/QuickCart'
 import ContextWrapper from '@/context/Contexts'
 
 export const metadata = {
-    title: 'Mirach | Handcrafted Personalized Bags | Shop Unique Lebanese Bags in Beirut, Lebanon',
-    description: `Discover Mirach's collection of handcrafted, personalized bags made in Lebanon. Shop unique styles including IVY, A La Libanaise, Koufiya, and more in Beirut`,
+    title: `Urban Gentleman | Shop Men's Accessories in Lebanon | Watch Boxes & Stands`,
+    description: `premium men's accessories at Urban Gentleman. Shop now for stylish watch boxes and elegant watch stands in Lebanon. Elevate your style with quality craftsmanship.`,
     icons: {
-        icon: `https://ucarecdn.com/83ee755f-e11f-40b6-9761-65b4b5ecd627/-/resize/200/`
+        icon: `https://ucarecdn.com/622a1d2d-b122-4eea-ab67-3365caf78a77/uglogofullCopy.PNG`
     }
 }
 
@@ -34,8 +34,7 @@ export default function Layout({children} : {
                     <Sidebar />
                     <QuickCart/>
                     <ScrollToTop/>
-                    <main >
-
+                    <main>
                      {children}
                     </main>
                 </ContextWrapper>

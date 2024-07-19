@@ -20,7 +20,7 @@ h1 {
 }
 
 .color3 {
-  color: #857a5a !important;
+  color: #f7f7f7 !important;
 }
 
 .animate-on-scroll {
@@ -31,7 +31,7 @@ h1 {
   text-transform: uppercase !important;
   font-weight: 600;
   font-size: 0.8em;
-  color: #857a5a !important !important;
+  color: #f7f7f7 !important !important;
 }
 .nav-link p {
   color: black !important;
@@ -40,6 +40,16 @@ h1 {
 .topd {
   -o-object-position: top;
      object-position: top;
+}
+
+.overlay {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.199);
 }
 
 .centerd {
@@ -66,12 +76,12 @@ h1 {
      object-fit: contain !important;
 }
 
-.bg2 {
-  background: #857a5a !important;
+.bg3 {
+  background: #f7f7f7 !important;
 }
 
-.bg3 {
-  background: #7eb0b0 !important;
+.bg2 {
+  background: #9fa092 !important;
 }
 
 .borderColor {
@@ -79,7 +89,7 @@ h1 {
 }
 
 .borderColor2 {
-  border-color: #7eb0b0 !important;
+  border-color: #9fa092 !important;
 }
 
 .sectionTitle {
@@ -91,7 +101,7 @@ h1 {
 }
 
 .color2 {
-  color: #7eb0b0 !important;
+  color: #9fa092 !important;
 }
 
 .color {
@@ -215,11 +225,11 @@ button[disabled] {
 }
 
 .clr2 {
-  color: #7eb0b0 !important;
+  color: #9fa092 !important;
 }
 
 .clr3 {
-  color: #857a5a !important;
+  color: #f7f7f7 !important;
 }
 
 .auto {

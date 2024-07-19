@@ -68,7 +68,7 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
         console.log('filterByCate: ', filterByCate);
         
     const ProductsCollection = await client
-        .db("MRCH")
+        .db("URBG")
         .collection("Products");
     let products : any = []
 

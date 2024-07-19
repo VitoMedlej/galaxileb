@@ -70,7 +70,7 @@ const Cart = () => {
     const {discountedPrice,isFirstOrder} = useDiscount(total)
 
 
-    let localCart : ICartItem[] = loadState('Vtjx2j7-zni3651n2iuxf-G8sfv1zY6') || []
+    let localCart : ICartItem[] = loadState('BlmbX3zmGB') || []
     useEffect(() => {
         if (localCart) {
             
@@ -80,12 +80,12 @@ const Cart = () => {
     }, [])
     const refetchState = () => {
 
-        setCartItems(loadState('Vtjx2j7-zni3651n2iuxf-G8sfv1zY6'))
+        setCartItems(loadState('BlmbX3zmGB'))
         
     }
     const remove = (id:string) => {
         let state = cartItems.filter(x => `${x._id}` !== id);
-         saveState('Vtjx2j7-zni3651n2iuxf-G8sfv1zY6', state);
+         saveState('BlmbX3zmGB', state);
          setCartItems(state);
      }
      
