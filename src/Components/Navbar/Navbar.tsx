@@ -55,15 +55,15 @@ export default function Navbar() {
                         margin: '0 auto'
                     }}
                 >
-                    {/* <Box className='center bg white  w100 text-center' sx={{ minWidth: '90vw', 
-                        background: 'white', width: '100%', py: 0.25 }}>
+                    <Box className='center   w100 text-center' sx={{ minWidth: '90vw', 
+                        background: '#484a4b', width: '100%', py: 0.25 }}>
                         <Typography className='uppercase ' component='h1'
                          sx={{ textTransform: 'uppercase',
                             fontWeight:500,
                           color: 'white', py: 0.2, fontSize: { xs: '.65em', sm: '.75em' } }}>
-                        Shipping anywhere in Lebanon & Worldwide 📍
+                            Delivery is available anywhere in Lebanon 🚚
                         </Typography>
-                    </Box> */}
+                    </Box>
 
                     <Toolbar className='flex bg2 relative center items-center'
                     

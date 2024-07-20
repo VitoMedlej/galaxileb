@@ -94,9 +94,8 @@ const CartProduct = ({onChange,_id,price,category,title,remove,qty,img,productse
                     </Typography>
                     <h2
                         style={{
-                        fontSize: '1em',
-                        fontWeight: '500',
-                        color: 'green',
+                        fontSize: '.85em',
+                        fontWeight: '600',
                         margin: ' .35em 0 0 0'
                     }}>
                         ${price}

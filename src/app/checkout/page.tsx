@@ -155,7 +155,9 @@ export default function Checkout() {
                     type='submit'
                     disabled={
                       !info?.checkbox2 || !info?.checkbox
-                      || !info?.email.match(regex) || !info.email || info.phone?.length < 6 || info.email?.length < 5 || !info?.firstName || info?.firstName.length < 2 || !info.phone }
+                      || !info?.email.match(regex) || !info.email || info.phone?.length < 6 || info.email?.length < 5 || !info?.firstName || info?.firstName.length < 2 || 
+                  !info.address1 ||
+                      !info.phone }
                      form="myform"
                   // variant="contained"
                   onClick={handleNext}
