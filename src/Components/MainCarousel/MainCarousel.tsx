@@ -18,10 +18,10 @@ const Preloader3 = ({resImages} : any) => {
     const [imgs,setImgs] = useState<any>(
         [
             {
-                img:`https://caseelegance.com/cdn/shop/files/Mask_Group_43_83565545-477a-4d23-8045-d3ce183b079b.png?v=1707296008&width=1500`
+                img:`https://winnerforce-lb.com/cdn/shop/files/website_1800x800_0003_7bf94542-4185-423b-a54d-fd111ffac9fb_1400x.png?v=1716815188`
             },
             {
-                img:'https://caseelegance.com/cdn/shop/files/Group_1089_a6967502-f359-4526-83c5-1a03b9b08b22.png?v=1707209619&width=1500'
+                img:'https://instagram.fbey22-1.fna.fbcdn.net/v/t39.30808-6/450251622_122102107868402824_6956869894819437387_n.jpg?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xMDgweDEzNTAuc2RyLmYzMDgwOCJ9&_nc_ht=instagram.fbey22-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=ZTbipEkNV-0Q7kNvgE8c9lF&edm=AEhyXUkAAAAA&ccb=7-5&ig_cache_key=MzQwOTg1NTE1NzA2MjA1Nzc1NA%3D%3D.2-ccb7-5&oh=00_AYABJ39IgaPAj8soKMuWOALQNJkf8aJiOdvjSR7X6f51tQ&oe=66A28F9C&_nc_sid=8f1549'
             }
      ]
     )
@@ -43,7 +43,7 @@ const Preloader3 = ({resImages} : any) => {
           width:'100%',
           transform:'translateY(-1px)',
           maxWidth:'none',
-          height: {xs:'500px',sm:'100%',md:'600px'},
+          height: {xs:'85vh',sm:'100%',md:'600px'},
           margin: '0 auto',
         //   mt:'1em',
           display: {xs: 'flex'}
@@ -77,19 +77,24 @@ const Preloader3 = ({resImages} : any) => {
                               alt="Main Carousel Image"
                           />
                       </Box>
-                      <Box className='absolute text-center w100  ' sx={{
-                            transform: `translateX(50%)`,
-                        top:{xs:'10%',md:'15%'},right:'50%',zIndex:'1234'}}>
-                             <Typography sx={{color:'white',fontSize:{xs:'.8em',md:'1em'},
-                             fontWeight:500}}>
-                                Urban Gentleman
-                            </Typography>
-                            <Typography sx={{pt:1,color:'white',fontSize:{xs:'1.5em',md:'2em'},fontWeight:700}}>
-                            Stylish essentials for the modern man
+                      <Box className='absolute  animate-on-scroll  flex col' sx={{
+                            transform: `translateY(-50%)`,
+                            right: 0,
+                            top: {xs:'70%',sm:`50%`},
+                            alignItems:{xs:'center',sm:'flex-end'},
+                            width: {xs:'100%',sm:'fit-content'},
+                            padding: {xs:'0 .15em',sm:'0 2em'},
+                       zIndex:'1234'}}>
+                            
+                            <Typography sx={{
+                                px:{xs:'.1em'},
+                                textAlign:{xs:'center',sm:'flex-end'},
+                                pt:1,color:'white',fontSize:{xs:'1.35em',md:'2em'},fontWeight:300}}>
+                            Embrace the power of movement with Shield.
                             </Typography>
                             <Btn  
                             onClick={()=>router.push('/collection/products')}
-                            v2 className='center ' sx={{mt:'2em',mx:'auto'}}>
+                            v2 className='center ' sx={{mt:'1em',mx:''}}>
                                 Shop Now
                             </Btn>
                       </Box>

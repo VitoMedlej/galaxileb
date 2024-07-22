@@ -8,7 +8,7 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
 try {
 
     const ProductsCollection = await client
-        .db("URBG")
+        .db("SHLD")
         .collection("Products");
     let featuredProducts : any = [];
     let products : any = []

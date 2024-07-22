@@ -7,11 +7,11 @@ import React from 'react'
 
 const sm = [
     {
-        Icon:'https://www.svgrepo.com/show/520798/instagram.svg',
+        Icon:'https://www.svgrepo.com/show/452229/instagram-1.svg',
         href:`${process.env.NEXT_PUBLIC_INSTA}`
     },
-    {Icon:'https://www.svgrepo.com/show/506628/whatsapp.svg',href:`https://wa.me/+${process.env.NEXT_PUBLIC_WA}`},
-    {Icon:'https://www.svgrepo.com/show/494202/facebook.svg',href:'https://www.facebook.com/Urban Gentleman.lb'},
+    {Icon:'https://www.svgrepo.com/show/349563/whatsapp.svg',href:`https://wa.me/+${process.env.NEXT_PUBLIC_WA}`},
+    {Icon:'https://www.svgrepo.com/show/475647/facebook-color.svg',href:'https://www.facebook.com/profile.php?id=61562084735542'},
   
  ]
 const SMicons = ({sx,color}:{color?:string,sx?:any}) => {

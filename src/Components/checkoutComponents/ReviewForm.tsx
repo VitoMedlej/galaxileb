@@ -41,9 +41,9 @@ import useDiscount from '@/Hooks/useDiscount';
 // }  
 export default function Review({setActiveStep}:{setActiveStep:any}) {
 
-  const products = loadState('BlmbX3zmGB')
+  const products = loadState('V5jOzZ2100')
  
-  const info = loadState('2VI1H2OI-FJ04BJZ2X')
+  const info = loadState('fZ1z5Gn21')
   const total = totalCal(products);
   const {discountedPrice,isFirstOrder} = useDiscount(total)
 

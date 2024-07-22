@@ -8,8 +8,8 @@ import QuickCart from '@/Components/Shared/QuickCart/QuickCart'
 import ContextWrapper from '@/context/Contexts'
 
 export const metadata = {
-    title: `Urban Gentleman | Shop Men's Accessories in Lebanon | Watch Boxes & Stands`,
-    description: `premium men's accessories at Urban Gentleman. Shop now for stylish watch boxes and elegant watch stands in Lebanon. Elevate your style with quality craftsmanship.`,
+    title: `Shop Stylish Sportswear in Lebanon | Shield Lb`,
+    description: `Discover stylish and comfortable sportswear at Shield Lb in Lebanon. Shop gym wear in various colors and elevate your workout with our premium collection.`,
     icons: {
         icon: `https://ucarecdn.com/622a1d2d-b122-4eea-ab67-3365caf78a77/uglogofullCopy.PNG`
     }
@@ -24,8 +24,9 @@ export default function Layout({children} : {
             <head>
             <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
-            </head>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></link> 
+           
+           </head>
 
             <body className='relative'>
 

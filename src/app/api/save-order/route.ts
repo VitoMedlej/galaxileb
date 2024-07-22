@@ -16,7 +16,7 @@ export async function POST(req: NextRequest, res: NextApiResponse) {
     // Add the unique order number to the order object
     let nb = `${orderNumber}`?.split("-")[0]?.toUpperCase();
 
-    const insertReq = await client.db("URBG").collection("Orders").insertOne({...order,orderNumber:nb});
+    const insertReq = await client.db("SHLD").collection("Orders").insertOne({...order,orderNumber:nb});
     if (insertReq.acknowledged) {         
       return NextResponse.json({success:true, orderNumber: nb});
     }

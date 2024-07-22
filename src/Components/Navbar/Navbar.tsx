@@ -56,23 +56,23 @@ export default function Navbar() {
                     }}
                 >
                     <Box className='center   w100 text-center' sx={{ minWidth: '90vw', 
-                        background: '#484a4b', width: '100%', py: 0.25 }}>
+                        background: '#ebebeb', width: '100%', py: 0.25 }}>
                         <Typography className='uppercase ' component='h1'
                          sx={{ textTransform: 'uppercase',
                             fontWeight:500,
-                          color: 'white', py: 0.2, fontSize: { xs: '.65em', sm: '.75em' } }}>
-                            Delivery is available anywhere in Lebanon 🚚
+                            color:"black",
+                         py: 0.2, fontSize: { xs: '.65em', sm: '.75em' } }}>
+                          Delivery all over Lebanon | Cash upon delivery📦
                         </Typography>
                     </Box>
 
                     <Toolbar className='flex bg2 relative center items-center'
                     
-                    sx={{ boxShadow:'1px 1px 3px #857a5b4a', py: 1, background: 'white' }}>
+                    sx={{ boxShadow:'1px 1px 3px #857a5b4a', py: 0, background: 'white' }}>
                         {/* Logo on the far left */}
 
 
-                            <SearchInput mobileHidden/>
-
+                            <NavButtom/>
 
                         <Box
                             onClick={() => router.push('/')}
@@ -86,7 +86,7 @@ export default function Navbar() {
                             }}
                         >
                             <img 
-                            src="https://ucarecdn.com/67d27952-152a-456f-ab9f-b99e9c566f10/-/resize/300/" alt="Urban Gentleman-LBLOGO" className="img contain" />
+                            src="https://ucarecdn.com/0e233b8c-0b1a-438b-ac58-019da36991d8/shieldlogosmaller.jpg" alt="ShieldLOGO" className="img contain" />
                         </Box>
 
 
@@ -126,7 +126,7 @@ export default function Navbar() {
 
                 </AppBar>
 
-                <NavButtom/>
+                {/* <NavButtom/> */}
             </Box>
 
         </>

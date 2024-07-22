@@ -2,17 +2,17 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Montserrat", sans-serif !important;
+  font-family: "Roboto", sans-serif !important;
 }
 
 h1 {
   text-transform: uppercase;
   letter-spacing: 0px;
-  font-family: "Montserrat", sans-serif !important;
+  font-family: "Roboto", sans-serif !important;
 }
 
 *, h2, h3, h4, h5, h6, p, button, input, select, textarea, a {
-  font-family: "Montserrat", sans-serif !important;
+  font-family: "Roboto", sans-serif !important;
 }
 
 .w100 {
@@ -49,7 +49,7 @@ h1 {
   right: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.199);
+  background: rgba(0, 0, 0, 0.082);
 }
 
 .centerd {
@@ -81,7 +81,7 @@ h1 {
 }
 
 .bg2 {
-  background: #9fa092 !important;
+  background: #ffffff !important;
 }
 
 .borderColor {
@@ -89,7 +89,7 @@ h1 {
 }
 
 .borderColor2 {
-  border-color: #9fa092 !important;
+  border-color: #ffffff !important;
 }
 
 .sectionTitle {
@@ -101,7 +101,7 @@ h1 {
 }
 
 .color2 {
-  color: #9fa092 !important;
+  color: #ffffff !important;
 }
 
 .color {
@@ -225,7 +225,7 @@ button[disabled] {
 }
 
 .clr2 {
-  color: #9fa092 !important;
+  color: #ffffff !important;
 }
 
 .clr3 {

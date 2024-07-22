@@ -6,9 +6,9 @@ import React from 'react'
 
 let style1 = {
   color: 'black',
-  background: ' transparent',
-  border:'1px solid black',
-  borderRadius: '2px', 
+  background: 'white',
+  border:'1px solid white',
+  borderRadius: '552px', 
   transition: 'background 0.3s ease, transform 0.2s ease',
 
   ':hover': {
@@ -19,27 +19,27 @@ let style1 = {
   },
   display: 'flex',
   padding: '8px 55px',
-  fontWeight: '600',
+  fontWeight: '300',
   fontSize: '12px',
   cursor: 'pointer',
   outline: 'none',
 }
 let style2 = {
   color: 'black',
-  background: ' #9fa092',
-  border:'1px solid #9fa092',
-  borderRadius: '2px', 
+  background: 'white',
+  border:'1px solid white',
+  borderRadius: '255px', 
   transition: 'background 0.3s ease, transform 0.2s ease',
 
   ':hover': {
       background: 'white',
-      color:' #857a5a',
-      border: '1px solid  #857a5a',
+      color:' black',
+      border: '1px solid  black',
     
   },
   display: 'flex',
   padding: '8px 55px',
-  fontWeight: '600',
+  fontWeight: '300',
   fontSize: '12px',
   cursor: 'pointer',
   outline: 'none',

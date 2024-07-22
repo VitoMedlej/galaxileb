@@ -110,11 +110,9 @@ const PreLoader = ({data, resImages, categories} : any) => {
 
             </Box> */}
 
-            <HomeProductsCarousel 
-            delay={4500} 
-            Collectiontitle='New Arrivals'
-             text={'Our latest gear to drop. Don’t miss out on new CE products.'}
-              data={data}/>
+            <HomeProductCollection 
+            title='New Arrivals'
+              products={data}/>
             {/* <HomeProductsCarousel delay={4000} Collectiontitle={'Best Sellers'}  data={collection}/> */}
 
                   {/* {
@@ -130,60 +128,19 @@ const PreLoader = ({data, resImages, categories} : any) => {
                       
       
 
-          <Grid className='space-evenly' container>
-               {
-               [
-                {
-                  title: 'Elegant Watch Box',
-                  description: 'Our watch box features a versatile design that holds any watch securely. Crafted with fine materials for a sophisticated look, it ensures your timepiece is always ready to wear.',
-                  CTA: 'Shop Now',
-                  img: 'https://caseelegance.com/cdn/shop/files/IMG_0220.png?v=1707554788&width=700'
-                },
-                {
-                  title: 'Luxury Watch Stand',
-                  description: 'Display your watch with pride on our luxury watch stand. Designed to complement any decor, it offers a stylish way to keep your watch accessible and beautifully showcased.',
-                  CTA: 'Explore Collection',
-                  img: 'https://caseelegance.com/cdn/shop/files/Photo-41.png?v=1707554788&width=700'
-                },
-                {
-                  title: 'Premium Leather Watch Case',
-                  description: 'Protect and organize your watches with our premium leather watch case. Its sleek design and durable construction make it an essential accessory for any watch lover.',
-                  CTA: 'Buy Now',
-                  img: 'https://caseelegance.com/cdn/shop/files/CE-WIND-1-BLK-Listing-02.png?v=1712248374&width=700'
-                },
-                {
-                  title: 'Modern Watch Holder',
-                  description: 'Keep your watch in pristine condition with our modern watch holder. Featuring a minimalist design, it blends functionality with elegance, making it a perfect addition to your collection.',
-                  CTA: 'Discover More',
-                  img: 'https://caseelegance.com/cdn/shop/files/Cylindor-Brown-02.png?v=1706519803&width=700'
-                }
-              ].map(i=>{
+     
 
-                 return <Grid key={i.title} item xs={11.4} md={5.5} >
-                      <ContentBlock href={'/collection/products'}
-                       title={i.title}
-                       img={`${i.img}`}
-                       text={`${i?.description}`} 
-                       CTA={i.CTA}                      />
-                  </Grid> })}
-          </Grid>
-
-          <Box className='bg3'>
-                <HomeProductCollection products={data} title=''/> 
-          </Box>
 
             {/* <Box
                 className="w100 "
                 sx={{
                 my: 4,
-                background: '#7eb0b024'
             }}>
 
                 <Grid
                     className='auto'
                     sx={{
                     maxWidth: '1200px',
-                    background: '#f9d40100',
                     alignItems: 'center',
                     justifyContent: 'space-evenly',
                     width: '100%',
@@ -208,7 +165,7 @@ const PreLoader = ({data, resImages, categories} : any) => {
                         }}
                             className='auto animate-on-scroll'>
                             <img
-                                src="https://ucarecdn.com/e67a749e-abd8-4d9d-866d-dbc81029a2dc/mypic.jpg"
+                                src="https://instagram.fbey22-1.fna.fbcdn.net/v/t39.30808-6/450251622_122102107868402824_6956869894819437387_n.jpg?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xMDgweDEzNTAuc2RyLmYzMDgwOCJ9&_nc_ht=instagram.fbey22-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=ZTbipEkNV-0Q7kNvgE8c9lF&edm=AEhyXUkAAAAA&ccb=7-5&ig_cache_key=MzQwOTg1NTE1NzA2MjA1Nzc1NA%3D%3D.2-ccb7-5&oh=00_AYABJ39IgaPAj8soKMuWOALQNJkf8aJiOdvjSR7X6f51tQ&oe=66A28F9C&_nc_sid=8f1549"
                                 alt=""
                                 className="img"/>
                         </Box>
@@ -231,10 +188,10 @@ const PreLoader = ({data, resImages, categories} : any) => {
                                     sm: 0
                                 },
                                 fontSize: {
-                                    xs: '2em',
-                                    sm: '3em'
+                                    xs: '1.4em',
+                                    sm: '2em'
                                 },
-                                fontWeight: 700
+                                fontWeight: 300
                             }}
                                 component='h1'
                                 className='color animate-on-scroll '>
@@ -252,7 +209,7 @@ const PreLoader = ({data, resImages, categories} : any) => {
                                 },
                                 fontWeight: 300,
                                 color: '#4d555e',
-                                mt: 2
+                                mt: 1
                             }}
                                 className='flex left animate-on-scroll'>
                                 {`Shop our collection in Beirut and discover the perfect accessory to elevate your wardrobe. Experience the luxury and authenticity of Lebanese-made bags with Urban Gentleman.`
@@ -278,62 +235,63 @@ const PreLoader = ({data, resImages, categories} : any) => {
 
             </Box> */}
 
-            <Box className='relative' sx={{my:8,height:{xs:'500px',sm:'100%'}}}>
+            <Box className='relative' sx={{my:8,height:{xs:'500px',sm:'500px'}}}>
             <Box sx={{position:'relative', height: '100%', width:'100%'}}>
                       <Box className='overlay'>
                 
                 </Box>
                           <img
-                              className={`img `}
-                              src={`https://caseelegance.com/cdn/shop/files/Action-1_copy.png?v=1707554788&width=1500`}
+                              className={`img cover`}
+                              src={`https://winnerforce-lb.com/cdn/shop/files/750-1100___003_x800.png?v=1716815234`}
                             //   src={`${item?.img}/-/resize/${imageSize}/`}
                               alt="Main Carousel Image"
                           />
                       </Box>
-                      <Box className='absolute text-center w100  ' sx={{
-                            transform: `translate(50%,-50%)`,
-                        top:{xs:'50%',md:'50%'},right:'50%',zIndex:'1234'}}>
-                             <Typography sx={{color:'white',fontSize:{xs:'.8em',md:'1em'},
-                             fontWeight:500}}>
-                                Urban Gentleman
+                      <Box className='absolute  animate-on-scroll  flex col' sx={{
+                            transform: `translateY(-50%)`,
+                            right: 0,
+                            top: {xs:'70%',sm:`50%`},
+                            alignItems:{xs:'center',sm:'flex-end'},
+                            width: 'fit-content',
+                            padding: '0 2em',
+                       zIndex:'1234'}}>
+                            
+                            <Typography sx={{
+                                textAlign:{xs:'center',sm:'flex-end'},
+                                pt:1,color:'white',fontSize:{xs:'1.5em',md:'2em'},fontWeight:300}}>
+                            Embrace the power of movement with Shield.
                             </Typography>
-                            <Typography sx={{pt:1,color:'white',fontSize:{xs:'1.5em',md:'2em'},fontWeight:700}}>
-                            Stylish essentials for the modern man
-                            </Typography>
-                            <Btn  v2 className='center ' sx={{mt:'2em',mx:'auto'}}>
+                            <Btn  
+                            onClick={()=>router.push('/collection/products')}
+                            v2 className='center ' sx={{mt:'1em',mx:''}}>
                                 Shop Now
                             </Btn>
                       </Box>
             </Box>
 
-            <Grid sx={{mt:8}} className='space-evenly' container>
-               {
-                [
-                {
-                    title: 'Classic Watch Organizer',
-                    description: 'Organize your watch collection with our classic watch organizer. Its multiple compartments and elegant finish provide both style and functionality, perfect for any watch enthusiast.',
-                    CTA: 'Shop Now',
-                    img: 'https://caseelegance.com/cdn/shop/files/Cylindor-Brown-02.png?v=1706519803&width=700'
-                  },
-                  {
-                    title: 'Sleek Watch Display Case',
-                    description: 'Showcase your favorite watches in our sleek display case. Designed with a clear top and soft interior lining, it offers a premium display solution that protects and highlights your timepieces.',
-                    CTA: 'View Collection',
-                    img: 'https://caseelegance.com/cdn/shop/files/Luca-Brown-Listing-Layout_EBC-02.png?v=1707554789&width=700'
-                  }
-                ].map(i=>{
+            <HomeProductCollection 
+            title='Best Sellers'
+              products={data}/>
 
-                 return <Grid key={i.title} item xs={11.4} md={5.5} >
-                      <ContentBlock href={'/collection/products'}
-                       title={i.title}
-                       img={`${i.img}`}
-                       text={`${i.description}`} 
-                       CTA={i.CTA}                      />
-                  </Grid> })}
-          </Grid>
-
-                <HomeProductCollection products={data} title=''/> 
-
+            <Box className='relative'>
+            <picture>
+        <source media="(min-width: 768px)" srcSet="https://winnerforce-lb.com/cdn/shop/files/cover_kit_00013_1400x.png?v=1713275040" />
+        <source media="(max-width: 767px)" srcSet="https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_486,c_fit/dpr_2/image/packs/cult/CULTPACK509/19_mag_web.jpg" />
+        <img src="https://winnerforce-lb.com/cdn/shop/files/cover_kit_00013_1400x.png?v=1713275040" alt="" className="img" />
+    </picture>
+                <Box
+                sx={{
+                    top: {xs:`60%`,md:'70%'},
+                    zIndex: 5214,
+                    right: `50%`,
+                    transform: `translate(50%, 50%)`,
+                }}
+                className="absolute">
+                    <Btn>
+                        Shop Now
+                    </Btn>
+                </Box>
+            </Box>
         </Box>
     )
 }

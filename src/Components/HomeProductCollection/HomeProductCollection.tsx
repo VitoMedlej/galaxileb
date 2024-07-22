@@ -12,23 +12,24 @@ const HomeProductCollection = ({products,title} : {title?:string,products:IProdu
   return (
     <Box sx={{mt:4,maxWidth:'lg'}} className='center auto'>
         
-         <Box className="flex justify-between col auto" sx={{px:1,pt:4,pb:0,maxWidth:'lg'}}>
+         <Box className="flex justify-between row auto items-center " sx={{px:1,pt:{xs:8,sm:6},pb:0,maxWidth:'lg'}}>
 
         {title &&  <Typography
          onClick={()=>router.push(`/${encodeURIComponent(`${title ? title : 'collection'}`)?.toLocaleLowerCase()}/products`)}
          sx={{
-    pt:{xs:2,sm:6},
+  
     maxWidth:'1200px',
     pb:0,
-    px:1,
-   
-    fontWeight:'400',
-    fontSize:{xs:'1.5em',sm:'1.8em'},
-    }} component='h1' className='color2 cusror pointer animate-on-scroll   '>
-       {title }
+   color:'black',
+    fontWeight:'300',
+    fontSize:{xs:'1em',sm:'1.5em'},
+    }} component='h1' className=' cusror pointer animate-on-scroll   '>
+       {title.toUpperCase()}
     </Typography>}
 
-
+    <Btn v2 sx={{width:'auto',px:{xs:1,sm:2}}}>
+      View All
+    </Btn>
 
 
 </Box>
@@ -49,12 +50,7 @@ const HomeProductCollection = ({products,title} : {title?:string,products:IProdu
 
 
 
-              <Btn 
-sx={{width:'fit-content',border:'1px solid black',mb:2,mx:'auto'}}
-onClick={()=>router.push('/collections/products')}
->
-   View More
-</Btn>
+             
             </Box>
   )
 }

@@ -8,7 +8,7 @@ import MenuHover from './MenuHover'
 
 // {categories && categories?.slice(0,2)?.map((category : any,  index : any)  => (
 //     <Link className=' decor-none nav-link' key={category?.categoryName} href={`/${encodeURIComponent(category?.categoryName?.toLowerCase())}/products`} >
-//     <Box component="p" sx={{fontWeight:600, color: 'black', ml: 2, textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}>
+//     <Box component="p" sx={{fontWeight:300, color: 'black', ml: 2, textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}>
 //     {category?.categoryName}
 //     </Box>
 //     </Link>
@@ -20,12 +20,11 @@ const NavButtom = ({categories}:any) => {
 
   return (
     <Box
-        className=' items-center wrap    space-evenly'
+        className=' items-center wrap    '
         sx={{
             flex:1,
             position:'relative',
         // width: '100%',
-        borderBottom:'1px solid #0000002e',
         py:.5,
         background:'white',
         // maxWidth:'lg',/
@@ -33,7 +32,7 @@ const NavButtom = ({categories}:any) => {
         display : {xs:'none',md:'flex'}
     }}>
         <Container
-            className='flex center  '
+            className='flex   '
             sx={{
                 maxWidth:'lg',
             justifyContent: 'flex-start',
@@ -55,7 +54,7 @@ component='h1' sx={{width:'max-content',
 mx:'1em',
 alignItems: 'center',
 
-fontWeight:600,fontSize:{xs:'.86em',sm:'.95em'}}}>
+fontWeight:300,fontSize:{xs:'.75em',sm:'.85em'}}}>
 Home
 </Typography>
 </Link>
@@ -68,7 +67,7 @@ component='h1' sx={{width:'max-content',
 mx:'1em',
 alignItems: 'center',
 
-fontWeight:600,fontSize:{xs:'.86em',sm:'.95em'}}}>
+fontWeight:300,fontSize:{xs:'.75em',sm:'.85em'}}}>
 About
 </Typography>
 </Link>
@@ -81,7 +80,7 @@ component='h1' sx={{width:'max-content',
 mx:'1em',
 alignItems: 'center',
 
-fontWeight:600,fontSize:{xs:'.86em',sm:'.95em'}}}>
+fontWeight:300,fontSize:{xs:'.75em',sm:'.85em'}}}>
 Shop
 </Typography>
 </Link> */}
@@ -99,7 +98,7 @@ component='h1' sx={{width:'max-content',
 mx:'1em',
 alignItems: 'center',
 
-fontWeight:600,fontSize:{xs:'.86em',sm:'.95em'}}}>
+fontWeight:300,fontSize:{xs:'.75em',sm:'.85em'}}}>
 {`${cate?.categoryName}`}
 </Typography>
 </Link>}
@@ -127,7 +126,7 @@ component='h1' sx={{width:'max-content',
 mx:'1em',
 alignItems: 'center',
 
-fontWeight:600,fontSize:{xs:'.86em',sm:'.95em'}}}>
+fontWeight:300,fontSize:{xs:'.75em',sm:'.85em'}}}>
 About US
 </Typography>
 </Link> */}
@@ -153,7 +152,7 @@ About US
         sx={{width:'max-content',
         mx:'1em',
         alignItems: 'center',
-        fontWeight:600,fontSize:{xs:'.86em',sm:'.95em'}}}>
+        fontWeight:300,fontSize:{xs:'.75em',sm:'.85em'}}}>
         {i.toUpperCase()}
         </Typography>
         </Link>
@@ -169,7 +168,7 @@ component='p' sx={{width:'max-content',
 mx:'1em',
 alignItems: 'center',
 
-fontWeight:600,fontSize:{xs:'.86em',sm:'.95em'}}}>
+fontWeight:300,fontSize:{xs:'.75em',sm:'.85em'}}}>
 Organic Herbs
 </Typography>
 </Link>
@@ -182,7 +181,7 @@ component='p' sx={{width:'max-content',
 mx:'1em',
 alignItems: 'center',
 
-fontWeight:600,fontSize:{xs:'.86em',sm:'.95em'}}}>
+fontWeight:300,fontSize:{xs:'.75em',sm:'.85em'}}}>
 Natural Supplements
 </Typography>
 </Link> */}
@@ -198,7 +197,7 @@ component='p' sx={{width:'max-content',
 mx:'1em',
 alignItems: 'center',
 
-fontWeight:600,fontSize:{xs:'.86em',sm:'.95em'}}}>
+fontWeight:300,fontSize:{xs:'.75em',sm:'.85em'}}}>
 About Us
 </Typography>
 </Link> */}
@@ -212,7 +211,7 @@ component='p' sx={{width:'max-content',
 alignItems: 'center',
 mx:'1em',
 
-fontWeight:600,fontSize:{xs:'.6em',sm:'.75em'}}}>
+fontWeight:300,fontSize:{xs:'.6em',sm:'.75em'}}}>
 New Arrivals
 </Typography>
 </Link> */}
@@ -225,7 +224,7 @@ New Arrivals
         mx:'1em',
         alignItems: 'center',
         
-        fontWeight:600,fontSize:{xs:'.6em',sm:'.75em'}}}>
+        fontWeight:300,fontSize:{xs:'.6em',sm:'.75em'}}}>
      Birds
    </Typography>
    </Link> */}
@@ -237,7 +236,7 @@ New Arrivals
     // {cate:"Offers",subCate:offersSubcategories,img:'https://i.pinimg.com/originals/bf/cb/59/bfcb59f20bddc43101e39de2cc142f7e.jpg'}
 ].map(i => {
                 // return <Link className='clr decor-none uppercase' key={i} href={`/${i.replace(/ /g, '-').toLocaleLowerCase()}/products`}>
-                //     <Typography  component='p' sx={{width:'max-content',fontWeight:600,fontSize:{xs:'.6em',sm:'.75em'}}}>                    
+                //     <Typography  component='p' sx={{width:'max-content',fontWeight:300,fontSize:{xs:'.6em',sm:'.75em'}}}>                    
                 //     {i}
                 //     </Typography>
                 // </Link>

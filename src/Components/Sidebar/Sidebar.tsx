@@ -76,7 +76,7 @@ export default function TemporaryDrawer() {
            disablePadding>
             <ListItemButton>
             
-                  <Typography className='clr3' component='h1' sx={{fontWeight:600}}>
+                  <Typography className='' component='h1' sx={{fontWeight:300}}>
             Home
             </Typography>
             </ListItemButton>
@@ -91,7 +91,7 @@ export default function TemporaryDrawer() {
            disablePadding>
             <ListItemButton>
             
-                  <Typography   className='clr3'  component='h1' sx={{fontWeight:600}}>
+                  <Typography   className=''  component='h1' sx={{fontWeight:300}}>
               About Us
             </Typography>
             </ListItemButton>
@@ -112,7 +112,7 @@ export default function TemporaryDrawer() {
                disablePadding>
                 <ListItemButton>
                 
-                      <Typography component='h1' sx={{fontWeight:600}}>
+                      <Typography component='h1' sx={{fontWeight:300}}>
                      {cate?.categoryName?.toUpperCase()}
                 </Typography>
                 </ListItemButton>
@@ -132,7 +132,7 @@ export default function TemporaryDrawer() {
     aria-controls="panel1a-content"
     id="panel1a-header"
   >
- <Typography className='clr3' component='h1' sx={{fontWeight:600}}>
+ <Typography className='' component='h1' sx={{fontWeight:300}}>
  {cate?.categoryName?.toUpperCase()}
 
       </Typography>

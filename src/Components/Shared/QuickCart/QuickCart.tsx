@@ -18,7 +18,7 @@ export default function TemporaryDrawer() {
         setCartOpen} = useCartContext();
         const [cartItems,setCartItems] = useState<ICartItem[]>([])
         useEffect(() =>{
-            let localCart : ICartItem[] = loadState('BlmbX3zmGB') || []
+            let localCart : ICartItem[] = loadState('V5jOzZ2100') || []
             if (localCart) {
                 
                 setCartItems(localCart)
@@ -34,7 +34,7 @@ export default function TemporaryDrawer() {
     };
     const remove = (_id:string) => {
        let state = cartItems.filter(x => `${x._id}` !== _id);
-        saveState('BlmbX3zmGB', state);
+        saveState('V5jOzZ2100', state);
         setCartItems(state);
     }
     return (

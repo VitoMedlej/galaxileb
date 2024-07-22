@@ -5,7 +5,7 @@ import React from 'react'
 
 
 const text = [
-    "Order Confirmation:\nAll orders placed on our website are subject to confirmation and acceptance by Urban Gentleman-lb.",
+    "Order Confirmation:\nAll orders placed on our website are subject to confirmation and acceptance by Shield.",
   
     "Returns and Exchanges:\nWe do not accept returns.\nExchange requests are applicable within 3 days of receiving the product.\nItems must be in their original condition with tags intact for exchange eligibility.",
     
@@ -19,7 +19,7 @@ const text = [
     
     "Product Availability:\nAll products are subject to availability. In the event of unavailability after order placement, we will notify you and offer alternatives or a refund.",
     
-    "Intellectual Property:\nAll content on this website, including images and text, is the property of Urban Gentleman-lb",
+    "Intellectual Property:\nAll content on this website, including images and text, is the property of Shield",
     
     "Privacy Policy:\nYour privacy is important to us. Refer to our Privacy Policy for details on how we collect, use, and protect your information."
 ]
