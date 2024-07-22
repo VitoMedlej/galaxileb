@@ -60,8 +60,8 @@ const CartProduct = ({onChange,_id,price,category,title,remove,qty,img,productse
                         margin: 0,
                         width:'100%',
                         cursor:'pointer',
-                        fontWeight: '600',
-                        fontSize:{sm:'1.1em',md:'1.3em'}
+                        fontWeight: '300',
+                        fontSize:{sm:'.9em',md:'1em'}
                     }}>
                        {title}
                     {productselectedSize &&   <Box 

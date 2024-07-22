@@ -18,11 +18,14 @@ const Preloader3 = ({resImages} : any) => {
     const [imgs,setImgs] = useState<any>(
         [
             {
-                img:`https://winnerforce-lb.com/cdn/shop/files/website_1800x800_0003_7bf94542-4185-423b-a54d-fd111ffac9fb_1400x.png?v=1716815188`
+                img:'https://instagram.fbey22-1.fna.fbcdn.net/v/t39.30808-6/450251622_122102107868402824_6956869894819437387_n.jpg?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xMDgweDEzNTAuc2RyLmYzMDgwOCJ9&_nc_ht=instagram.fbey22-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=ZTbipEkNV-0Q7kNvgE8c9lF&edm=AEhyXUkAAAAA&ccb=7-5&ig_cache_key=MzQwOTg1NTE1NzA2MjA1Nzc1NA%3D%3D.2-ccb7-5&oh=00_AYABJ39IgaPAj8soKMuWOALQNJkf8aJiOdvjSR7X6f51tQ&oe=66A28F9C&_nc_sid=8f1549'
             },
             {
-                img:'https://instagram.fbey22-1.fna.fbcdn.net/v/t39.30808-6/450251622_122102107868402824_6956869894819437387_n.jpg?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xMDgweDEzNTAuc2RyLmYzMDgwOCJ9&_nc_ht=instagram.fbey22-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=ZTbipEkNV-0Q7kNvgE8c9lF&edm=AEhyXUkAAAAA&ccb=7-5&ig_cache_key=MzQwOTg1NTE1NzA2MjA1Nzc1NA%3D%3D.2-ccb7-5&oh=00_AYABJ39IgaPAj8soKMuWOALQNJkf8aJiOdvjSR7X6f51tQ&oe=66A28F9C&_nc_sid=8f1549'
-            }
+                img:`https://ucarecdn.com/608e7e12-9c10-456e-adb4-55008d45f1c3/`
+            },
+            {
+                img:`https://winnerforce-lb.com/cdn/shop/files/website_1800x800_0003_7bf94542-4185-423b-a54d-fd111ffac9fb_1400x.png?v=1716815188`
+            },
      ]
     )
 
@@ -55,7 +58,7 @@ const Preloader3 = ({resImages} : any) => {
           spaceBetween={0}
           loop={true}
           autoplay={{
-              delay: 3022200,
+              delay: 4000,
               disableOnInteraction: false
           }}
           modules={[Autoplay,Pagination]}

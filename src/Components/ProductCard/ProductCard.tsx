@@ -45,14 +45,14 @@ const ProductCard = ({
         <Box
             className='  trans cardproduct center text-center'
             sx={{
-            boxShadow: `rgba(0, 0, 0, 0.05) 0px 0px 0px 1px`,
+            // boxShadow: `rgba(0, 0, 0, 0.05) 0px 0px 0px 1px`,
             // border : '1px solid #000000a',
             py: 3,
             margin: '0em auto',
             background:'white',
 
             my:1,
-            minWidth: {sm:'30%'},
+            minWidth: {sm:'30%',md:'24%'},
             width: width
                 ? width
                 : {
@@ -83,21 +83,22 @@ const ProductCard = ({
             
             sx={{
                 px: .95,
-                mt:1.5,
+                mt:{xs:1,sm:1.5,md:0},
                 alignItems: "left",
                 background:'white'
             }}> 
             <Typography
-            className='flex cursor clr2 limited w100  left '
+            className='flex cursor  limited w100  left '
                     component='p'
                     onClick={() => router.push(`/product/${_id}`)}
                     sx={{
                         textAlign: 'left',
-                        color:'black'
-                    ,fontSize: {xs:'.65em',sm:'.7em',md:'.9em'},
-                    fontWeight: '300'
+                        pl:.35,
+                        color:'black',borderLeft:'3px solid black'
+                    ,fontSize: {xs:'.6em',sm:'.6em',md:'.6em'},
+                    fontWeight: '400'
                 }}>
-                    {category}
+                    {`${category}`.toUpperCase()}
                 </Typography>
              <Typography
             className='flex cursor limited w100  left '
@@ -105,9 +106,9 @@ const ProductCard = ({
                     onClick={() => router.push(`/product/${_id}`)}
                     sx={{
                         textAlign: 'left',
-                        color:'black'
+                        color:'black',pt:.25
                     ,fontSize: {xs:'.75em',sm:'.9em',md:'1em'},
-                    fontWeight: '600'
+                    fontWeight: '300'
                 }}>
                     {title}
                 </Typography>
@@ -126,7 +127,7 @@ const ProductCard = ({
         display:'flex',
         alignItems:"left",
         my: 0.5,
-        fontWeight: '500',
+        fontWeight: '400',
         fontSize: { xs: '.8em', sm: '.9em' },
     }}
 >

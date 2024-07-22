@@ -22,14 +22,14 @@ export default function ProductCard({ setselectedSize, selectedSize, sizes }: an
                 key={option.size}
                 sx={{
                   mx:1,
-                  px:0,py:0,
+                  px:2,py:0,
                   border:'1px solid black',
                   ':hover':{
-                    background:selectedSize?.size?.toLocaleLowerCase() === option.size?.toLocaleLowerCase() ? '#9fa092' : 'transparent'
+                    background:selectedSize?.size?.toLocaleLowerCase() === option.size?.toLocaleLowerCase() ? 'transparent' : 'transparent'
                     ,color:selectedSize?.size?.toLocaleLowerCase() === option.size?.toLocaleLowerCase() ? 'black' : 'black'
 
                   },
-                  background:selectedSize?.size?.toLocaleLowerCase() === option.size?.toLocaleLowerCase() ? '#9fa092' : 'transparent'
+                  background:selectedSize?.size?.toLocaleLowerCase() === option.size?.toLocaleLowerCase() ? 'transparent' : 'transparent'
                   ,color:selectedSize?.size?.toLocaleLowerCase() === option.size?.toLocaleLowerCase() ? 'black' : 'black'
                 
                 }}

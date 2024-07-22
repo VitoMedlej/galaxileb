@@ -51,10 +51,10 @@ const NavButtom = ({categories}:any) => {
 className=' cursor center flex gap1 black decor-none captialize'
 
 component='h1' sx={{width:'max-content',
-mx:'1em',
+mx:'.55em',
 alignItems: 'center',
 
-fontWeight:300,fontSize:{xs:'.75em',sm:'.85em'}}}>
+fontWeight:300,fontSize:{xs:'.75em',sm:'.8em'}}}>
 Home
 </Typography>
 </Link>
@@ -64,10 +64,10 @@ Home
 className=' cursor center flex gap1 black decor-none captialize'
 
 component='h1' sx={{width:'max-content',
-mx:'1em',
+mx:'.55em',
 alignItems: 'center',
 
-fontWeight:300,fontSize:{xs:'.75em',sm:'.85em'}}}>
+fontWeight:300,fontSize:{xs:'.75em',sm:'.8em'}}}>
 About
 </Typography>
 </Link>
@@ -77,28 +77,27 @@ About
 className=' cursor center flex gap1 black decor-none captialize'
 
 component='h1' sx={{width:'max-content',
-mx:'1em',
+mx:'.55em',
 alignItems: 'center',
 
-fontWeight:300,fontSize:{xs:'.75em',sm:'.85em'}}}>
+fontWeight:300,fontSize:{xs:'.75em',sm:'.8em'}}}>
 Shop
 </Typography>
 </Link> */}
 {
-    categories && categories.map((cate:any)=>{
-            // if (cate?.subcategories?.length == 0){ return      <Link 
-                if (false){ return      <Link 
-            key={cate?.categoryName} className='black decor-none'
+    categories && categories?.slice(0,3).map((cate:any)=>{
+            if (cate?.subcategories?.length == 0){ return      <Link   
+                 key={cate?.categoryName} className='black decor-none'
              href={`/${cate?.categoryName?.toLocaleLowerCase()}/products`}>
 
 <Typography 
 className=' cursor center flex gap1 black decor-none captialize'
 
 component='h1' sx={{width:'max-content',
-mx:'1em',
+mx:'.55em',
 alignItems: 'center',
 
-fontWeight:300,fontSize:{xs:'.75em',sm:'.85em'}}}>
+fontWeight:300,fontSize:{xs:'.75em',sm:'.8em'}}}>
 {`${cate?.categoryName}`}
 </Typography>
 </Link>}
@@ -123,10 +122,10 @@ fontWeight:300,fontSize:{xs:'.75em',sm:'.85em'}}}>
 className=' cursor center flex gap1 black decor-none captialize'
 
 component='h1' sx={{width:'max-content',
-mx:'1em',
+mx:'.55em',
 alignItems: 'center',
 
-fontWeight:300,fontSize:{xs:'.75em',sm:'.85em'}}}>
+fontWeight:300,fontSize:{xs:'.75em',sm:'.8em'}}}>
 About US
 </Typography>
 </Link> */}
@@ -150,9 +149,9 @@ About US
         className=' cursor center flex gap1 black decor-none captialize'
         
         sx={{width:'max-content',
-        mx:'1em',
+        mx:'.55em',
         alignItems: 'center',
-        fontWeight:300,fontSize:{xs:'.75em',sm:'.85em'}}}>
+        fontWeight:300,fontSize:{xs:'.75em',sm:'.8em'}}}>
         {i.toUpperCase()}
         </Typography>
         </Link>
@@ -165,10 +164,10 @@ About US
 className=' cursor center flex gap1 black decor-none captialize'
 
 component='p' sx={{width:'max-content',
-mx:'1em',
+mx:'.55em',
 alignItems: 'center',
 
-fontWeight:300,fontSize:{xs:'.75em',sm:'.85em'}}}>
+fontWeight:300,fontSize:{xs:'.75em',sm:'.8em'}}}>
 Organic Herbs
 </Typography>
 </Link>
@@ -178,10 +177,10 @@ Organic Herbs
 className=' cursor center flex gap1 black decor-none captialize'
 
 component='p' sx={{width:'max-content',
-mx:'1em',
+mx:'.55em',
 alignItems: 'center',
 
-fontWeight:300,fontSize:{xs:'.75em',sm:'.85em'}}}>
+fontWeight:300,fontSize:{xs:'.75em',sm:'.8em'}}}>
 Natural Supplements
 </Typography>
 </Link> */}
@@ -194,10 +193,10 @@ Natural Supplements
 className=' cursor center flex gap1 black decor-none '
 
 component='p' sx={{width:'max-content',
-mx:'1em',
+mx:'.55em',
 alignItems: 'center',
 
-fontWeight:300,fontSize:{xs:'.75em',sm:'.85em'}}}>
+fontWeight:300,fontSize:{xs:'.75em',sm:'.8em'}}}>
 About Us
 </Typography>
 </Link> */}
@@ -209,7 +208,7 @@ className=' cursor center flex gap1 black decor-none uppercase'
 
 component='p' sx={{width:'max-content',
 alignItems: 'center',
-mx:'1em',
+mx:'.55em',
 
 fontWeight:300,fontSize:{xs:'.6em',sm:'.75em'}}}>
 New Arrivals
@@ -221,7 +220,7 @@ New Arrivals
       className=' cursor center flex gap1 black decor-none uppercase'
         
         component='p' sx={{width:'max-content',
-        mx:'1em',
+        mx:'.55em',
         alignItems: 'center',
         
         fontWeight:300,fontSize:{xs:'.6em',sm:'.75em'}}}>

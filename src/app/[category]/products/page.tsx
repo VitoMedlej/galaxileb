@@ -17,7 +17,6 @@ const Page = async(ctx : any) => {
     const categoriesData = await Getcategories()
     const categories = categoriesData?.Categories[0]?.cateArray;
 
-    // console.log('subcategory: ', subcategory);
     // const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-cate?category=${category ? category : 'collection'}&type=${type ? type : null}&page=${0}&search=${search ? search : null}&subcategory=${subcategory ? encodeURIComponent(subcategory) : null}`)
     // const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-cate?category=${category ? category : 'collections'}&type=${type ? type : null}&page=${0}&search=${search ? search : null}&subcategory=${subcategory ? encodeURIComponent(subcategory) : null}`,{cache:'no-store',next:{revalidate:0}})
     const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-cate?category=${category ? encodeURIComponent(category) : 'collections'}&type=${type ? type : null}&page=${0}&search=${search ? search : null}`)

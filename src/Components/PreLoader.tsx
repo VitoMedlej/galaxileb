@@ -5,25 +5,25 @@ import MainCarousel from './MainCarousel/MainCarousel'
 import {useRouter} from 'next/navigation'
 import Btn from './Btn/Btn'
 // import ContactSection from './ContactSection/ContactSection'
-import CategoryItem from './HomeCateogryList/CategoryItem'
+// import CategoryItem from './HomeCateogryList/CategoryItem'
 import {useCategoriesContext} from '@/context/Contexts'
 import HomeProductCollection from './HomeProductCollection/HomeProductCollection'
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
-import ContentBlock from './ContentBlock/ContentBlock'
+// import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
+// import ContentBlock from './ContentBlock/ContentBlock'
 // import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
 
-function getCategorizedProducts(data : any, categories : any) {
-  // console.log('data: ', data);
-  if (!data || !categories) return;
-   return categories.map((category:any) => {
-      if (!category || !data) return;
-      const productsInCategory =data && data?.filter((product : any) => `${product?.category?.toLowerCase()}` === `${category?.categoryName?.toLowerCase()}`);
-      return productsInCategory.length ? { categoryName: category.categoryName, data: productsInCategory } : null;
-    })
-    .filter((categoryProducts:any) => categoryProducts !== null);
-}
+// function getCategorizedProducts(data : any, categories : any) {
+//   // console.log('data: ', data);
+//   if (!data || !categories) return;
+//    return categories.map((category:any) => {
+//       if (!category || !data) return;
+//       const productsInCategory =data && data?.filter((product : any) => `${product?.category?.toLowerCase()}` === `${category?.categoryName?.toLowerCase()}`);
+//       return productsInCategory.length ? { categoryName: category.categoryName, data: productsInCategory } : null;
+//     })
+//     .filter((categoryProducts:any) => categoryProducts !== null);
+// }
 
 
 
@@ -235,7 +235,7 @@ const PreLoader = ({data, resImages, categories} : any) => {
 
             </Box> */}
 
-            <Box className='relative' sx={{my:8,height:{xs:'500px',sm:'500px'}}}>
+            <Box className='relative' sx={{mt:8,height:{xs:'500px',sm:'500px'}}}>
             <Box sx={{position:'relative', height: '100%', width:'100%'}}>
                       <Box className='overlay'>
                 

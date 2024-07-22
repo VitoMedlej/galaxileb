@@ -61,7 +61,7 @@ export default function Navbar() {
                          sx={{ textTransform: 'uppercase',
                             fontWeight:500,
                             color:"black",
-                         py: 0.2, fontSize: { xs: '.65em', sm: '.75em' } }}>
+                         py: 0.2, fontSize: { xs: '.55em', sm: '.65em' } }}>
                           Delivery all over Lebanon | Cash upon delivery📦
                         </Typography>
                     </Box>
@@ -72,7 +72,7 @@ export default function Navbar() {
                         {/* Logo on the far left */}
 
 
-                            <NavButtom/>
+                            <NavButtom categories={categories}/>
 
                         <Box
                             onClick={() => router.push('/')}
