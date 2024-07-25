@@ -9,11 +9,13 @@ import {AiOutlineWhatsApp,AiOutlineInstagram} from 'react-icons/ai'
 const Perks = () => {
     return (
         <Box
-            className='flexed bg'
+            className='flexed '
             sx={{
                 mt: '5em',
                 flexWrap: 'wrap',
-                // background:'#f0f0f0',
+                background:'white',
+                borderTop:'1px solid #00000029',
+                borderBottom:'1px solid #00000029',
                 py: '1.5em',
                 justifyContent: 'space-evenly',
                 width: '100%',
@@ -37,7 +39,7 @@ const Perks = () => {
                 <Typography
                 component='h1'
                     sx={{
-                        fontSize: '2em',fontWeight: 'bold'
+                        fontSize: '1em',fontWeight: '500'
                     }}>Reach out to us through any of these support channels</Typography>
                        
             </Box>

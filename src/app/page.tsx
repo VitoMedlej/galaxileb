@@ -8,20 +8,20 @@ const Home = async () => {
   const categoriesData = await Getcategories()
   const productsResponse = await Getproducts()
   const ImagesResponse = await Getimages()
-  console.log('ImagesResponse: ', ImagesResponse);
+  // console.log('ImagesResponse: ', ImagesResponse);
   // DO NOT ask me why the data is nested the way it is
   // I wrote it at 1am in the morning, HALF ASLEEP  
   
   const categories = categoriesData?.success !== false ? categoriesData?.Categories[0]?.cateArray : null;
-  const images = ImagesResponse?.success !== false && ImagesResponse?.data?.Images[0]?.imagesArray;
-  const secondSectionImage = ImagesResponse?.success !== false && ImagesResponse?.data2?.Images[0]?.imagesArray;
+  let imagesArray1 = ImagesResponse.success && ImagesResponse.data && ImagesResponse.data.Images[0].imagesArray.length > 0 ? ImagesResponse.data.Images[0].imagesArray : null;
+  let imagesArray2 = ImagesResponse.success && ImagesResponse.data2 && ImagesResponse.data2.Images2[0].imagesArray.length > 0 ? ImagesResponse.data2.Images2[0].imagesArray : null;
   return (
     <PreLoader
     // categories={null}
     categories={categories}
     // resImages={null}
-    resImages={images}
-    secondSectionImage={secondSectionImage}
+    resImages={imagesArray1}
+    secondSectionImage={imagesArray2}
     // data={null}
     data={productsResponse?.data?.featuredProducts}
   />

@@ -10,6 +10,7 @@ import {useCategoriesContext} from '@/context/Contexts'
 import HomeProductCollection from './HomeProductCollection/HomeProductCollection'
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Perks from './ContactSection/ContactSection'
 // import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
 // import ContentBlock from './ContentBlock/ContentBlock'
 // import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
@@ -32,6 +33,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
+    console.log('secondSectionImage: ', secondSectionImage);
+    console.log('resImages: ', resImages);
 
     const {setCategories} = useCategoriesContext()
     const router = useRouter();
@@ -242,7 +245,8 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
                 </Box>
                           <img
                               className={`img cover`}
-                              src={`${secondSectionImage}`}
+                              src={`${secondSectionImage && secondSectionImage?.length > 0
+                                && secondSectionImage[0]?.img && `${secondSectionImage[0]?.img}`}`}
                             //   src={`${item?.img}/-/resize/${imageSize}/`}
                               alt="Main Carousel Image"
                           />
@@ -273,7 +277,8 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
             title='Best Sellers'
               products={data}/>
 
-            <Box className='relative'>
+                                <Perks></Perks>
+            {/* <Box className='relative'>
             <picture>
         <source media="(min-width: 768px)" srcSet="https://winnerforce-lb.com/cdn/shop/files/cover_kit_00013_1400x.png?v=1713275040" />
         <source media="(max-width: 767px)" srcSet="https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_486,c_fit/dpr_2/image/packs/cult/CULTPACK509/19_mag_web.jpg" />
@@ -291,7 +296,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
                         Shop Now
                     </Btn>
                 </Box>
-            </Box>
+            </Box> */}
         </Box>
     )
 }
