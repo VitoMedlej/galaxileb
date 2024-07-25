@@ -31,7 +31,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 
 gsap.registerPlugin(ScrollTrigger);
-const PreLoader = ({data, resImages, categories} : any) => {
+const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
 
     const {setCategories} = useCategoriesContext()
     const router = useRouter();
@@ -242,7 +242,7 @@ const PreLoader = ({data, resImages, categories} : any) => {
                 </Box>
                           <img
                               className={`img cover`}
-                              src={`https://winnerforce-lb.com/cdn/shop/files/750-1100___003_x800.png?v=1716815234`}
+                              src={`${secondSectionImage}`}
                             //   src={`${item?.img}/-/resize/${imageSize}/`}
                               alt="Main Carousel Image"
                           />

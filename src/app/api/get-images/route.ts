@@ -7,18 +7,24 @@ import {type NextRequest} from 'next/server'
 export async function GET(req : NextRequest, res : NextApiResponse) {
 try {
 
-    const ProductsCollection = await client
+    const Imgs = await client
         .db("SHLD")
         .collection("Images");
-
-    const Images = await ProductsCollection
+        const Imgs2 = await client
+        .db("SHLD")
+        .collection("Images2");
+        
+    const Images = await Imgs
     .find({})
     .limit(20)
     .toArray()
 
+    const Images2 = await Imgs2
+    .find({})
+    .limit(1)
+    .toArray()
+    console.log('Imgs2: ', Images, Images2);
 
-    
-    
 
     if (!Images) {
         return NextResponse.json({success: false});
@@ -28,6 +34,9 @@ try {
         success: true,
         data: {
             Images
+        },
+        data2: {
+            Images2
         }
     });
 }
