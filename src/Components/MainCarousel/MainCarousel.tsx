@@ -74,8 +74,9 @@ const Preloader3 = ({resImages} : any) => {
                 
                 </Box>
                           <img
-                              className={`img `}
-                              src={`${item?.img}-/resize/600/`}
+                              className={`img contain`}
+                            //   src={`${item?.img}-/resize/600/`}
+                              src={`${item?.img}`}
                             //   src={`${item?.img}/-/resize/${imageSize}/`}
                               alt="Main Carousel Image"
                           />
