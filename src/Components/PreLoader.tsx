@@ -33,14 +33,12 @@ import Perks from './ContactSection/ContactSection'
 
 gsap.registerPlugin(ScrollTrigger);
 const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
-    console.log('secondSectionImage: ', secondSectionImage);
-    console.log('resImages: ', resImages);
 
     const {setCategories} = useCategoriesContext()
     const router = useRouter();
     // const collection = data?.slice(0, Number(data?.length / 2))
-    // const collection1 = data?.slice(5, 7)
-    // const collection2 = data?.slice(7, 10)
+    const collection1 = data?.slice(0, 4)
+    const collection2 = data?.slice(4, 100)
     // const carouselProducts = data?.slice(Number(data?.length / 2), 50)
 
 
@@ -115,7 +113,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
 
             <HomeProductCollection 
             title='New Arrivals'
-              products={data}/>
+              products={collection1}/>
             {/* <HomeProductsCarousel delay={4000} Collectiontitle={'Best Sellers'}  data={collection}/> */}
 
                   {/* {
@@ -275,7 +273,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
 
             <HomeProductCollection 
             title='Best Sellers'
-              products={data}/>
+              products={collection2}/>
 
                                 <Perks></Perks>
             {/* <Box className='relative'>

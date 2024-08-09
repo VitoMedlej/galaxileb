@@ -68,7 +68,7 @@ const ProductCard = ({
             sx={{
                 background:'white',
                 width:{xs:'98%',sm:'100%',md:'auto'},
-                height: height || {sm:'300px',md:'400px'}
+                height: height || {xs:'250px',sm:'300px',md:'400px'}
                 // height: height || {xs:'100%',sm:'300px',md:'400px'}
             }}>
                 <img
@@ -76,7 +76,7 @@ const ProductCard = ({
                     ? `${images[0]}/-/resize/500/`
                     : ''}
                     alt="Prdouct image"
-                    className="img contain "/>
+                    className="img cover "/>
             </Box>
             
             <Box 
@@ -93,7 +93,8 @@ const ProductCard = ({
                     onClick={() => router.push(`/product/${_id}`)}
                     sx={{
                         textAlign: 'left',
-                        pl:.35,
+                        pl:.25,
+                        mt:.5,
                         color:'black',borderLeft:'3px solid black'
                     ,fontSize: {xs:'.6em',sm:'.6em',md:'.6em'},
                     fontWeight: '400'

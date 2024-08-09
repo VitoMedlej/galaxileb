@@ -21,17 +21,15 @@ export default function ProductCard({ setselectedSize, selectedSize, sizes }: an
               <Btn v2
                 key={option.size}
                 sx={{
-                  mx:1,
-                  px:2,py:0,
+                  mx:{xs:.5,sm:1},
+                  px:{xs:.5,sm:1},py:0,
                   border:'1px solid black',
-                  ':hover':{
-                    background:selectedSize?.size?.toLocaleLowerCase() === option.size?.toLocaleLowerCase() ? 'transparent' : 'transparent'
-                    ,color:selectedSize?.size?.toLocaleLowerCase() === option.size?.toLocaleLowerCase() ? 'black' : 'black'
-
-                  },
-                  background:selectedSize?.size?.toLocaleLowerCase() === option.size?.toLocaleLowerCase() ? 'transparent' : 'transparent'
-                  ,color:selectedSize?.size?.toLocaleLowerCase() === option.size?.toLocaleLowerCase() ? 'black' : 'black'
-                
+            ':hover': {
+    background: selectedSize?.size?.toLocaleLowerCase() === option.size?.toLocaleLowerCase() ? 'black' : 'transparent',
+    color: selectedSize?.size?.toLocaleLowerCase() === option.size?.toLocaleLowerCase() ? 'white' : 'black'
+},
+background: selectedSize?.size?.toLocaleLowerCase() === option.size?.toLocaleLowerCase() ? 'black' : 'transparent',
+color: selectedSize?.size?.toLocaleLowerCase() === option.size?.toLocaleLowerCase() ? 'white' : 'black'
                 }}
                 onClick={() => handleSizeClick(option?.size)}
               >

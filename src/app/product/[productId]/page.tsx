@@ -231,7 +231,7 @@ const Index = () => {
              
               sx={{gap:.5,
                 borderRadius:0,
-                px:{xs:0.1,sm:2},
+                px:{xs:1,sm:2},
                 background:'black',
                 color:'white',
                 border:'1px solid black',
