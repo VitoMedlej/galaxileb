@@ -20,7 +20,7 @@ export default function TemporaryDrawer() {
   const {categories} = useCategoriesContext();
 
 //   const fetchUserAndList = async () => {
-//     const user = localStorage.getItem('Usxer201-z51')
+//     const user = localStorage.getItem('GijVT341fxSFOjgio2j55')
 //     if (user) {
 //            let parsedUser = JSON.parse(user)
 //            if (!parsedUser) {return}

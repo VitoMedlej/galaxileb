@@ -33,7 +33,7 @@ export default function Navbar() {
         <>
             <Box
                 id='navy'
-                className='center auto relative bg2 flex'
+                className='center auto relative bg flex'
                 sx={{
                     zIndex: 12,
                     flexWrap: 'wrap',
@@ -47,7 +47,7 @@ export default function Navbar() {
             >
                 <AppBar
                     id='navy2'
-                    className='center col bg2 relative flex'
+                    className='center col bg relative flex'
                     sx={{
                         boxShadow: 'none',
                         background: 'transparent',
@@ -55,38 +55,45 @@ export default function Navbar() {
                         margin: '0 auto'
                     }}
                 >
-                    <Box className='center   w100 text-center' sx={{ minWidth: '90vw', 
-                        background: '#ebebeb', width: '100%', py: 0.25 }}>
+                    <Box className='center bg  w100 text-center' sx={{ minWidth: '90vw', 
+                       width: '100%', py: 0.25 }}>
                         <Typography className='uppercase ' component='h1'
                          sx={{ textTransform: 'uppercase',
                             fontWeight:500,
-                            color:"black",
+                            color:"white",
                          py: 0.2, fontSize: { xs: '.55em', sm: '.65em' } }}>
                           Delivery all over Lebanon | Cash upon delivery📦
                         </Typography>
                     </Box>
 
-                    <Toolbar className='flex bg2 relative center items-center'
+                    <Toolbar className='flex bg relative center items-center'
                     
-                    sx={{ boxShadow:'1px 1px 3px #857a5b4a', py: 0, background: 'white' }}>
+                    sx={{ boxShadow:'1px 1px 3px #857a5b4a', py: 1, background: 'white' }}>
                         {/* Logo on the far left */}
 
 
                             <NavButtom categories={categories}/>
-
+                            <Box
+                                onClick={() => setOpen(!open)}
+                                className='cursor pointer center items-center'
+                                sx={{ width: '20px', padding: 1, 
+                                    display: { xs: 'flex', md: 'none' } }}
+                            >
+                                <img style={{ filter: 'invert(1)' }} src="https://cdn-icons-png.flaticon.com/128/10513/10513594.png" alt="" className="img" />
+                            </Box>
                         <Box
                             onClick={() => router.push('/')}
                             className='cursor pointer'
                             sx={{
-                                position: { xs: 'relative', sm: 'absolute' },
-                                left: { xs: '0%', sm: '50%' },
-                                transform: { sm: 'translateX(-50%)' },
+                                position: { xs: 'absolute', sm: 'absolute' },
+                                left: { xs: '50%' },
+                                transform: { xs: 'translateX(-50%)' },
                                 width: { xs: '100px', sm: 'auto' },
                                 height: '100%'
                             }}
                         >
                             <img 
-                            src="https://ucarecdn.com/0e233b8c-0b1a-438b-ac58-019da36991d8/shieldlogosmaller.jpg" alt="ShieldLOGO" className="img contain" />
+                            src="https://ucarecdn.com/c9d6219c-d35c-4f91-a252-73ce3e75b5af/ealogo.PNG" alt="EArchitectureLOGO" className="img contain" />
                         </Box>
 
 
@@ -99,7 +106,7 @@ export default function Navbar() {
                                 className='cursor pointer flex center items-center'
                                 sx={{ display:{xs:'flex',md:'none'}, width: '20px', padding: 1 }}
                             >
-                                <img style={{ filter: 'invert(0)' }} src="https://cdn-icons-png.flaticon.com/128/9177/9177086.png" alt="" className="img" />
+                                <img style={{ filter: 'invert(1)' }} src="https://cdn-icons-png.flaticon.com/128/9177/9177086.png" alt="" className="img" />
                             </Box>
 
                             <Box
@@ -107,22 +114,15 @@ export default function Navbar() {
                                 className='cursor pointer flex center items-center'
                                 sx={{ width: '20px', padding: 1 }}
                             >
-                                <img style={{ filter: 'invert(0)' }} src="https://cdn-icons-png.flaticon.com/128/687/687259.png" alt="" className="img" />
+                                <img style={{ filter: 'invert(1)' }} src="https://cdn-icons-png.flaticon.com/128/687/687259.png" alt="" className="img" />
                             </Box>
 
-                            <Box
-                                onClick={() => setOpen(!open)}
-                                className='cursor pointer center items-center'
-                                sx={{ width: '20px', padding: 1, 
-                                    display: { xs: 'flex', md: 'none' } }}
-                            >
-                                <img style={{ filter: 'invert(0)' }} src="https://cdn-icons-png.flaticon.com/128/10513/10513594.png" alt="" className="img" />
-                            </Box>
+                        
                         </Box>
                     </Toolbar>
 
                     {/* Render your SearchModal component */}
-                    <SearchModal openModal={openModal} setOpenModal={setOpenModal} />
+                    {/* <SearchModal openModal={openModal} setOpenModal={setOpenModal} /> */}
 
                 </AppBar>
 

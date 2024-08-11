@@ -8,10 +8,10 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
 try {
 
     const Imgs = await client
-        .db("SHLD")
+        .db("EA")
         .collection("Images");
         const Imgs2 = await client
-        .db("SHLD")
+        .db("EA")
         .collection("Images2");
         
     const Images = await Imgs

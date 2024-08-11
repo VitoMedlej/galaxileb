@@ -20,12 +20,12 @@ const Footer = () => (
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675713948/logo_sktnut_1_jwy2hk.png */}
             <img className='img contain'
             
-            src='https://ucarecdn.com/0e233b8c-0b1a-438b-ac58-019da36991d8/shieldlogosmaller.jpg' alt="Pets Town Lebanon Logo" />
+            src='https://ucarecdn.com/0e233b8c-0b1a-438b-ac58-019da36991d8/EArchitecturelogosmaller.jpg' alt="Pets Town Lebanon Logo" />
             </Link>
           </div>
           <Typography component='p' sx={{ fontSize: '.85em',color:"black" }}  className='footer-p '>
       {
-        `At Shield Lb, we offer a diverse range of sportswear to meet your fitness needs. Our collection includes stylish and functional gym wear designed to provide maximum comfort and flexibility. Each piece is available in various colors, allowing you to express your personal style while staying active.`
+        `At E.Architecture, we offer a diverse range of sportswear to meet your fitness needs. Our collection includes stylish and functional gym wear designed to provide maximum comfort and flexibility. Each piece is available in various colors, allowing you to express your personal style while staying active.`
       }
           </Typography>
           <SMicons/>
@@ -62,7 +62,7 @@ const Footer = () => (
               </li>
         
 
-            <li><a href={`${process.env.NEXT_PUBLIC_INSTA}`} target="_blank" rel="noreferrer" >@shield.lb_</a></li>
+            <li><a href={`${process.env.NEXT_PUBLIC_INSTA}`} target="_blank" rel="noreferrer" >@EArchitecture.lb_</a></li>
             <li><a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} rel="noreferrer" target='_blank' >+{process.env.NEXT_PUBLIC_WA}</a></li>
             {/* <li><a href={`http://tiktok.com/@thecraftroomlb`} rel="noreferrer" target='_blank' >TikTok</a></li> */}
           </ul>

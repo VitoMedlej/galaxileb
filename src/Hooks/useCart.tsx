@@ -9,7 +9,7 @@ const useCart = () => {
     const {cartOpen, setCartOpen} = useCartContext();
     const incrementQty = (_id:string,newValue ?: number,productselectedSize?:string, productselectedColor?:any) => {
        
-        const state = loadState('V5jOzZ2100') || [];
+        const state = loadState('xMZ31DZ1') || [];
         let foundIndex = state.findIndex((value:ICartItem) => value._id === _id);
         let selectedItem = state[foundIndex];
         
@@ -28,7 +28,7 @@ const useCart = () => {
             }
             state[foundIndex] = selectedItem
             
-           saveState('V5jOzZ2100', state)           
+           saveState('xMZ31DZ1', state)           
            return true
        }
        return false;
@@ -44,7 +44,7 @@ const useCart = () => {
         }
         
             //if we do not have the item in cart, insert it
-        pushState('V5jOzZ2100',
+        pushState('xMZ31DZ1',
         {qty:selectedQuantity || 1,img:product.img,
             category:product?.category || 'Collection',
             title:product.title

@@ -8,11 +8,11 @@ body {
 h1 {
   text-transform: uppercase;
   letter-spacing: 0px;
-  font-family: "Roboto", sans-serif !important;
+  font-family: "Lora", serif !important;
 }
 
 *, h2, h3, h4, h5, h6, p, button, input, select, textarea, a {
-  font-family: "Roboto", sans-serif !important;
+  font-family: "Hanken Grotesk", sans-serif !important;
 }
 
 .w100 {
@@ -34,7 +34,7 @@ h1 {
   color: #f7f7f7 !important !important;
 }
 .nav-link p {
-  color: black !important;
+  color: #2a393c !important;
 }
 
 .topd {
@@ -85,7 +85,7 @@ h1 {
 }
 
 .borderColor {
-  border-color: black !important;
+  border-color: #2a393c !important;
 }
 
 .borderColor2 {
@@ -105,7 +105,7 @@ h1 {
 }
 
 .color {
-  color: black !important;
+  color: #2a393c !important;
 }
 
 .flex-end {
@@ -153,7 +153,7 @@ h1 {
 }
 
 .bg {
-  background: black !important;
+  background: #2a393c !important;
 }
 
 .white {
@@ -221,7 +221,7 @@ button[disabled] {
 }
 
 .clr {
-  color: black !important;
+  color: #2a393c !important;
 }
 
 .clr2 {

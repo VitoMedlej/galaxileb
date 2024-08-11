@@ -8,8 +8,8 @@ import QuickCart from '@/Components/Shared/QuickCart/QuickCart'
 import ContextWrapper from '@/context/Contexts'
 
 export const metadata = {
-    title: `Shop Stylish Sportswear in Lebanon | Shield Lb`,
-    description: `Discover stylish and comfortable sportswear at Shield Lb in Lebanon. Shop gym wear in various colors and elevate your workout with our premium collection.`,
+    title: `Shop Stylish Sportswear in Lebanon | E.Architecture`,
+    description: `Discover stylish and comfortable sportswear at E.Architecture in Lebanon. Shop gym wear in various colors and elevate your workout with our premium collection.`,
     icons: {
         icon: `https://ucarecdn.com/0e233b8c-0b1a-438b-ac58-019da36991d8/shieldlogosmaller.jpg`
     }
@@ -24,7 +24,7 @@ export default function Layout({children} : {
             <head>
             <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" />
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></link> 
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500&family=Lora:wght@400&display=swap" rel="stylesheet"/>
            
            </head>
 

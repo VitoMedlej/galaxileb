@@ -94,7 +94,7 @@ const Preloader3 = ({resImages} : any) => {
                                 px:{xs:'.1em'},
                                 textAlign:{xs:'center',sm:'flex-end'},
                                 pt:1,color:'white',fontSize:{xs:'1.35em',md:'2em'},fontWeight:300}}>
-                            Embrace the power of movement with Shield.
+                            Embrace the power of movement with EArchitecture.
                             </Typography>
                             <Btn  
                             onClick={()=>router.push('/collection/products')}

@@ -12,7 +12,7 @@ export default function AddressForm({info,setInfo,handleChange}:{handleChange:an
   const [localUser,setLocalUser] = useState<{name?:string,email?:string} | null>(null)
 
   const fetchUserAndList = async () => {
-    const user = localStorage.getItem('Usxer201-z51')
+    const user = localStorage.getItem('GijVT341fxSFOjgio2j55')
     if (user) {
            let parsedUser = JSON.parse(user)
            if (!parsedUser) {return}
