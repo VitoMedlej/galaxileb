@@ -25,7 +25,7 @@ const Footer = () => (
           </div>
           <Typography component='p' sx={{ fontSize: '.85em',color:"white" }}  className='footer-p '>
       {
-        `At E.Architecture, we offer a diverse range of sportswear to meet your fitness needs. Our collection includes stylish and functional gym wear designed to provide maximum comfort and flexibility. Each piece is available in various colors, allowing you to express your personal style while staying active.`
+        `E.Architecture: Where modern design meets timeless quality. Transform your space with furniture and accessories that stand the test of time.`
       }
           </Typography>
           <SMicons/>

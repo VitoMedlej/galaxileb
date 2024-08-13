@@ -11,7 +11,7 @@ const sm = [
         href:`${process.env.NEXT_PUBLIC_INSTA}`
     },
     {Icon:'https://www.svgrepo.com/show/349563/whatsapp.svg',href:`https://wa.me/+${process.env.NEXT_PUBLIC_WA}`},
-    {Icon:'https://www.svgrepo.com/show/475647/facebook-color.svg',href:'https://www.facebook.com/profile.php?id=61562084735542'},
+    // {Icon:'https://www.svgrepo.com/show/475647/facebook-color.svg',href:'https://www.facebook.com/profile.php?id=61562084735542'},
   
  ]
 const SMicons = ({sx,color}:{color?:string,sx?:any}) => {

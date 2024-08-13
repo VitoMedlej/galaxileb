@@ -115,7 +115,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
 
             <HomeProductsCarousel
             text=''
-             delay={4000} Collectiontitle={'OutDoor Collections'}
+             delay={4000} Collectiontitle={'Latest Collections'}
               data={collection1}/>
 
               {/* <FullscreenPoster/> */}
@@ -197,13 +197,13 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
                             }}
                                 component='h1'
                                 className='color text-center auto w100 black animate-on-scroll '>
-                               Office Space
+                          Living Room Transformation
                             </Typography>
                             <Typography
                                 sx={{
                                 width: '100%',
                                 flex: 1,
-                                maxWidth: '500px',
+                                // maxWidth: '500px',
                                 alignItems: 'left',
                                 fontSize: {
                                     xs: '.8em',
@@ -214,7 +214,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
                                 mt: 1
                             }}
                                 className='flex text-center left animate-on-scroll'>
-                                {`A space dedicated to work and professional activities, the office enhances productivity as a separate space away from home distractions. Make yours conducive to work-related tasks, with beautiful and thoughtful designs made to perform proficiently.`
+                                {`Create a space that’s both inviting and functional. Our handcrafted metal furniture adds a touch of modern elegance, making your living room the perfect place to relax and entertain.`
 }
                             </Typography>
                             <Btn
@@ -332,7 +332,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
                             }}
                                 component='h1'
                                 className='color text-center auto w100 black animate-on-scroll '>
-                               Office Space
+                                Bathroom Bliss
                             </Typography>
                             <Typography
                                 sx={{
@@ -347,7 +347,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
                                 mt: 1
                             }}
                                 className='flex text-center left animate-on-scroll'>
-                                {`A space dedicated to work and professional activities, the office enhances productivity as a separate space away from home distractions. Make yours conducive to work-related tasks, with beautiful and thoughtful designs made to perform proficiently.`
+                                {`Bring a touch of luxury to your bathroom with our custom metal shelves and accessories. Built to withstand moisture and wear, they add elegance to any bathroom.`
 }
                             </Typography>
                             <Btn
@@ -386,7 +386,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
 
             <HomeProductsCarousel
             text=''
-             delay={4000} Collectiontitle={'OutDoor Collections'}
+             delay={4000} Collectiontitle={'Best Sellers'}
               data={collection1}/>
 
 
@@ -416,24 +416,26 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
                             width: 'fit-content',
                        zIndex:'1234'}}>
                             
-                            <Typography sx={{
+                            <Typography 
+                            component='h1'
+                            sx={{
+                                px:{xs:'.1em'},
+                                maxWidth:'500px',
                                 textAlign:{xs:'center',sm:'flex-end'},
-                                pt:1,color:'white',fontSize:{xs:'1.5em',md:'2em'},fontWeight:300}}>
-                            Embrace the power of movement with EArchitecture.
+                                pt:1,color:'white',fontSize:{xs:'1.5em',sm:'1.4em'},fontWeight:300}}>
+                          Timeless Design, Modern Living
                             </Typography>
                             <Typography sx={{
                                 maxWidth:'600px',
                                 textAlign:{xs:'center',sm:'flex-end'},
                                 pt:1,color:'white',fontSize:{xs:'.8em',md:'.9em'},fontWeight:300}}>
-                            Embrace the power of movement with EArchitecture.
-                            Defined by collaborative spirit,
-the Co Chair Collection is a cohesive series of multifunctional chairs that adapts to the spatial needs and design preferences of both private
+                           At E.Architecture, we bring your vision to life with furniture that combines contemporary style and industrial strength. Each piece is crafted with precision, ensuring it stands the test of time while enhancing your living space. Whether you're transforming a room or just adding a final touch, our designs are made to make a statement.
 </Typography>
                           
                             <Btn  
                             onClick={()=>router.push('/collection/products')}
                             v2 className='center ' sx={{mt:'1em',mx:''}}>
-                                Shop Now
+                               Redefine your space
                             </Btn>
                       </Box>
             </Box>

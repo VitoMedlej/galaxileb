@@ -8,11 +8,12 @@ import "swiper/css/navigation";
 import { useRouter } from 'next/navigation';
 import { Autoplay, Navigation, Pagination } from 'swiper';
 import Btn from '../Btn/Btn';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 
 
-
-
+gsap.registerPlugin(ScrollTrigger);
 const Preloader3 = ({resImages} : any) => {
     const router = useRouter()
     const [imgs,setImgs] = useState<any>(
@@ -30,14 +31,36 @@ const Preloader3 = ({resImages} : any) => {
     )
 
 
+   
     useEffect(() => {
-      
+        if (resImages) {
+            setImgs(resImages);
+        }
     
-      if (resImages) {
-        setImgs(resImages)
-      }
-    }, [])
+        const elements = gsap.utils.toArray('.animate-on-scroll2');
+        elements.forEach((element: any) => {
+            gsap.fromTo(element,
+                { opacity: 0, y: 20 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    scrollTrigger: {
+                        trigger: element,
+                        start: 'top 70%',
+                        markers: false, // Set to true for debugging
+                    },
+                }
+            );
+        });
     
+        // Cleanup on unmount
+        return () => {
+            elements.forEach((element: any) => {
+                ScrollTrigger.getById(element)?.kill(); // Clean up scroll triggers
+            });
+        };
+    }, [resImages]);
 
         
     return (
@@ -57,9 +80,10 @@ const Preloader3 = ({resImages} : any) => {
           slidesPerView={1}
           spaceBetween={0}
           loop={true}
+          speed={1000}
           autoplay={{
-              delay: 4000,
-              disableOnInteraction: false
+              delay: 550500,
+              disableOnInteraction: true
           }}
           modules={[Autoplay,Pagination]}
           className="mySwiper swiper "
@@ -67,9 +91,9 @@ const Preloader3 = ({resImages} : any) => {
           {imgs && imgs?.map((item:any) => {
             
               return (
-                  <SwiperSlide className='ztop relative ' key={`${item?.img}`}>
+                  <SwiperSlide className='ztop relative  ' key={`${item?.img}`}>
             
-                      <Box sx={{position:'relative', height: '100%', width:'100%'}}>
+                      <Box className='animate-on-scroll2' sx={{position:'relative', height: '100%', width:'100%'}}>
                       <Box className='overlay'>
                 
                 </Box>
@@ -81,24 +105,36 @@ const Preloader3 = ({resImages} : any) => {
                               alt="Main Carousel Image"
                           />
                       </Box>
-                      <Box className='absolute  animate-on-scroll  flex col' sx={{
-                            transform: `translateY(-50%)`,
-                            right: 0,
+                      <Box className='absolute  animate-on-scroll2 w100  flex col' sx={{
+                            transform: `translate(50%,-50%)`,
+                            right: '50%',
                             top: {xs:'70%',sm:`50%`},
                             alignItems:{xs:'center',sm:'flex-end'},
-                            width: {xs:'100%',sm:'fit-content'},
-                            padding: {xs:'0 .15em',sm:'0 2em'},
+                            // width: {xs:'100%',sm:'fit-content'},
                        zIndex:'1234'}}>
-                            
                             <Typography sx={{
+  
+  
+  maxWidth:'1200px',
+  pb:0,
+  px:1,
+  fontWeight:'300',
+  fontSize:{xs:'.8em',sm:'1em'},
+  }} component='h1' className='black auto white animate-on-scroll2 text-center  '>
+     Timeless Elegance Awaits
+  </Typography>
+                            <Typography 
+                            className='auto text-center'
+                            component='h1'
+                            sx={{
                                 px:{xs:'.1em'},
-                                textAlign:{xs:'center',sm:'flex-end'},
-                                pt:1,color:'white',fontSize:{xs:'1.35em',md:'2em'},fontWeight:300}}>
-                            Embrace the power of movement with EArchitecture.
+                                // textAlign:{xs:'center',sm:'flex-end'},
+                                pt:1,color:'white',fontSize:{xs:'1.5em',sm:'1.4em'},fontWeight:300}}>
+                           Discover home decor that stands the test of time.
                             </Typography>
                             <Btn  
                             onClick={()=>router.push('/collection/products')}
-                            v2 className='center ' sx={{mt:'1em',mx:''}}>
+                             className='center  center flex ' sx={{background:'transparent',color:'white',mt:'2em',mx:'auto'}}>
                                 Shop Now
                             </Btn>
                       </Box>
