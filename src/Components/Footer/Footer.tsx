@@ -8,8 +8,8 @@ import SMicons from '../SMicons/SMicons';
 
 
 const Footer = () => (
-  <footer className="site-footer bg2 " style={{color:'black'}}>
-    <div className="container bg2" style={{color:'black'}}>
+  <footer className="site-footer bg " style={{color:'white'}}>
+    <div className="container bg" style={{color:'white'}}>
       <div className="site-footer__top ">
         <div className="site-footer__description">
           <div className='logos cursor'>
@@ -20,10 +20,10 @@ const Footer = () => (
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675713948/logo_sktnut_1_jwy2hk.png */}
             <img className='img contain'
             
-            src='https://ucarecdn.com/0e233b8c-0b1a-438b-ac58-019da36991d8/EArchitecturelogosmaller.jpg' alt="Pets Town Lebanon Logo" />
+            src='https://ucarecdn.com/c9d6219c-d35c-4f91-a252-73ce3e75b5af/ealogo.PNG' alt="Pets Town Lebanon Logo" />
             </Link>
           </div>
-          <Typography component='p' sx={{ fontSize: '.85em',color:"black" }}  className='footer-p '>
+          <Typography component='p' sx={{ fontSize: '.85em',color:"white" }}  className='footer-p '>
       {
         `At E.Architecture, we offer a diverse range of sportswear to meet your fitness needs. Our collection includes stylish and functional gym wear designed to provide maximum comfort and flexibility. Each piece is available in various colors, allowing you to express your personal style while staying active.`
       }
@@ -37,7 +37,7 @@ const Footer = () => (
   
           <ul className=' ul-white'>
             <li className='white link-title'>
-              <h1 style={{color:'black'}}>
+              <h1 style={{color:'white'}}>
 
               Site links
               </h1>
@@ -47,14 +47,14 @@ const Footer = () => (
               
           <li><Link href="/about">About Us</Link></li> 
             <li><Link href="/collections/products">All Products</Link></li> 
-            <li><Link href="/terms-and-conditions">Terms & Conditions</Link></li>
-            <li><Link href="/privacy-policy">Privacy Policy</Link></li>
-            <li><Link href="https://wa.me/+96179111760">WhatsApp Us</Link></li>
+            {/* <li><Link href="/terms-and-conditions">Terms & Conditions</Link></li> */}
+            {/* <li><Link href="/privacy-policy">Privacy Policy</Link></li> */}
+            <li><Link href="https://wa.me/+96181303139">WhatsApp Us</Link></li>
           </ul>
      
-          <ul  className='ul-white' style={{color:'black'}}>
+          <ul  className='ul-white' style={{color:'white'}}>
             <li className='link-title'>
-            <h1 style={{color:'black'}}>
+            <h1 style={{color:'white'}}>
 
               Contact
             </h1>

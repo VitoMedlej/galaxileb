@@ -14,7 +14,7 @@ const Index = () => {
             ABOUT US | E.Architecture
         </Typography>
         <Box sx={{width:'100%',height:'200px'}}>
-            <img src="https://ucarecdn.com/0e233b8c-0b1a-438b-ac58-019da36991d8/shieldlogosmaller.jpg" alt="" className="img contain" />
+            <img src="https://ucarecdn.com/c9d6219c-d35c-4f91-a252-73ce3e75b5af/ealogo.PNG" alt="" className="img contain" />
         </Box>
     
         <Box sx={{my:4}}>

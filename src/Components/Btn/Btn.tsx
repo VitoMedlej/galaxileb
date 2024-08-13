@@ -8,7 +8,7 @@ let style1 = {
   color: 'black',
   background: 'white',
   border:'1px solid white',
-  borderRadius: '552px', 
+  borderRadius: '0', 
   transition: 'background 0.3s ease, transform 0.2s ease',
 
   ':hover': {
@@ -28,7 +28,7 @@ let style2 = {
   color: 'black',
   background: 'white',
   border:'1px solid white',
-  borderRadius: '255px', 
+  borderRadius: '0', 
   transition: 'background 0.3s ease, transform 0.2s ease',
 
   ':hover': {

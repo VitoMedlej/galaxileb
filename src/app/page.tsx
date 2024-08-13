@@ -28,8 +28,8 @@ const Home = async () => {
   }
 
   const categories = categoriesData?.success !== false ? categoriesData?.Categories[0]?.cateArray : null;
-  let imagesArray1 = ImagesResponse?.success && ImagesResponse.data && ImagesResponse.data?.Images?.length > 0 && ImagesResponse.data.Images[0].imagesArray.length > 0 ? ImagesResponse.data.Images[0].imagesArray : null;
-  let imagesArray2 = ImagesResponse?.success && ImagesResponse.data2 && ImagesResponse.data?.Images?.length > 0 && ImagesResponse.data2.Images2[0].imagesArray.length > 0 ? ImagesResponse.data2.Images2[0].imagesArray : null;
+  let imagesArray1 = ImagesResponse?.success && ImagesResponse.data && ImagesResponse.data?.Images?.length > 0 && ImagesResponse.data2.Images2?.length > 0 && ImagesResponse.data.Images[0].imagesArray.length > 0 ? ImagesResponse.data.Images[0].imagesArray : null;
+  let imagesArray2 = ImagesResponse?.success && ImagesResponse.data2 && ImagesResponse.data?.Images?.length > 0 && ImagesResponse.data2.Images2?.length > 0 && ImagesResponse.data2.Images2[0].imagesArray.length > 0 ? ImagesResponse.data2.Images2[0].imagesArray : null;
 
   return (
     <PreLoader

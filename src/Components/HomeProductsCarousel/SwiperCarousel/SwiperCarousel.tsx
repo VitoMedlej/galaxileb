@@ -35,16 +35,20 @@ const SwiperCarousel = ({data, delay} : {
                 delay:  delay || 5000,
                 disableOnInteraction: true,
               }}
+              speed={1000}
               navigation={true}
             spaceBetween={10}
-            slidesPerView={2}
-            slidesPerGroup={2}
+            slidesPerView={1.1}
+            slidesPerGroup={1}
             modules={[FreeMode,Navigation, Pagination]}
             breakpoints={{
                 200 : {
-                    slidesPerView:2,
+                    slidesPerView:1,
                 },
-                540: {
+                440: {
+                    slidesPerView: 1,
+                  },
+                  740: {
                     slidesPerView: 2,
                   },
                   

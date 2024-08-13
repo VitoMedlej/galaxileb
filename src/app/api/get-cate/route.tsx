@@ -15,8 +15,6 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
     const type = searchParams.get('type')
     const search = searchParams.get('search')
     const page = searchParams.get('page')
-    
-    console.log('search: ', search);
 
     // const {page} = ctx?.searchParams;
     // const {type} = ctx?.searchParams;

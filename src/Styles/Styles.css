@@ -2,7 +2,7 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif !important;
+  font-family: "Hanken Grotesk", sans-serif;
 }
 
 h1 {
@@ -20,7 +20,7 @@ h1 {
 }
 
 .color3 {
-  color: #f7f7f7 !important;
+  color: #f5f3eb !important;
 }
 
 .animate-on-scroll {
@@ -31,7 +31,7 @@ h1 {
   text-transform: uppercase !important;
   font-weight: 600;
   font-size: 0.8em;
-  color: #f7f7f7 !important !important;
+  color: #f5f3eb !important !important;
 }
 .nav-link p {
   color: #2a393c !important;
@@ -49,7 +49,7 @@ h1 {
   right: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.082);
+  background: rgba(0, 0, 0, 0.226);
 }
 
 .centerd {
@@ -77,7 +77,7 @@ h1 {
 }
 
 .bg3 {
-  background: #f7f7f7 !important;
+  background: #f5f3eb !important;
 }
 
 .bg2 {
@@ -229,7 +229,7 @@ button[disabled] {
 }
 
 .clr3 {
-  color: #f7f7f7 !important;
+  color: #f5f3eb !important;
 }
 
 .auto {

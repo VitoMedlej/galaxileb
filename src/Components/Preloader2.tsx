@@ -10,6 +10,7 @@ import ProductCard from './ProductCard/ProductCard'
 import { useCategoriesContext } from '@/context/Contexts'
 
 const Preloader2 = ({ data, totalPages, categories }: any) => {
+  console.log('data: ', data);
     const router = useRouter();
     const { setCategories } = useCategoriesContext();
   
@@ -29,7 +30,7 @@ const Preloader2 = ({ data, totalPages, categories }: any) => {
     const fetchData = async (val: number) => {
       const url = `/api/get-cate?category=${category ?? "all"}&search=${
         newValue ? encodeURIComponent(newValue) : ""
-      }&page=${val - 1 ?? 0}&type=${type ?? ""}`;
+      }&page=${Number(val) - 1 || 0}&type=${type ?? ""}`;
       const req = await fetch(`${server}${url}`, {
         cache: "no-store",
         next: { revalidate: 0 },
@@ -37,7 +38,9 @@ const Preloader2 = ({ data, totalPages, categories }: any) => {
       const res = await req.json();
   
       setProducts(res?.data?.products ?? []);
+
       totalPages = res?.data?.totalPages ?? 1;
+
       if (window) {
         window.scrollTo(0, 0);
       }
@@ -100,7 +103,7 @@ const Preloader2 = ({ data, totalPages, categories }: any) => {
               <ProductCard
                 key={i?._id}
                 sizes={i?.sizes ?? null}
-                width={{ xs: "45%", sm: "32%" }}
+                width={{ xs: "98%", sm: "48%", md:'31%' }}
                 inStock={i?.inStock}
                 _id={i._id}
                 title={i.title}

@@ -8,10 +8,10 @@ import QuickCart from '@/Components/Shared/QuickCart/QuickCart'
 import ContextWrapper from '@/context/Contexts'
 
 export const metadata = {
-    title: `Shop Stylish Sportswear in Lebanon | E.Architecture`,
-    description: `Discover stylish and comfortable sportswear at E.Architecture in Lebanon. Shop gym wear in various colors and elevate your workout with our premium collection.`,
+    title: `E.Architecture - Premium Home Decor & Metal Furniture in Lebanon`,
+    description: `E.Architecture | your go-to online store in Lebanon for premium home decor and handcrafted metal furniture. From concept to creation, upgrade your living space with our unique designs and high-quality accessories.`,
     icons: {
-        icon: `https://ucarecdn.com/0e233b8c-0b1a-438b-ac58-019da36991d8/shieldlogosmaller.jpg`
+        icon: `https://ucarecdn.com/c9d6219c-d35c-4f91-a252-73ce3e75b5af/ealogo.PNG`
     }
 }
 
@@ -28,7 +28,7 @@ export default function Layout({children} : {
            
            </head>
 
-            <body className='relative'>
+            <body className='relative bg3'>
 
                 <ContextWrapper>
                     <Navbar/>

@@ -38,14 +38,24 @@ const ProductCollection = ({sx,delay,text,Collectiontitle,data,setQuickView} : {
              <Box className="flex center auto justify-between col   "
               sx={{pb:0,maxWidth:'lg'}}>
 
-
+<Typography sx={{
+  
+  
+  maxWidth:'1200px',
+  pb:0,
+  px:1,
+  fontWeight:'300',
+  fontSize:{xs:'.8em',sm:'1em'},
+  }} component='h1' className='black animate-on-scroll text-center  '>
+     EXPLORE OUR
+  </Typography>
 <Typography sx={{
   
   
     maxWidth:'1200px',
     pb:0,
     px:1,
-    fontWeight:'400',
+    fontWeight:'300',
     fontSize:{xs:'1.5em',sm:'1.8em'},
     }} component='h1' className='animate-on-scroll text-center  '>
        {Collectiontitle}

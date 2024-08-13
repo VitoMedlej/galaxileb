@@ -156,14 +156,15 @@ const Index = () => {
          <Box sx={{pt:{xs:3,sm:0}}}>
          {data?.product?.category &&
           <Typography
-          className='bg2 center flex items-center' component={'h2'} 
+          className='bg center flex items-center' component={'h2'} 
           sx={{
             width:'fit-content',
             px:2,
             py:1,
+            fontWeight:300,
             borderRadius:'400px',
             textAlign:'center',color:'white',
-            fontWeight:700,fontSize:{xs:'.8em',sm:'.85em',md:'.8em'}}}>
+            fontSize:{xs:'.8em',sm:'.85em',md:'.8em'}}}>
               {data?.product?.category }
              </Typography>}
              <Typography component={'h1'} sx={{fontWeight:300,pt:1,fontSize:{xs:'1.2em',sm:'1.7em',md:'2em'}}}>
@@ -290,7 +291,14 @@ const Index = () => {
          </Box>}
 
            
-            
+         <Box sx={{px:1,pt:4,maxWidth:'600px'}}>
+   
+   <Typography 
+    className='gray' 
+    sx={{whiteSpace:'pre-wrap',maxWidth:'100%'}}
+    dangerouslySetInnerHTML={{ __html: data?.product?.description }}
+  />
+   </Box>
              
          </Box>
        </Grid>
@@ -303,14 +311,7 @@ const Index = () => {
      <CircularProgress />
    </Box>
      }
-     <Box sx={{px:1,pt:4,maxWidth:'600px'}}>
-     Description:
-     <Typography 
-      className='gray' 
-      sx={{whiteSpace:'pre-wrap',maxWidth:'100%'}}
-      dangerouslySetInnerHTML={{ __html: data?.product?.description }}
-    />
-     </Box>
+
    </Box>
     
   )

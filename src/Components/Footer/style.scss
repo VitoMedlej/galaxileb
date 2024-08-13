@@ -26,21 +26,21 @@ footer {
           min-width: 170px;
           li {
               a {
-                  color :#1a1a1ad0;
+                  color :#f7f7f7d0;
                   text-decoration: none !important;
               }
               padding: .14em 0;
           }
           .link-title {
-              font-weight: 500;
               padding: 0 0 .65em 0;
-              font-size: 1.1em;
-              color:rgba(29, 29, 29, 0.87) !important;font-weight: 600 !important;
+              font-size: 1em;
+              color:rgba(247, 247, 247, 0.87) !important;
+              font-weight: 300 !important;
           }
       }
   }
   .footer-p {
-    color:rgba(22, 22, 22, 0.87);
+    color:rgba(243, 243, 243, 0.87);
   }
   .site-footer__bottom {
     background: black;

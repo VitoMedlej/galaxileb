@@ -1,16 +1,20 @@
 "use client"
 import { Box } from '@mui/material'
 import React from 'react'
+import Btn from '../Btn/Btn'
 
 const Index = () => {
   return (
-    <Box>
-        <Box sx={{display:{xs:'flex',md:'none'}}}>
-            <img src="https://www.petriotics.com/cdn/shop/files/2_375x250.png?v=1665495970" alt="" className="img" />
+    <Box className='relative' sx={{}}>
+        <Box sx={{width:'100%', height:'600px',display:{xs:'flex'}}}>
+            <img src="https://audocph.com/cdn/shop/files/Audo_AfteroomCoatHangerLarge_21.jpg?v=1708508586&width=940" alt="" className="img" />
         </Box>
-        <Box sx={{display:{xs:'none',md:'flex'}}}>
-            <img src="https://www.petriotics.com/cdn/shop/files/15_OFF_3_1305x386.png?v=1664448008" alt="" className="img" />
+        <Box className='absolute center w100 auto flex' sx={{top:'90%',zIndeX:12}}>
+          <Btn>
+            Explore Collections Now
+          </Btn>
         </Box>
+       
     </Box>
   )
 }

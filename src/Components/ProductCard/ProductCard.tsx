@@ -49,7 +49,7 @@ const ProductCard = ({
             // border : '1px solid #000000a',
             py: 3,
             margin: '0em auto',
-            background:'white',
+            background:'transparent',
 
             my:1,
             minWidth: {sm:'30%',md:'24%'},
@@ -66,9 +66,9 @@ const ProductCard = ({
             className='cursor auto'
                onClick={() => router.push(`/product/${_id}`)}
             sx={{
-                background:'white',
+                background:'transparent',
                 width:{xs:'98%',sm:'100%',md:'auto'},
-                height: height || {xs:'250px',sm:'300px',md:'400px'}
+                height: height || {xs:'300px',sm:'350px',md:'450px'}
                 // height: height || {xs:'100%',sm:'300px',md:'400px'}
             }}>
                 <img
@@ -85,9 +85,9 @@ const ProductCard = ({
                 px: .95,
                 mt:{xs:1,sm:1.5,md:0},
                 alignItems: "left",
-                background:'white'
+                background:'transparent'
             }}> 
-            <Typography
+            {/* <Typography
             className='flex cursor  limited w100  left '
                     component='p'
                     onClick={() => router.push(`/product/${_id}`)}
@@ -100,7 +100,7 @@ const ProductCard = ({
                     fontWeight: '400'
                 }}>
                     {`${category}`.toUpperCase()}
-                </Typography>
+                </Typography> */}
              <Typography
             className='flex cursor limited w100  left '
                     component='h1'

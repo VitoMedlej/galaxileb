@@ -45,16 +45,18 @@ const NavButtom = ({categories}:any) => {
                     Sale
                     </Typography>
                 </Link> */}
-                <Link className='white decor-none ' href={`/`}>
+                <Link className='white trans  decor-none ' href={`/`}>
 
 <Typography 
-className=' cursor center flex gap1 white decor-none captialize'
+className=' cursor center  flex gap1 white decor-none captialize'
 
-component='h1' sx={{width:'max-content',
+component='h2' sx={{width:'max-content',
 mx:'.55em',
 alignItems: 'center',
-
-fontWeight:300,fontSize:{xs:'.75em',sm:'.8em'}}}>
+':hover':{
+    textDecoration: 'underline',
+},
+fontWeight:300,fontSize:{xs:'.9em',sm:'1em'}}}>
 Home
 </Typography>
 </Link>
@@ -63,12 +65,29 @@ Home
 <Typography 
 className=' cursor center flex gap1 white decor-none captialize'
 
-component='h1' sx={{width:'max-content',
+component='h2' sx={{width:'max-content',
 mx:'.55em',
 alignItems: 'center',
-
-fontWeight:300,fontSize:{xs:'.75em',sm:'.8em'}}}>
+':hover':{
+    textDecoration: 'underline',
+},
+fontWeight:300,fontSize:{xs:'.9em',sm:'1em'}}}>
 About
+</Typography>
+</Link>
+<Link className='white decor-none ' href={`/collection/products`}>
+
+<Typography 
+className=' cursor center flex gap1 white decor-none captialize'
+
+component='h2' sx={{width:'max-content',
+mx:'.55em',
+alignItems: 'center',
+':hover':{
+    textDecoration: 'underline',
+},
+fontWeight:300,fontSize:{xs:'.9em',sm:'1em'}}}>
+Collections
 </Typography>
 </Link>
 {/* <Link className='white decor-none ' href={`/#shop`}>
@@ -76,16 +95,16 @@ About
 <Typography 
 className=' cursor center flex gap1 white decor-none captialize'
 
-component='h1' sx={{width:'max-content',
+component='h2' sx={{width:'max-content',
 mx:'.55em',
 alignItems: 'center',
 
-fontWeight:300,fontSize:{xs:'.75em',sm:'.8em'}}}>
+fontWeight:300,fontSize:{xs:'.9em',sm:'1em'}}}>
 Shop
 </Typography>
 </Link> */}
 {
-    categories && categories?.slice(0,3).map((cate:any)=>{
+    categories && categories?.slice(0,1).map((cate:any)=>{
             if (cate?.subcategories?.length == 0){ return      <Link   
                  key={cate?.categoryName} className='white decor-none'
              href={`/${cate?.categoryName?.toLocaleLowerCase()}/products`}>
@@ -93,11 +112,11 @@ Shop
 <Typography 
 className=' cursor center flex gap1 white decor-none captialize'
 
-component='h1' sx={{width:'max-content',
+component='h2' sx={{width:'max-content',
 mx:'.55em',
 alignItems: 'center',
 
-fontWeight:300,fontSize:{xs:'.75em',sm:'.8em'}}}>
+fontWeight:300,fontSize:{xs:'.9em',sm:'1em'}}}>
 {`${cate?.categoryName}`}
 </Typography>
 </Link>}
@@ -121,11 +140,11 @@ fontWeight:300,fontSize:{xs:'.75em',sm:'.8em'}}}>
 <Typography 
 className=' cursor center flex gap1 white decor-none captialize'
 
-component='h1' sx={{width:'max-content',
+component='h2' sx={{width:'max-content',
 mx:'.55em',
 alignItems: 'center',
 
-fontWeight:300,fontSize:{xs:'.75em',sm:'.8em'}}}>
+fontWeight:300,fontSize:{xs:'.9em',sm:'1em'}}}>
 About US
 </Typography>
 </Link> */}
@@ -145,13 +164,13 @@ About US
         return <Link key={i} className='white decor-none ' href={`/${i.toLocaleLowerCase()}/products`}>
 
         <Typography 
-        component='h1'
+        component='h2'
         className=' cursor center flex gap1 white decor-none captialize'
         
         sx={{width:'max-content',
         mx:'.55em',
         alignItems: 'center',
-        fontWeight:300,fontSize:{xs:'.75em',sm:'.8em'}}}>
+        fontWeight:300,fontSize:{xs:'.9em',sm:'1em'}}}>
         {i.toUpperCase()}
         </Typography>
         </Link>
@@ -167,7 +186,7 @@ component='p' sx={{width:'max-content',
 mx:'.55em',
 alignItems: 'center',
 
-fontWeight:300,fontSize:{xs:'.75em',sm:'.8em'}}}>
+fontWeight:300,fontSize:{xs:'.9em',sm:'1em'}}}>
 Organic Herbs
 </Typography>
 </Link>
@@ -180,7 +199,7 @@ component='p' sx={{width:'max-content',
 mx:'.55em',
 alignItems: 'center',
 
-fontWeight:300,fontSize:{xs:'.75em',sm:'.8em'}}}>
+fontWeight:300,fontSize:{xs:'.9em',sm:'1em'}}}>
 Natural Supplements
 </Typography>
 </Link> */}
@@ -196,7 +215,7 @@ component='p' sx={{width:'max-content',
 mx:'.55em',
 alignItems: 'center',
 
-fontWeight:300,fontSize:{xs:'.75em',sm:'.8em'}}}>
+fontWeight:300,fontSize:{xs:'.9em',sm:'1em'}}}>
 About Us
 </Typography>
 </Link> */}
@@ -230,7 +249,7 @@ New Arrivals
            
 
             {/* { [
-    {cate:"Categories",subCate:catsSubcategories,img:`https://th.bing.com/th/id/R.1776ae53615a64b359d8d65cf5eca544?rik=WKeDBh1pbwPftA&riu=http%3a%2f%2fwww.kmart.com.au%2fwcsstore%2fKmart%2fimages%2fespots%2fpets-beds-050418-tall-banner.jpg&ehk=fwMSwpMwGOLad6eRmrG%2bT48oAdH2G7Y8Mm2thOjl3Zk%3d&risl=&pid=ImgRaw&r=0`},
+    {cate:"Categories",subCate:catsSubcategories,img:`https://th.bing.com/th/id/R.1776ae53615a64b359d8d65cf5eca544?rik=WKeDBh2pbwPftA&riu=http%3a%2f%2fwww.kmart.com.au%2fwcsstore%2fKmart%2fimages%2fespots%2fpets-beds-050418-tall-banner.jpg&ehk=fwMSwpMwGOLad6eRmrG%2bT48oAdH2G7Y8Mm2thOjl3Zk%3d&risl=&pid=ImgRaw&r=0`},
     // {cate:"Dogs",subCate:dogsSubcategories,img:`https://mypetguru.com/imgs/uploads/toy-for-dog.jpg`},
     // {cate:"Offers",subCate:offersSubcategories,img:'https://i.pinimg.com/originals/bf/cb/59/bfcb59f20bddc43101e39de2cc142f7e.jpg'}
 ].map(i => {

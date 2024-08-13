@@ -74,7 +74,7 @@ const Preloader3 = ({resImages} : any) => {
                 
                 </Box>
                           <img
-                              className={`img contain`}
+                              className={`img cover `}
                             //   src={`${item?.img}-/resize/600/`}
                               src={`${item?.img}`}
                             //   src={`${item?.img}/-/resize/${imageSize}/`}
