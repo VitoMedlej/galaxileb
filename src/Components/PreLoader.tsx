@@ -127,13 +127,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
                        
                     })
                   } */}
-                    
-                      
-      
-                   
-     
-
-
+                 
             <Box
                 className="w100 "
                 sx={{
@@ -235,9 +229,6 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
                     </Grid>
 
                 </Grid>
-
-
-
 
             </Box> 
 
@@ -368,32 +359,14 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
                     </Grid>
 
                 </Grid>
-
-
-
-                            
+                  
             </Box> 
-
-
-
-
-
-
-
-
-
 
 
             <HomeProductsCarousel
             text=''
              delay={4000} Collectiontitle={'Best Sellers'}
               data={collection1}/>
-
-
-
-
-
-
 
 
             <Box className='relative' sx={{mt:8,height:{xs:'500px',sm:'500px'}}}>
@@ -429,7 +402,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
                                 maxWidth:'600px',
                                 textAlign:{xs:'center',sm:'flex-end'},
                                 pt:1,color:'white',fontSize:{xs:'.8em',md:'.9em'},fontWeight:300}}>
-                           At E.Architecture, we bring your vision to life with furniture that combines contemporary style and industrial strength. Each piece is crafted with precision, ensuring it stands the test of time while enhancing your living space. Whether you're transforming a room or just adding a final touch, our designs are made to make a statement.
+                          {` At E.Architecture, we bring your vision to life with furniture that combines contemporary style and industrial strength. Each piece is crafted with precision, ensuring it stands the test of time while enhancing your living space. Whether you're transforming a room or just adding a final touch, our designs are made to make a statement.`}
 </Typography>
                           
                             <Btn  

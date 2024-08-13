@@ -60,16 +60,7 @@ const ProductCollection = ({sx,delay,text,Collectiontitle,data,setQuickView} : {
     }} component='h1' className='animate-on-scroll text-center  '>
        {Collectiontitle}
     </Typography>
-    <Typography sx={{
-  
-    maxWidth:'1200px',
-    pb:0,
-    px:1,
-    fontWeight:'400',
-    fontSize:{xs:'.8em',sm:'1em'},
-    }} component='p' className='animate-on-scroll text-center  '>
-       {text}
-    </Typography>
+
 
 
 
