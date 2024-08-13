@@ -1,6 +1,6 @@
 "use client"
 import Link from 'next/link';
-import {Typography , Box, Divider } from '@mui/material'
+import {Typography , Box, Divider, Grid } from '@mui/material'
 import './style.css'
 import SMicons from '../SMicons/SMicons';
 // import SMicons from './SMicons';
@@ -8,76 +8,71 @@ import SMicons from '../SMicons/SMicons';
 
 
 const Footer = () => (
-  <footer className="site-footer bg " style={{color:'white'}}>
-    <div className="container bg" style={{color:'white'}}>
-      <div className="site-footer__top ">
-        <div className="site-footer__description">
-          <div className='logos cursor'>
+      <Box component='footer'  className='bg'> 
+          <Grid container className='auto' sx={{py:4,px:2,maxWidth:'md'}} >
+            <Grid item xs={12} sm={6} lg={6}>
+              <Box sx={{width:'50px'}}>
+                <img src="https://ucarecdn.com/c9d6219c-d35c-4f91-a252-73ce3e75b5af/ealogo.PNG" alt="" className="img" />
+              </Box>
+              <Box>
+                  <Typography sx={{maxWidth:'300px',fontSize:'.7em',color:'white'}}>
+                  E.Architecture: Where modern design meets timeless quality. Transform your space with furniture and accessories that stand the test of time.
+                  </Typography>
+              </Box>
+            </Grid>
 
-            <Link href="/">
-              {/* <a><h1 className="site-logo"><Logo />E-Shop</h1></a> */}
-              {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675357773/logo_ghli5e.jpg */}
-              {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675713948/logo_sktnut_1_jwy2hk.png */}
-            <img className='img contain'
-            
-            src='https://ucarecdn.com/c9d6219c-d35c-4f91-a252-73ce3e75b5af/ealogo.PNG' alt="Pets Town Lebanon Logo" />
-            </Link>
-          </div>
-          <Typography component='p' sx={{ fontSize: '.85em',color:"white" }}  className='footer-p '>
-      {
-        `E.Architecture: Where modern design meets timeless quality. Transform your space with furniture and accessories that stand the test of time.`
-      }
+
+
+
+
+            <Grid item xs={12} sm={3} md={3}>
+        <Box sx={{pt:{xs:4,sm:0}}}>
+          <Typography className='white' component={'h1'} sx={{fontSize:'.9em',pb:1}}>
+              Site Links
           </Typography>
-          <SMicons/>
+          <Box className="flex wrap col gap1">
+
+          <Link href='/' className='white decor-' style={{fontSize:'.8em'}}>
+              Home
+          </Link>
+          <Link href='/about' className='white decor-' style={{fontSize:'.8em'}}>
+              About
+          </Link>
+          <Link href='/collection/products' className='white decor-' style={{fontSize:'.8em'}}>
+              Collections
+          </Link>
+          </Box>
+
+        </Box>
+</Grid>
 
 
-        </div>
 
-        <div className="site-footer__links ">
-  
-          <ul className=' ul-white'>
-            <li className='white link-title'>
-              <h1 style={{color:'white'}}>
+<Grid item xs={12} sm={3} md={3}>
+<Box sx={{pt:{xs:4,sm:0}}}> 
+          <Typography className='white' component={'h1'} sx={{fontSize:'.9em',pb:1}}>
+              Contacts
+          </Typography>
+          <Box className="flex wrap col gap1">
 
-              Site links
-              </h1>
-              </li>
-            <li ><Link   href="/">
-              Home</Link></li>
-              
-          <li><Link href="/about">About Us</Link></li> 
-            <li><Link href="/collections/products">All Products</Link></li> 
-            {/* <li><Link href="/terms-and-conditions">Terms & Conditions</Link></li> */}
-            {/* <li><Link href="/privacy-policy">Privacy Policy</Link></li> */}
-            <li><Link href="https://wa.me/+96181303139">WhatsApp Us</Link></li>
-          </ul>
-     
-          <ul  className='ul-white' style={{color:'white'}}>
-            <li className='link-title'>
-            <h1 style={{color:'white'}}>
+          <a href={`${process.env.NEXT_PUBLIC_INSTA}`} target={'_blank'}  className='white decor-none' style={{fontSize:'.8em'}}>
+          @EArchitecture.lb_
+          </a>
+          <a href={`${process.env.NEXT_PUBLIC_WA}`} target={'_blank'}  className='white decor-none' style={{fontSize:'.8em'}}>
+          +{process.env.NEXT_PUBLIC_WA}
+          </a>
+          
+          </Box>
 
-              Contact
-            </h1>
-            
-              </li>
-        
-
-            <li><a href={`${process.env.NEXT_PUBLIC_INSTA}`} target="_blank" rel="noreferrer" >@EArchitecture.lb_</a></li>
-            <li><a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} rel="noreferrer" target='_blank' >+{process.env.NEXT_PUBLIC_WA}</a></li>
-            {/* <li><a href={`http://tiktok.com/@thecraftroomlb`} rel="noreferrer" target='_blank' >TikTok</a></li> */}
-          </ul>
-        </div>
-  
-      </div>
-    </div>
-        <Divider color='gray'></Divider>
-    <div className="site-footer__bottom  " style={{color:'white',borderTop:"1px solid #0000001f"}}>
-      <div className="container " style={{color:'white'}}>
-        <p>Website Developed By{' '}
-          <a style={{ color: 'white' }} href={`${'https://www.onbeirut.com'}`}>OnBeirut Agency </a></p>
-      </div>
-    </div>
-  </footer>
+        </Box>
+</Grid>
+          </Grid>
+          <Box className='flex  center auto' sx={{background:'#01242b',py:1,color:'white'}}>
+            <Typography component='p' sx={{fontSize:'.8em'}}>
+            Site Developed By <span><a target='_blank' href='https://onbeirut.com'>OnBeirut Agency</a></span>
+            </Typography>
+          </Box>
+      </Box>
 );
 
 

@@ -20,16 +20,16 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
     const product = await ProductsCollection
         .findOne({_id:new ObjectId(`${id}`)});
 
-        const moreProductsQuery  = await ProductsCollection
-        .find({})
-        .sort({_id: -1})
-        .limit(10)
+        // const moreProductsQuery  = await ProductsCollection
+        // .find({})
+        // .sort({_id: -1})
+        // .limit(10)
 
-    await moreProductsQuery.forEach((doc : any) => {
+    // await moreProductsQuery.forEach((doc : any) => {
 
-        moreProducts.push(doc)
+    //     moreProducts.push(doc)
 
-    });
+    // });
 
      
     if (!product ) {
@@ -39,7 +39,7 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
     return NextResponse.json({
         success: true,
         product,
-        moreProducts
+        // moreProducts
     });
 
 }

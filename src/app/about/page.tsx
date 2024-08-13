@@ -14,7 +14,7 @@ const Index = () => {
            <Typography 
            component='h1'
            sx={{mb:1,mx:'auto',fontSize:'2.5em',fontWeight:'600'}} className=" center text-center">
-            ABOUT US | E.Architecture
+            ABOUT US  E.Architecture
         </Typography>
 
     

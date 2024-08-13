@@ -103,7 +103,7 @@ fontWeight:300,fontSize:{xs:'.9em',sm:'1em'}}}>
 Shop
 </Typography>
 </Link> */}
-{
+{/* {
     categories && categories?.slice(0,1).map((cate:any)=>{
             if (cate?.subcategories?.length == 0){ return      <Link   
                  key={cate?.categoryName} className='white decor-none'
@@ -129,7 +129,7 @@ fontWeight:300,fontSize:{xs:'.9em',sm:'1em'}}}>
             }
           
     })
-}
+} */}
 {/* <MenuHover img={'https://irrelevantlvng.com/img/cms/IMG_1323.JPG'} category={'Shop'} subcategories={['test','tes1']} /> */}
 
 {/* <MenuHover img={'https://irrelevantlvng.com/img/cms/IMG_1323.JPG'} category={'collections'} subcategories={['22','33']} /> */}

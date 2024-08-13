@@ -9,7 +9,6 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import InnerImageZoom from 'react-inner-image-zoom';
 import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css';
 // import ImageZoom from "react-image-zooom";
 import ImageZoom from "react-image-zooom";

@@ -1,44 +1,41 @@
 "use client"
-import * as React from 'react';
-// import { useState } from 'react';
-import Box from '@mui/material/Box';
-// import Button from '@mui/material/Button';
-// import { InputLabel } from '@mui/material';
-import Btn from '../Btn/Btn';
+import { Box, MenuItem, Select, FormControl, InputLabel, SelectChangeEvent } from '@mui/material'
+import React, { useState } from 'react'
 
-export default function ProductCard({ setselectedSize, selectedSize, sizes }: any) {
-  
-  const handleSizeClick = (size: string) => {
-    const option = sizes.find((option: any) => option.size?.toLocaleLowerCase() === size?.toLocaleLowerCase());
-    setselectedSize(option);
+const SelectWeight = ({sizes,setPrice} : {sizes:any,setPrice:any}) => {
+  if (!sizes) return;
+
+
+  const [selectedSize, setSelectedSize] = useState<string>(sizes[0].size);
+  const [selectedPrice, setSelectedPrice] = useState<string>(sizes[0].price);
+
+  const handleChange = (event: SelectChangeEvent<string>)  : any => {
+    const selected = sizes.find((size:{size:string}) => size.size === event.target.value);
+    if (selected) {
+      setSelectedSize(selected.size);
+      setSelectedPrice(selected.price);
+      setPrice(selected.price);
+    }
   };
-
   return (
-    <Box className='flex items-center' sx={{ mx:1,minWidth: { xs: 120, lg: 200 } }}>
-        <Box className='flex row wrap'>
-          {sizes &&
-            sizes?.map((option: any) => (
-              <Btn v2
-                key={option.size}
-                sx={{
-                  mx:{xs:.5,sm:1},
-                  px:{xs:.5,sm:1},py:0,
-                  border:'1px solid black',
-            ':hover': {
-    background: selectedSize?.size?.toLocaleLowerCase() === option.size?.toLocaleLowerCase() ? 'black' : 'transparent',
-    color: selectedSize?.size?.toLocaleLowerCase() === option.size?.toLocaleLowerCase() ? 'white' : 'black'
-},
-background: selectedSize?.size?.toLocaleLowerCase() === option.size?.toLocaleLowerCase() ? 'black' : 'transparent',
-color: selectedSize?.size?.toLocaleLowerCase() === option.size?.toLocaleLowerCase() ? 'white' : 'black'
-                }}
-                onClick={() => handleSizeClick(option?.size)}
-              >
-                {option?.size}
-              </Btn>
-            ))}
-        </Box>
-      {/* Additional content, if needed */}
-      {/* <p>Price: ${selectedSize.price}</p> */}
+    <Box sx={{width:{xs:'100%',sm:'auto'},my:2}} className='flex '>
+     
+      <FormControl sx={{width:'100%'}} size='small' fullWidth>
+        <InputLabel>Size</InputLabel>
+        <Select
+          value={selectedSize}
+          onChange={handleChange}
+          label="Size"
+        >
+          {sizes.map((size: any, index : number) => (
+            <MenuItem key={index} value={size.size}>
+              {size.size}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
     </Box>
-  );
+  )
 }
+
+export default SelectWeight;

@@ -58,7 +58,7 @@ footer {
 }
 }
 .logos {
-  max-width: 250px;
+  max-width: 50px;
   margin: 0 auto;
 }
 .auto {
@@ -166,15 +166,15 @@ $breakpoint-value: map-get($breakpoints, $breakpoint);
 }
 
 .site-footer {
-  padding-top: 50px;
+  padding-top: 10px;
   @include breakpoint(phone) {
-    padding-top: 90px;
+    padding-top: 5px;
   }
   .site-footer__top {
     @include breakpoint(phone) {
       display: flex;
       flex-wrap: wrap;
-      padding-bottom: 60px;
+      padding-bottom: 5px;
     }
     @include breakpoint(tablet-lg) {
       flex-wrap: nowrap;
@@ -182,7 +182,7 @@ $breakpoint-value: map-get($breakpoints, $breakpoint);
   }
   .site-footer__description {
     margin-right: auto;
-    margin-bottom: 70px;
+    margin-bottom: 30px;
     @include breakpoint(phone) {
       width: 400px;
       margin-bottom: 50px;
@@ -230,7 +230,7 @@ $breakpoint-value: map-get($breakpoints, $breakpoint);
       width: auto;
     }
     ul {
-      margin-bottom: 40px;
+      margin-bottom: 10px;
       @include breakpoint(phone) {
         margin-right: 30px;
         margin-bottom: 0;
@@ -242,17 +242,17 @@ $breakpoint-value: map-get($breakpoints, $breakpoint);
         margin-right: 0;
       }
       li {
-        font-size: 14px;
+        font-size: 11px;
         color: #000;
-        margin-bottom: 12px;
+        margin-bottom: 0px;
         @include breakpoint(phone) {
-          margin-bottom: 15px;
+          margin-bottom: 0px;
         }
         &:first-child {
-          font-weight: 600;
-          margin-bottom: 26px;
+          font-weight: 300;
+          margin-bottom: 0px;
           @include breakpoint(phone) {
-            margin-bottom: 34px;
+            margin-bottom: 0px;
           }
         }
         a {
@@ -268,10 +268,10 @@ $breakpoint-value: map-get($breakpoints, $breakpoint);
     padding: 10px 0;
     border-top: 1px solid #EBEBEB;
     @include breakpoint(phone) {
-      padding: 16px 0;
+      padding: 3px 0;
     }
     .container {
-      font-size: 15px;
+      font-size: 11px;
       text-align: center;
       @include breakpoint(phone) {
         font-size: 16px;

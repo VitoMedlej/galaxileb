@@ -369,7 +369,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
               data={collection1}/>
 
 
-            <Box className='relative' sx={{mt:8,height:{xs:'500px',sm:'500px'}}}>
+            <Box className='relative' sx={{mt:8,mb:12,height:{xs:'500px',sm:'500px'}}}>
             <Box sx={{position:'relative', height: '100%', width:'100%'}}>
                       <Box className='overlay'>
                 
@@ -384,7 +384,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
                       </Box>
                       <Box className='absolute  animate-on-scroll  w100 center auto flex col' sx={{
                            
-                            top: {xs:'40%',sm:`40%`},
+                            top: {xs:'20%',sm:`20%`},
                             alignItems:{xs:'center',sm:'center'},
                             width: 'fit-content',
                        zIndex:'1234'}}>
