@@ -3,7 +3,6 @@ import { Box, MenuItem, Select, FormControl, InputLabel, SelectChangeEvent } fro
 import React, { useState } from 'react'
 
 const SelectWeight = ({sizes,setPrice} : {sizes:any,setPrice:any}) => {
-  if (!sizes) return;
 
 
   const [selectedSize, setSelectedSize] = useState<string>(sizes[0].size);
@@ -17,6 +16,8 @@ const SelectWeight = ({sizes,setPrice} : {sizes:any,setPrice:any}) => {
       setPrice(selected.price);
     }
   };
+  if (!sizes) return;
+
   return (
     <Box sx={{width:{xs:'100%',sm:'auto'},my:2}} className='flex '>
      
