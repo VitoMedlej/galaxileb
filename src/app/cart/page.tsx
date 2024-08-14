@@ -66,8 +66,8 @@ const Cart = () => {
 
     
     const [cartItems,setCartItems] = useState<ICartItem[]>([])
-    const total= totalCal(cartItems) || 0; 
-    const {discountedPrice,isFirstOrder} = useDiscount(total)
+    const {totalPrice, deliveryCharge}= totalCal(cartItems); 
+    const {discountedPrice,isFirstOrder} = useDiscount(totalPrice)
 
 
     let localCart : ICartItem[] = loadState('VZJo2p4j1op2cgfG221zGG') || []
@@ -119,11 +119,13 @@ const Cart = () => {
                     cartItems.map(item=>{
                         if (!item?._id) return;
                         return <CartProduct 
-                        productselectedSize={item?.productselectedSize}
-                        productselectedColor={item?.productselectedColor}
-                        onChange={refetchState}
-                        key={item._id}
-                        img={item.img} qty={item.qty} remove={remove} title={item.title} _id={item._id} price={item.price}/>
+                            productselectedSize={item?.productselectedSize}
+                            productselectedColor={item?.productselectedColor}
+                            onChange={refetchState}
+                            key={item._id}
+                            img={item.img} qty={item.qty} remove={remove}
+                             title={item.title} _id={item._id} price={item.price}
+                              weight={Number(item?.weight)}/>
                     }) :
                     <EmptyCartAlert/>     
                 }
@@ -169,14 +171,14 @@ const Cart = () => {
                          {`Price`}:{' '}
                          ${cartItems?.length > 0  && Number(discountedPrice) > 0 ? discountedPrice : 0}                     
                         </Typography>}        
-                        {/* {<Typography sx={{
+                        {<Typography sx={{
                             pb:.5,
             color:'black',
                         fontWeight: '400'
                     }}>
                          {`Delivery`}:{' '}
-                         ${cartItems?.length > 0 ? 4 : 0}                     
-                        </Typography>} */}
+                         ${deliveryCharge}                     
+                        </Typography>}
 
 
                     <Typography sx={{
@@ -186,7 +188,7 @@ const Cart = () => {
                  }}>
                     {`Total`}:{' '}
                         <span style={{color:'black'}}>
-                        ${cartItems?.length > 0 ? Number(discountedPrice) + Number(0) : 0}
+                        ${Number(totalPrice + deliveryCharge).toFixed(2)}
                         
                     </span>
                         </Typography>

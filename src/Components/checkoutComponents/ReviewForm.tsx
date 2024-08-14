@@ -44,8 +44,8 @@ export default function Review({setActiveStep}:{setActiveStep:any}) {
   const products = loadState('VZJo2p4j1op2cgfG221zGG')
  
   const info = loadState('Vjq2zFFF1Z')
-  const total = totalCal(products);
-  const {discountedPrice,isFirstOrder} = useDiscount(total)
+  // const total = totalCal(products);
+  const {totalPrice, deliveryCharge}= totalCal(products); 
 
 
   if (!info) {
@@ -67,13 +67,13 @@ export default function Review({setActiveStep}:{setActiveStep:any}) {
           </ListItem>
         })}
         <Divider/>
-        {/* <ListItem sx={{px: 0 }}>
+        <ListItem sx={{px: 0 }}>
 
 <ListItemText primary="Delivery" />
 <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
-  $3
+  ${deliveryCharge}
 </Typography>
-</ListItem> */}
+</ListItem>
  {/* {Number(total) < 60 && <ListItem sx={{ px: 0 }}>
 
 <ListItemText primary="Delivery Fees" />
@@ -87,7 +87,7 @@ export default function Review({setActiveStep}:{setActiveStep:any}) {
 <ListItemText primary="Total" />
 <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
   {/* ${Number(total) >= 60 ? total : Number(total) + 4} */}
-  ${Number(discountedPrice)}
+  ${Number(totalPrice) + Number(deliveryCharge)}
   {/* ${Number(discountedPrice) + Number(4)} */}
 </Typography>
 

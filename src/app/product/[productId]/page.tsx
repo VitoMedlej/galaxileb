@@ -79,7 +79,7 @@ const Page = () => {
       price: currentPrice,
       productselectedSize:selectedSize && selectedSize != 'undefined' ? selectedSize : size || '',
       productselectedColor: selectedColor,
-      weight: 0
+      weight: weight ? Number(weight) : 0
     };
   
     addToCart(1, `${productId}`, itemToAdd);
@@ -136,7 +136,7 @@ const Page = () => {
     sx={{maxWidth:'100%'}}
     component='h2'
   >
-    {weight}g
+    {weight}kg
   </Typography>
    </Box>}
 

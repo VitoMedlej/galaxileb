@@ -25,6 +25,7 @@ export interface ICartItem {
     price: number;
     img : string;
     qty : number;
+    weight: number;
     onChange ?: () => void;
     category ?: string;
     remove: (id:string) => void;

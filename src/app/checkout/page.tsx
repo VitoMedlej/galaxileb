@@ -40,11 +40,11 @@ const theme = createTheme();
 export default function Checkout() {
   const [activeStep, setActiveStep] = React.useState(0);
   const [orderNumber, setOrderNumber] = React.useState(null);
-  const products = loadState('VZJo2p4j1op2cgfG221zGG')
-  const total = totalCal(products);
+  const products = loadState('VZJo2p4j1op2cgfG221zGG');
+  const {totalPrice, deliveryCharge} = totalCal(products); 
   
 
-  const {isFirstOrder} = useDiscount(total)
+  const {isFirstOrder} = useDiscount(totalPrice)
 
   
   const handleBack = () => {
@@ -85,7 +85,7 @@ export default function Checkout() {
       
 
       // const total = 10
-      if (products && info && total) {
+      if (products && info && totalPrice) {
 
         // saveState('order',{info,products,total})
         const rawResponse = await fetch(`${server}/api/save-order`, {
@@ -94,7 +94,7 @@ export default function Checkout() {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({order:{info,products,total,isFirstOrder}})
+            body: JSON.stringify({order:{info,products,totalPrice,isFirstOrder}})
         });
   const content = await rawResponse.json();
         setOrderNumber(content?.orderNumber)
