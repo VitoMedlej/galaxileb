@@ -2,17 +2,16 @@
 import { Box, MenuItem, Select, FormControl, InputLabel, SelectChangeEvent } from '@mui/material'
 import React, { useState } from 'react'
 
-const SelectWeight = ({sizes,setPrice} : {sizes:any,setPrice:any}) => {
+const SelectWeight = ({sizes,selectedSize,setSelectedSize,setPrice} : {setSelectedSize:any,selectedSize:any,sizes:any,setPrice:any}) => {
 
 
-  const [selectedSize, setSelectedSize] = useState<string>(sizes[0].size);
-  const [selectedPrice, setSelectedPrice] = useState<string>(sizes[0].price);
+
 
   const handleChange = (event: SelectChangeEvent<string>)  : any => {
     const selected = sizes.find((size:{size:string}) => size.size === event.target.value);
     if (selected) {
       setSelectedSize(selected.size);
-      setSelectedPrice(selected.price);
+      
       setPrice(selected.price);
     }
   };

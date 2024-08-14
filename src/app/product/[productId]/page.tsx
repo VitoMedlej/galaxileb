@@ -13,9 +13,10 @@ interface Product {
   images: string[];
   title: string;
   price: number;
-  weight: number;
   description: string;
+  weight : string;
   category: string;
+  size?: string;
   newPrice?: number;
   sizes?: { size: string; price: string }[];
   colors ?: string[];
@@ -24,13 +25,17 @@ interface Product {
 const Page = () => {
   const [product, setProduct] = useState<Product | null>(null);
   console.log('product: ', product);
+
+
   const [error, setError] = useState<string | null>(null);
   const { productId } = useParams();
   const { addToCart } = useCart();
 
   const [currentPrice, setPrice] = useState<number>(0);
   const [selectedColor, setColor] = useState<string | null>(null);
-  console.log('currentPrice: ', currentPrice);
+  console.log('selectedColor: ', selectedColor);
+  const [selectedSize, setSelectedSize] = useState<string>('');
+
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -52,13 +57,33 @@ const Page = () => {
     if (product) {
       setPrice(typeof product.newPrice === 'number' && 
         Number(product.newPrice) >= 0 ? Number(product.newPrice) :  Number(product.price));
+
+        console.log('sizes ? ${sizes[0]?.size} ', sizes ? `${sizes[0]?.size}` : size || '');
+        setSelectedSize(sizes ? `${sizes[0]?.size}` : size || '');
+        setColor(colors? colors[0] : null);
     }
   }, [product]);
 
   if (error) return <Box sx={{height:'70vh',alignItems:'center'}} className='flex auto center text-center '>Something went wrong! {' '}  <span>  <Link href='/'>Go Home</Link></span></Box>;
   if (!product) return <Box sx={{height:'70vh',alignItems:'center'}} className=' flex auto center text-center '>Loading Product Details</Box>;
 
-  const {colors, images, description, title, sizes, category } = product;
+  const {colors, size, weight, images, description, title, sizes, category } = product;
+
+  const handleCart = () => {
+    console.log('selectedSize: ', size);
+    const itemToAdd = {
+      title,
+      category,
+      img: images?.length > 0 ? images[0] : '',
+      _id: `${productId}`,
+      price: currentPrice,
+      productselectedSize:selectedSize && selectedSize != 'undefined' ? selectedSize : size || '',
+      productselectedColor: selectedColor,
+      weight: 0
+    };
+  
+    addToCart(1, `${productId}`, itemToAdd);
+  };
 
   return (
     <Box sx={{ maxWidth: 'lg', pt: 2 }} className='lg auto'>
@@ -79,25 +104,54 @@ const Page = () => {
           </Typography>
 
           <Box>
-            <SelectWeight setPrice={setPrice} sizes={sizes} />
+          {sizes && sizes[0]?.size?.length > 0 &&  <SelectWeight  selectedSize={selectedSize} setSelectedSize={setSelectedSize} setPrice={setPrice} sizes={sizes} />}
             <SelectColor setColor={setColor} colors={colors} />
           </Box>
           <Box>
-            <Btn sx={{width:'100%',my:1,border:'1px solid'}}>
+            
+            <Btn 
+            onClick={()=>handleCart()}
+            sx={{width:'100%',my:1,border:'1px solid'}}>
               ADD TO CART
             </Btn>
 
-           
-            <Box sx={{px:1,pt:4,maxWidth:'600px'}}>
+     {size &&       <Box className='flex gap1' sx={{mt:4,borderBottom:'1px solid #00000025',px:1,py:.5}}>
       <Typography component='h1'>
-        Description:
+      Dimensions:
       </Typography>
+   <Typography 
+    className='gray' 
+    sx={{maxWidth:'100%'}}
+    component='h2'
+  >
+    {size}
+  </Typography>
+   </Box>}
+   {weight &&       <Box className='flex gap1' sx={{mt:4,borderBottom:'1px solid #00000025',px:1,py:.5}}>
+      <Typography component='h1'>
+      Weight:
+      </Typography>
+   <Typography 
+    className='gray' 
+    sx={{maxWidth:'100%'}}
+    component='h2'
+  >
+    {weight}g
+  </Typography>
+   </Box>}
+
+            <Box sx={{px:1,pt:4,maxWidth:'600px'}}>
+      {/* <Typography component='h1'>
+        Description:
+      </Typography> */}
    <Typography 
     className='gray' 
     sx={{whiteSpace:'pre-wrap',maxWidth:'100%'}}
     dangerouslySetInnerHTML={{ __html: description }}
   />
    </Box>
+
+
             
           </Box>
         </Box>

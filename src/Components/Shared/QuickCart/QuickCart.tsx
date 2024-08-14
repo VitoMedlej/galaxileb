@@ -17,8 +17,10 @@ export default function TemporaryDrawer() {
     const {cartOpen,
         setCartOpen} = useCartContext();
         const [cartItems,setCartItems] = useState<ICartItem[]>([])
+        console.log('cartItems: ', cartItems);
+
         useEffect(() =>{
-            let localCart : ICartItem[] = loadState('xMZ31DZ1') || []
+            let localCart : ICartItem[] = loadState('VZJo2p4j1op2cgfG221zGG') || []
             if (localCart) {
                 
                 setCartItems(localCart)
@@ -34,7 +36,7 @@ export default function TemporaryDrawer() {
     };
     const remove = (_id:string) => {
        let state = cartItems.filter(x => `${x._id}` !== _id);
-        saveState('xMZ31DZ1', state);
+        saveState('VZJo2p4j1op2cgfG221zGG', state);
         setCartItems(state);
     }
     return (
@@ -80,7 +82,8 @@ export default function TemporaryDrawer() {
                         if (!item?._id) return;
                         return <CartProduct
                         productselectedColor={item?.productselectedColor}
-                        productselectedSize={item?.productselectedSize} _id={item._id} qty={item.qty} price={item.price} img={item.img}
+                        productselectedSize={item?.productselectedSize} 
+                        _id={item._id} qty={item.qty} price={item.price} img={item.img}
                         remove={remove}
                         title={item.title} key={index}/>
                             })
