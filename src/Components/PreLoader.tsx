@@ -386,7 +386,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
                            
                             top: {xs:'20%',sm:`20%`},
                             alignItems:{xs:'center',sm:'center'},
-                            width: 'fit-content',
+                            // width: 'fit-content',
                        zIndex:'1234'}}>
                             
                             <Typography 
