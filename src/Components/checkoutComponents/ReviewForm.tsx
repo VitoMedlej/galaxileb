@@ -57,15 +57,19 @@ export default function Review({setActiveStep}:{setActiveStep:any}) {
         Order summary
       </Typography>
       <List disablePadding>
-        {products?.length > 0 && products.map((product:any) => {
-
-        
-          if (!product?._id) return;
-         return <ListItem key={product.title} sx={{ py: 1, px: 0 }}>
-             <ListItemText primary={`${product?.qty || '1'} x ${product?.productselectedColor ? `${product?.productselectedColor} - `: ''} ${product?.title || 'Product Name'} - ${product?.productselectedSize ? product?.productselectedSize : ''}`}  />
-            <Typography variant="body2">${product?.newPrice ? Number(product?.newPrice * Number(product?.qty || 1) ) : product?.price * Number(product?.qty || 1) }</Typography>
-          </ListItem>
-        })}
+      {products?.length > 0 && products.map((product:any) => {
+  if (!product?._id) return;
+  return (
+    <ListItem key={product.title} sx={{ py: 1, px: 0 }}>
+      <ListItemText 
+        primary={`${product?.qty || '1'} x ${product?.productselectedColor ? `${product?.productselectedColor} - `: ''} ${product?.title || 'Product Name'} - ${product?.productselectedSize ? product?.productselectedSize : ''}`}  
+      />
+      <Typography variant="body2">
+        ${product?.newPrice ? (Number(product?.newPrice) * Number(product?.qty || 1)).toFixed(2) : (product?.price * Number(product?.qty || 1)).toFixed(2)}
+      </Typography>
+    </ListItem>
+  );
+})}
         <Divider/>
         <ListItem sx={{px: 0 }}>
 
