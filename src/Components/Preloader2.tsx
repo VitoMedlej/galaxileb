@@ -10,8 +10,8 @@ import ProductCard from './ProductCard/ProductCard'
 import { useCategoriesContext } from '@/context/Contexts'
 
 const Preloader2 = ({ data, totalPages, categories }: any) => {
-  console.log('data: ', data);
-    const router = useRouter();
+  // console.log('data: ', data);
+    // const router = useRouter();
     const { setCategories } = useCategoriesContext();
   
     const [newValue, setNewValue] = useState<string>("");
@@ -19,7 +19,7 @@ const Preloader2 = ({ data, totalPages, categories }: any) => {
     const { category } = useParams();
     const searchParams = useSearchParams();
     const type = searchParams.get("type");
-    const subCategory = searchParams.get("subCategory");
+    // const subCategory = searchParams.get("subCategory");
   
     useEffect(() => {
       if (categories) {
@@ -88,7 +88,7 @@ const Preloader2 = ({ data, totalPages, categories }: any) => {
     };
   
     return (
-      <Container sx={{ mt: 0 }} disableGutters maxWidth="lg">
+      <Container sx={{ mt: {xs:'8em',md:'10em'} }} disableGutters maxWidth="lg">
         <Box className="flex items-center wrap" sx={{ my: 2, width: "100%" }}>
           <FilterSection
             handleSubmit={handleSubmit}
@@ -103,7 +103,7 @@ const Preloader2 = ({ data, totalPages, categories }: any) => {
               <ProductCard
                 key={i?._id}
                 sizes={i?.sizes ?? null}
-                width={{ xs: "98%", sm: "48%", md:'31%' }}
+                width={{ xs: "48%", sm: "48%", md:'31%' }}
                 inStock={i?.inStock}
                 _id={i._id}
                 title={i.title}

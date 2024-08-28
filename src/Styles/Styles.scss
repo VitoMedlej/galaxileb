@@ -2,22 +2,25 @@ body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Hanken Grotesk", sans-serif ;
+    font-family: "Poppins", sans-serif  !important;
 }
 h1 {
     text-transform: uppercase;
     letter-spacing: 0px;
-    font-family: "Lora", serif !important;
+    font-family: "Poppins", sans-serif  !important;
+
 }
 * ,h2,h3,h4,h5,h6 ,p,button,input,select,textarea,a{
-     font-family: "Hanken Grotesk", sans-serif !important;
+    font-family: "Poppins", sans-serif  !important;
+
 }
 .w100 {
     width:100%
 }
-$color : #2a393c !important;
+$color : #6b30d2 !important;
 $color2 : #ffffff !important;
 $color3 : #f5f3eb !important;
+$color4 : #353535d0 !important;
 
 
 
@@ -26,8 +29,12 @@ $color3 : #f5f3eb !important;
    
     color: $color3;
 }
+.color4 {
+   
+    color: $color4;
+}
 .animate-on-scroll {
-    opacity: 0;
+    opacity: 1;
 }
 
 .nav-link {

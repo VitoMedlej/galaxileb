@@ -10,6 +10,7 @@ export const Getimages = async () => {
     );
     const data = await res.json();
     return data;
+    console.log('data: ', data);
   }
   catch(err) {
     console.log('err: ', err);

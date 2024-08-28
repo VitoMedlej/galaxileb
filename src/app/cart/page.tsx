@@ -17,14 +17,13 @@ const titleStyle = {
     fontWeight: '600 !Important',
     
 }
-const textStyle = {
-    color: '#000000b8'
-}
+
 const EmptyCartAlert = () => {
     return (
         <Box sx={{
             pb: 10,
-            pt: 15
+            pt: 15,
+            mt:'7em',
         }}>
             <Box
                 className='flexed'

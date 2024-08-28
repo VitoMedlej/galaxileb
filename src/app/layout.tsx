@@ -8,10 +8,10 @@ import QuickCart from '@/Components/Shared/QuickCart/QuickCart'
 import ContextWrapper from '@/context/Contexts'
 
 export const metadata = {
-    title: `E.Architecture - Premium Home Decor & Metal Furniture in Lebanon`,
-    description: `E.Architecture | your go-to online store in Lebanon for premium home decor and handcrafted metal furniture. From concept to creation, upgrade your living space with our unique designs and high-quality accessories.`,
+    title: `Custom Apparel & Personalized Gifts in Lebanon | High-Quality T-Shirts, Mugs, Hats & More`,
+    description: `From high-quality t-shirts, mugs, and hats to custom tumblers and more, we offer stylish and unique items perfect for any occasion. Whether you support the Lakers or have other favorite teams, our exclusive designs let you showcase your style`,
     icons: {
-        icon: `https://ucarecdn.com/c9d6219c-d35c-4f91-a252-73ce3e75b5af/ealogo.PNG`
+        icon: `https://ucarecdn.com/9b5cffe2-f48c-45c7-889f-f7f4c6b6ebf3/433814466_7377333325677954_8424387939180368658_n.jpg`
     }
 }
 
@@ -24,11 +24,11 @@ export default function Layout({children} : {
             <head>
             <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" />
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500&family=Lora:wght@400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap" rel="stylesheet"/>
            
            </head>
 
-            <body className='relative bg3'>
+            <body className='relative '>
 
                 <ContextWrapper>
                     <Navbar/>

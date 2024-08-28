@@ -8,7 +8,7 @@ import MenuHover from './MenuHover'
 
 // {categories && categories?.slice(0,2)?.map((category : any,  index : any)  => (
 //     <Link className=' decor-none nav-link' key={category?.categoryName} href={`/${encodeURIComponent(category?.categoryName?.toLowerCase())}/products`} >
-//     <Box component="p" sx={{fontWeight:300, color: 'white', ml: 2, textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}>
+//     <Box component="p" sx={{fontWeight:300, color: 'black', ml: 2, textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}>
 //     {category?.categoryName}
 //     </Box>
 //     </Link>
@@ -20,19 +20,20 @@ const NavButtom = ({categories}:any) => {
 
   return (
     <Box
-        className='bg items-center wrap    '
+        className=' items-center wrap    '
         sx={{
             flex:1,
             position:'relative',
-        // width: '100%',
+        width: '100%',
         py:.5,
         background:'white',
         // maxWidth:'lg',/
+        borderTop:'1px solid #0000000d',
         mx: 0,
         display : {xs:'none',md:'flex'}
     }}>
         <Container
-            className='flex bg   '
+            className='flex    '
             sx={{
                 maxWidth:'lg',
             justifyContent: 'flex-start',
@@ -45,78 +46,78 @@ const NavButtom = ({categories}:any) => {
                     Sale
                     </Typography>
                 </Link> */}
-                <Link className='white trans  decor-none ' href={`/`}>
+                <Link className='black trans  decor-none ' href={`/`}>
 
 <Typography 
-className=' cursor center  flex gap1 white decor-none captialize'
+className=' cursor center  flex gap1 black decor-none captialize'
 
 component='h2' sx={{width:'max-content',
-mx:'.55em',
+mx:'.75em',
 alignItems: 'center',
 ':hover':{
     textDecoration: 'underline',
 },
-fontWeight:300,fontSize:{xs:'.9em',sm:'1em'}}}>
+fontWeight:300,fontSize:{xs:'.8em',sm:'.9em'}}}>
 Home
 </Typography>
 </Link>
-<Link className='white decor-none ' href={`/about`}>
+<Link className='black decor-none ' href={`/about`}>
 
 <Typography 
-className=' cursor center flex gap1 white decor-none captialize'
+className=' cursor center flex gap1 black decor-none captialize'
 
 component='h2' sx={{width:'max-content',
-mx:'.55em',
+mx:'.75em',
 alignItems: 'center',
 ':hover':{
     textDecoration: 'underline',
 },
-fontWeight:300,fontSize:{xs:'.9em',sm:'1em'}}}>
+fontWeight:300,fontSize:{xs:'.8em',sm:'.9em'}}}>
 About
 </Typography>
 </Link>
-<Link className='white decor-none ' href={`/collection/products`}>
+<Link className='black decor-none ' href={`/collection/products`}>
 
 <Typography 
-className=' cursor center flex gap1 white decor-none captialize'
+className=' cursor center flex gap1 black decor-none captialize'
 
 component='h2' sx={{width:'max-content',
-mx:'.55em',
+mx:'.75em',
 alignItems: 'center',
 ':hover':{
     textDecoration: 'underline',
 },
-fontWeight:300,fontSize:{xs:'.9em',sm:'1em'}}}>
+fontWeight:300,fontSize:{xs:'.8em',sm:'.9em'}}}>
 Collections
 </Typography>
 </Link>
-{/* <Link className='white decor-none ' href={`/#shop`}>
+{/* <Link className='black decor-none ' href={`/#shop`}>
 
 <Typography 
-className=' cursor center flex gap1 white decor-none captialize'
+className=' cursor center flex gap1 black decor-none captialize'
 
 component='h2' sx={{width:'max-content',
-mx:'.55em',
+mx:'.75em',
 alignItems: 'center',
 
-fontWeight:300,fontSize:{xs:'.9em',sm:'1em'}}}>
+fontWeight:300,fontSize:{xs:'.8em',sm:'.9em'}}}>
 Shop
 </Typography>
 </Link> */}
 {/* {
     categories && categories?.slice(0,1).map((cate:any)=>{
             if (cate?.subcategories?.length == 0){ return      <Link   
-                 key={cate?.categoryName} className='white decor-none'
+                 key={cate?.categoryName} className='black decor-none'
              href={`/${cate?.categoryName?.toLocaleLowerCase()}/products`}>
 
 <Typography 
-className=' cursor center flex gap1 white decor-none captialize'
+className=' cursor center flex gap1 black decor-none captialize'
 
 component='h2' sx={{width:'max-content',
-mx:'.55em',
+mx:'.75em',
 alignItems: 'center',
 
-fontWeight:300,fontSize:{xs:'.9em',sm:'1em'}}}>
+fontWeight:300,fontSize:{xs:'.8em',sm:'.9em'}}}>
 {`${cate?.categoryName}`}
 </Typography>
 </Link>}
@@ -135,16 +136,16 @@ fontWeight:300,fontSize:{xs:'.9em',sm:'1em'}}}>
 {/* <MenuHover img={'https://irrelevantlvng.com/img/cms/IMG_1323.JPG'} category={'collections'} subcategories={['22','33']} /> */}
 
 
-{/* <Link className='white decor-none ' href={`/about`}>
+{/* <Link className='black decor-none ' href={`/about`}>
 
 <Typography 
-className=' cursor center flex gap1 white decor-none captialize'
+className=' cursor center flex gap1 black decor-none captialize'
 
 component='h2' sx={{width:'max-content',
-mx:'.55em',
+mx:'.75em',
 alignItems: 'center',
 
-fontWeight:300,fontSize:{xs:'.9em',sm:'1em'}}}>
+fontWeight:300,fontSize:{xs:'.8em',sm:'.9em'}}}>
 About US
 </Typography>
 </Link> */}
@@ -161,85 +162,85 @@ About US
             // `Sporty Streets`,
         ]
             .map(i=>{
-        return <Link key={i} className='white decor-none ' href={`/${i.toLocaleLowerCase()}/products`}>
+        return <Link key={i} className='black decor-none ' href={`/${i.toLocaleLowerCase()}/products`}>
 
         <Typography 
         component='h2'
-        className=' cursor center flex gap1 white decor-none captialize'
+        className=' cursor center flex gap1 black decor-none captialize'
         
         sx={{width:'max-content',
-        mx:'.55em',
+        mx:'.75em',
         alignItems: 'center',
-        fontWeight:300,fontSize:{xs:'.9em',sm:'1em'}}}>
+        fontWeight:300,fontSize:{xs:'.8em',sm:'.9em'}}}>
         {i.toUpperCase()}
         </Typography>
         </Link>
     })
 } */}
 
-{/* <Link className='white decor-none ' href={`/organic herbs/products`}>
+{/* <Link className='black decor-none ' href={`/organic herbs/products`}>
 
 <Typography 
-className=' cursor center flex gap1 white decor-none captialize'
+className=' cursor center flex gap1 black decor-none captialize'
 
 component='p' sx={{width:'max-content',
-mx:'.55em',
+mx:'.75em',
 alignItems: 'center',
 
-fontWeight:300,fontSize:{xs:'.9em',sm:'1em'}}}>
+fontWeight:300,fontSize:{xs:'.8em',sm:'.9em'}}}>
 Organic Herbs
 </Typography>
 </Link>
-<Link className='white decor-none ' href={`/natural supplements/products`}>
+<Link className='black decor-none ' href={`/natural supplements/products`}>
 
 <Typography 
-className=' cursor center flex gap1 white decor-none captialize'
+className=' cursor center flex gap1 black decor-none captialize'
 
 component='p' sx={{width:'max-content',
-mx:'.55em',
+mx:'.75em',
 alignItems: 'center',
 
-fontWeight:300,fontSize:{xs:'.9em',sm:'1em'}}}>
+fontWeight:300,fontSize:{xs:'.8em',sm:'.9em'}}}>
 Natural Supplements
 </Typography>
 </Link> */}
 
 
 
-{/* <Link className='white decor-none ' href={`/about`}>
+{/* <Link className='black decor-none ' href={`/about`}>
 
 <Typography 
-className=' cursor center flex gap1 white decor-none '
+className=' cursor center flex gap1 black decor-none '
 
 component='p' sx={{width:'max-content',
-mx:'.55em',
+mx:'.75em',
 alignItems: 'center',
 
-fontWeight:300,fontSize:{xs:'.9em',sm:'1em'}}}>
+fontWeight:300,fontSize:{xs:'.8em',sm:'.9em'}}}>
 About Us
 </Typography>
 </Link> */}
 
-{/* <Link className='white decor-none uppercase' href={`/new-arrivals/products`}>
+{/* <Link className='black decor-none uppercase' href={`/new-arrivals/products`}>
 
 <Typography 
-className=' cursor center flex gap1 white decor-none uppercase'
+className=' cursor center flex gap1 black decor-none uppercase'
 
 component='p' sx={{width:'max-content',
 alignItems: 'center',
-mx:'.55em',
+mx:'.75em',
 
 fontWeight:300,fontSize:{xs:'.6em',sm:'.75em'}}}>
 New Arrivals
 </Typography>
 </Link> */}
-                {/* <Link className='white decor-none uppercase' href={`/birds/products`}>
+                {/* <Link className='black decor-none uppercase' href={`/birds/products`}>
 
                 <Typography 
-      className=' cursor center flex gap1 white decor-none uppercase'
+      className=' cursor center flex gap1 black decor-none uppercase'
         
         component='p' sx={{width:'max-content',
-        mx:'.55em',
+        mx:'.75em',
         alignItems: 'center',
         
         fontWeight:300,fontSize:{xs:'.6em',sm:'.75em'}}}>

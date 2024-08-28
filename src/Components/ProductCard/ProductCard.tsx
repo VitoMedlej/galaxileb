@@ -9,7 +9,6 @@ import useCart from '@/Hooks/useCart'
 
 import {BiCartAdd} from 'react-icons/bi';
 
-
 const ProductCard = ({
     title,
     price,
@@ -19,174 +18,147 @@ const ProductCard = ({
     _id,
     width,
     height,
-    inStock
-    ,
+    inStock,
     newPrice,
     sx
-
 } : {
-    inStock?:boolean,
+    inStock?: boolean,
     _id: string,
     title: string,
     sizes: {
         size: number;
         price: number;
-      }[] | null;
+    }[] | null;
     price: number,
-    newPrice ?: number,
+    newPrice?: number,
     images: string[],
     category: string,
     width?: string | number | any,
     height?: string | number,
-    sx?:any,
+    sx?: any,
 }) => {
     const router = useRouter()
+    
+    
+
+    
     return (
         <Box
-            className='  trans cardproduct center text-center'
+            className='trans cardproduct center text-center'
             sx={{
-            // boxShadow: `rgba(0, 0, 0, 0.05) 0px 0px 0px 1px`,
-            // border : '1px solid #000000a',
-            py: 3,
-            margin: '0em auto',
-            background:'transparent',
-
-            my:1,
-            minWidth: {sm:'30%',md:'24%'},
-            width: width
-                ? width
-                : {
-                    xs: '48%',
-                    sm: '32%',
-                    md:'22%'
-                },
-            ...sx,
-        }}>
+                py: 3,
+                margin: '0em auto',
+                background: 'transparent',
+                my: 1,
+                minWidth: { sm: '30%', md: '24%' },
+                width: width
+                    ? width
+                    : {
+                        xs: '48%',
+                        sm: '32%',
+                        md: '22%'
+                    },
+                ...sx,
+            }}
+        >
             <Box 
-            className='cursor auto'
-               onClick={() => router.push(`/product/${_id}`)}
-            sx={{
-                background:'transparent',
-                width:{xs:'98%',sm:'100%',md:'auto'},
-                height: height || {xs:'300px',sm:'350px',md:'450px'}
-                // height: height || {xs:'100%',sm:'300px',md:'400px'}
-            }}>
+                className='cursor auto'
+                onClick={() => router.push(`/product/${_id}`)}
+                sx={{
+                    background: 'transparent',
+                    width: { xs: '98%', sm: '100%', md: 'auto' },
+                    height: height || { xs: '280px', sm: '320px', md: '400px' }
+                }}
+            >
                 <img
                     src={images
-                    ? `${images[0]}/-/resize/500/`
-                    : ''}
-                    alt="Prdouct image"
-                    className="img cover "/>
+                        ? `${images[0]}/-/resize/500/`
+                        : ''}
+                    alt="Product image"
+                    className="img cover "
+                />
             </Box>
             
             <Box 
-            
-            sx={{
-                px: .95,
-                mt:{xs:1,sm:1.5,md:0},
-                alignItems: "left",
-                background:'transparent'
-            }}> 
-            {/* <Typography
-            className='flex cursor  limited w100  left '
-                    component='p'
-                    onClick={() => router.push(`/product/${_id}`)}
-                    sx={{
-                        textAlign: 'left',
-                        pl:.25,
-                        mt:.5,
-                        color:'black',borderLeft:'3px solid black'
-                    ,fontSize: {xs:'.6em',sm:'.6em',md:'.6em'},
-                    fontWeight: '400'
-                }}>
-                    {`${category}`.toUpperCase()}
-                </Typography> */}
-             <Typography
-            className='flex cursor limited w100  left '
+                sx={{
+                    px: .95,
+                    mt: { xs: 1, sm: 1.5, md: 0 },
+                    alignItems: "left",
+                    background: 'transparent'
+                }}
+            >
+                <Typography
+                    className='flex cursor limited w100 left'
                     component='h1'
                     onClick={() => router.push(`/product/${_id}`)}
                     sx={{
                         textAlign: 'left',
-                        color:'black',pt:.25
-                    ,fontSize: {xs:'.75em',sm:'.9em',md:'1em'},
-                    fontWeight: '300'
-                }}>
+                        color: 'black',
+                        pt: .25,
+                        fontSize: { xs: '.75em', sm: '.9em', md: '1em' },
+                        fontWeight: '300'
+                    }}
+                >
                     {title}
                 </Typography>
-        
-               
-              
-               {inStock !== false ?
-               <>
-              <Typography
-    component='p'
-    className="clr cursor"
-    sx={{
-        ':hover':{
-            textDecoration:'underline',
-        },
-        display:'flex',
-        alignItems:"left",
-        my: 0.5,
-        fontWeight: '400',
-        fontSize: { xs: '.8em', sm: '.9em' },
-    }}
->
-{newPrice ? (
-    <>
-        <s style={{color:'red'}} >${Number(price)?.toFixed(2)}</s>&nbsp;&nbsp;<span>{`$${Number(newPrice)?.toFixed(2)}`}</span>
-    </>
-) : (
-    `$${Number(price)?.toFixed(2)}`
-)}
-</Typography>
-               {/* <Typography
-                    sx={{
-                    mb:.5,
-                    color:'green',
-                    fontWeight: '700',
-                    fontSize: {xs:'.99em',sm:'1em'}
-                }}>
-                    {price}$
-                </Typography> */}
-                {/* <Btn 
-            className='cursor    gap1'
                 
-                     onClick={()=>
-                        sizes &&  sizes?.length > 0 ? 
-                        router.push(`/product/${_id}`)
-                        :
-                        addToCart(1,_id,{title,category,img:images[0],_id,price:newPrice?Number(newPrice):price},true)}
-                    
-                    sx={{
-
-                        margin:'0 auto'
-                    // borderRadius:'8',
-                    ,py:{xs:'.5em',sm:'1em'},
-                    px:{xs:'1em',sm:'3.5em',lg:'5em'}
-                        ,
-                        ':hover':{color:'white !IMPORTANT',background:'white '}
-                }}>
-                    <Box  className="flex">
-
-                    {sizes && sizes?.length > 0 ? 'Select Size' :  'ADD TO CART'}
-                  
-                    </Box>
-                </Btn> */}
-                
-               </>
-
-               :
-
-                  <Typography
-                    sx={{
-                    mb:.5,
-                    color:'red',
-                    fontWeight: '600',
-                    fontSize: {xs:'.99em',sm:'1.06em'}
-                }}>
-                    Out Of Stock
-                </Typography>
+                {inStock !== false ?
+                    <>
+                        <Typography
+                            component='p'
+                            className=" cursor"
+                            sx={{
+                                ':hover': {
+                                    textDecoration: 'underline',
+                                },
+                                display: 'flex',
+                                alignItems: "left",
+                                my: 0.5,
+                                fontWeight: '400',
+                                fontSize: { xs: '.8em', sm: '.9em' },
+                            }}
+                        >
+                            {newPrice ? (
+                                <>
+                                    <s style={{ color: 'red' }} >${Number(price)?.toFixed(2)}</s>&nbsp;&nbsp;<span>{`$${Number(newPrice)?.toFixed(2)}`}</span>
+                                </>
+                            ) : (
+                                `$${Number(price)?.toFixed(2)}`
+                            )}
+                        </Typography>
+                        
+                        {/* Size options */}
+                        {['XS','SM','MD'].length > 0 && (
+                            <Typography
+                            className='color4'
+                                component='p'
+                                sx={{
+                                    mt: .5,
+                                    fontSize: '.8em',
+                                    color: 'black',
+                                    textAlign: 'left',
+                                    display: 'flex',
+                                    flexWrap: 'wrap',
+                                    gap: '0.5em'
+                                }}
+                            >
+                                {['XS','SM','MD'].map((size : string, index) => (
+                                    <span key={index}>{size}</span>
+                                ))}
+                            </Typography>
+                        )}
+                    </>
+                    :
+                    <Typography
+                        sx={{
+                            mb: .5,
+                            color: 'red',
+                            fontWeight: '600',
+                            fontSize: { xs: '.99em', sm: '1.06em' }
+                        }}
+                    >
+                        Out Of Stock
+                    </Typography>
                 }
             </Box>
         </Box>

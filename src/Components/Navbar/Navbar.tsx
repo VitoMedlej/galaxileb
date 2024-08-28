@@ -11,9 +11,7 @@ import {useRouter} from 'next/navigation';
 
 import { useCartContext, useCategoriesContext, useDrawerContext, useLangContext } from '@/context/Contexts';
 import NavButtom from './NavButtom';
-import SearchInput from './SearchInput';
-
-
+// import SearchInput from './SearchInput';
 
 
 
@@ -33,70 +31,73 @@ export default function Navbar() {
         <>
             <Box
                 id='navy'
-                className='center auto relative bg flex'
+                className='center auto   flex'
                 sx={{
                     zIndex: 12,
                     flexWrap: 'wrap',
                     width: '100%',
+                    position: 'fixed',
+                    top: 0,
                     boxShadow: 'none',
                     background: 'transparent',
                     border: 'none',
                     px: 0,
+                    py:0,
                     flexGrow: 1
                 }}
             >
                 <AppBar
                     id='navy2'
-                    className='center col bg relative flex'
+                    className='center col  relative flex'
                     sx={{
                         boxShadow: 'none',
                         background: 'transparent',
                         width: '100%',
+                    py:0,
+
                         margin: '0 auto'
                     }}
                 >
-                    {/* <Box className='center bg  w100 text-center' sx={{ minWidth: '90vw', 
-                       width: '100%', py: 0.25 }}>
+                    <Box className='center bg  w100 text-center' sx={{ minWidth: '90vw', 
+                       width: '100%', py: 0 }}>
                         <Typography  component='h1'
                          sx={{ 
-                            fontWeight:500,
+                            fontWeight:600,
+                            
                             color:"white",
-                         py: 0.4, fontSize: { xs: '.75em', sm: '.85em' } }}>
+                         py: 0.4, fontSize: { xs: '.75em', sm: '.75em' } }}>
                           Delivery all over Lebanon
                         </Typography>
-                    </Box> */}
+                    </Box>
 
-                    <Toolbar className='flex bg relative center items-center'
+                    <Toolbar className='flex  relative center items-center'
                     
                     sx={{
                         //  boxShadow:'1px 1px 3px #857a5b4a',
-                     py: 1, background: 'white' }}>
+                     py: 0.1, background: 'white' }}>
                         {/* Logo on the far left */}
 
 
-                            <NavButtom categories={categories}/>
+
                             <Box
-                                onClick={() => setOpen(!open)}
-                                className='cursor pointer center items-center'
-                                sx={{ width: '25px', padding: 1, 
-                                    display: { xs: 'flex', md: 'none' } }}
-                            >
-                                <img style={{ filter: 'invert(1)' }} src="https://cdn-icons-png.flaticon.com/128/4219/4219090.png" alt="" className="img cover" />
-                            </Box>
-                        <Box
                             onClick={() => router.push('/')}
                             className='cursor pointer'
                             sx={{
-                                position: { xs: 'absolute', sm: 'absolute' },
-                                left: { xs: '50%' },
-                                transform: { xs: 'translateX(-50%)' },
-                                width: { xs: '100px', sm: 'auto' },
-                                height: '100%'
+                                // position: { xs: 'absolute', sm: 'absolute' },
+                                // left: { xs: '50%' },
+                                // transform: { xs: 'translateX(-50%)' },
+                                width: { xs: '80px', sm: '70px' },
+                                height: { xs: '80px', sm: '70px' },
                             }}
                         >
                             <img 
-                            src="https://ucarecdn.com/c9d6219c-d35c-4f91-a252-73ce3e75b5af/ealogo.PNG" alt="EArchitectureLOGO" className="img contain" />
+                            src="https://ucarecdn.com/9b5cffe2-f48c-45c7-889f-f7f4c6b6ebf3/433814466_7377333325677954_8424387939180368658_n.jpg" alt="EArchitectureLOGO" className="img contain" />
                         </Box>
+
+
+
+                           
+                       
 
 
 
@@ -108,7 +109,7 @@ export default function Navbar() {
                                 className='cursor pointer flex center items-center'
                                 sx={{ display:{xs:'flex',md:'none'}, width: '20px', padding: 1 }}
                             >
-                                <img style={{ filter: 'invert(1)' }} src="https://cdn-icons-png.flaticon.com/128/9177/9177086.png" alt="" className="img" />
+                                <img style={{ filter: 'invert(0)' }} src="https://cdn-icons-png.flaticon.com/128/9177/9177086.png" alt="" className="img contain" />
                             </Box>
 
                             <Box
@@ -116,9 +117,16 @@ export default function Navbar() {
                                 className='cursor pointer flex center items-center'
                                 sx={{ width: '20px', padding: 1 }}
                             >
-                                <img style={{ filter: 'invert(1)' }} src="https://cdn-icons-png.flaticon.com/128/5337/5337564.png" alt="" className="img" />
+                                <img style={{ filter: 'invert(0)' }} src="https://cdn-icons-png.flaticon.com/128/5337/5337564.png" alt="" className="img contain" />
                             </Box>
-
+                            <Box
+                                onClick={() => setOpen(!open)}
+                                className='cursor pointer center items-center'
+                                sx={{ width: '25px', padding: 1, 
+                                    display: { xs: 'flex', md: 'none' } }}
+                            >
+                                <img style={{ filter: 'invert(0)' }} src="https://cdn-icons-png.flaticon.com/128/4219/4219090.png" alt="" className="img contain" />
+                            </Box>
                         
                         </Box>
                     </Toolbar>
@@ -129,6 +137,8 @@ export default function Navbar() {
                 </AppBar>
 
                 {/* <NavButtom/> */}
+                <NavButtom categories={categories}/>
+
             </Box>
 
         </>

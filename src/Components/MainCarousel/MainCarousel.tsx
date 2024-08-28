@@ -15,6 +15,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 const Preloader3 = ({resImages} : any) => {
+    console.log('resImages: ', resImages);
     const router = useRouter()
     const [imgs,setImgs] = useState<any>(
     //     [
@@ -71,7 +72,7 @@ const Preloader3 = ({resImages} : any) => {
           maxWidth:'none',
           height: {xs:'85vh',sm:'100%',md:'600px'},
           margin: '0 auto',
-        //   mt:'1em',
+          mt:'7em',
           display: {xs: 'flex'}
       }}
   >
@@ -112,17 +113,7 @@ const Preloader3 = ({resImages} : any) => {
                             alignItems:{xs:'center',sm:'flex-end'},
                             // width: {xs:'100%',sm:'fit-content'},
                        zIndex:'1234'}}>
-                            <Typography sx={{
-  
-  
-  maxWidth:'1200px',
-  pb:0,
-  px:1,
-  fontWeight:'300',
-  fontSize:{xs:'.8em',sm:'1em'},
-  }} component='h1' className='black auto white animate-on-scroll2 text-center  '>
-     Timeless Elegance Awaits
-  </Typography>
+              
                             <Typography 
                             className='auto text-center'
                             component='h1'
@@ -130,12 +121,12 @@ const Preloader3 = ({resImages} : any) => {
                                 px:{xs:'.1em'},
                                 // textAlign:{xs:'center',sm:'flex-end'},
                                 pt:1,color:'white',fontSize:{xs:'1.5em',sm:'1.4em'},fontWeight:300}}>
-                           Discover home decor that stands the test of time.
+                           Transform Your Style with Custom Apparel in Lebanon
                             </Typography>
                             <Btn  
                             onClick={()=>router.push('/collection/products')}
                              className='center  center flex ' sx={{background:'transparent',color:'white',mt:'2em',mx:'auto'}}>
-                                Shop Now
+                                Browse Collection
                             </Btn>
                       </Box>
                   </SwiperSlide>

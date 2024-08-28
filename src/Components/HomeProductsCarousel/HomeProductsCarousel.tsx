@@ -38,7 +38,7 @@ const ProductCollection = ({sx,delay,text,Collectiontitle,data,setQuickView} : {
              <Box className="flex center auto justify-between col   "
               sx={{pb:0,maxWidth:'lg'}}>
 
-<Typography sx={{
+{/* <Typography sx={{
   
   
   maxWidth:'1200px',
@@ -48,7 +48,7 @@ const ProductCollection = ({sx,delay,text,Collectiontitle,data,setQuickView} : {
   fontSize:{xs:'.8em',sm:'1em'},
   }} component='h1' className='black animate-on-scroll text-center  '>
      EXPLORE OUR
-  </Typography>
+  </Typography> */}
 <Typography sx={{
   
   
@@ -56,12 +56,18 @@ const ProductCollection = ({sx,delay,text,Collectiontitle,data,setQuickView} : {
     pb:0,
     px:1,
     fontWeight:'300',
-    fontSize:{xs:'1.5em',sm:'1.8em'},
+    fontSize:{xs:'1.15em',sm:'1.18em'},
     }} component='h1' className='animate-on-scroll text-center  '>
        {Collectiontitle}
     </Typography>
 
-
+    <Btn 
+            className='animate-on-scroll'
+sx={{width:'fit-content',mt:1,mx:'auto',border:'none !Important',background:'transparent'}}
+onClick={()=>router.push('/collections/products')}
+>
+   View More
+</Btn>
 
 
 </Box>
@@ -80,13 +86,7 @@ const ProductCollection = ({sx,delay,text,Collectiontitle,data,setQuickView} : {
                 data={data && data.length > 0 
                 && data?.slice(0,25) || []}/>
             </Box>
-            <Btn 
-            className='animate-on-scroll'
-sx={{width:'fit-content',mt:1,mx:'auto'}}
-onClick={()=>router.push('/collections/products')}
->
-   View More
-</Btn>
+     
    
 {/* <Divider  light /> */}
         

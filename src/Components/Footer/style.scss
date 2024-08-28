@@ -1,7 +1,8 @@
 footer {
-
+  background: #f3f3f3de;
   .container {
-      background: black;
+  background: #f3f3f3de;
+
       max-width: 1200px;
       margin: 0 auto;
       padding: 1em;
@@ -26,7 +27,7 @@ footer {
           min-width: 170px;
           li {
               a {
-                  color :#f7f7f7d0;
+                  color :#494949d0;
                   text-decoration: none !important;
               }
               padding: .14em 0;
@@ -34,13 +35,13 @@ footer {
           .link-title {
               padding: 0 0 .65em 0;
               font-size: 1em;
-              color:rgba(247, 247, 247, 0.87) !important;
+              color:rgba(59, 59, 59, 0.87) !important;
               font-weight: 300 !important;
           }
       }
   }
   .footer-p {
-    color:rgba(243, 243, 243, 0.87);
+    color:#3f3f3fde;
   }
   .site-footer__bottom {
     background: black;
@@ -48,7 +49,7 @@ footer {
     background: black;
 
           p{
-            color:rgba(255, 255, 255, 0.87);
+            color:rgba(65, 65, 65, 0.87);
       align-items: center;
       text-align: center;
       width: 100%;

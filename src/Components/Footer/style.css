@@ -1,5 +1,8 @@
+footer {
+  background: rgba(243, 243, 243, 0.8705882353);
+}
 footer .container {
-  background: black;
+  background: rgba(243, 243, 243, 0.8705882353);
   max-width: 1200px;
   margin: 0 auto;
   padding: 1em;
@@ -27,17 +30,17 @@ footer .site-footer__links ul li {
   padding: 0.14em 0;
 }
 footer .site-footer__links ul li a {
-  color: rgba(247, 247, 247, 0.8156862745);
+  color: rgba(73, 73, 73, 0.8156862745);
   text-decoration: none !important;
 }
 footer .site-footer__links ul .link-title {
   padding: 0 0 0.65em 0;
   font-size: 1em;
-  color: rgba(247, 247, 247, 0.87) !important;
+  color: rgba(59, 59, 59, 0.87) !important;
   font-weight: 300 !important;
 }
 footer .footer-p {
-  color: rgba(243, 243, 243, 0.87);
+  color: rgba(63, 63, 63, 0.8705882353);
 }
 footer .site-footer__bottom {
   background: black;
@@ -46,7 +49,7 @@ footer .site-footer__bottom div {
   background: black;
 }
 footer .site-footer__bottom div p {
-  color: rgba(255, 255, 255, 0.87);
+  color: rgba(65, 65, 65, 0.87);
   align-items: center;
   text-align: center;
   width: 100%;
