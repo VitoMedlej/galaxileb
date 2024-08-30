@@ -34,6 +34,7 @@ export default function Navbar() {
                 className='center auto   flex'
                 sx={{
                     zIndex: 12,
+                    borderBottom:'1px solid #0000000d',
                     flexWrap: 'wrap',
                     width: '100%',
                     position: 'fixed',
@@ -86,22 +87,14 @@ export default function Navbar() {
                                 // position: { xs: 'absolute', sm: 'absolute' },
                                 // left: { xs: '50%' },
                                 // transform: { xs: 'translateX(-50%)' },
-                                width: { xs: '80px', sm: '70px' },
-                                height: { xs: '80px', sm: '70px' },
+                                width: { xs: '90px', sm: '140px' },
+                                height: { xs: '80px', sm: '90px' },
                             }}
                         >
                             <img 
-                            src="https://ucarecdn.com/9b5cffe2-f48c-45c7-889f-f7f4c6b6ebf3/433814466_7377333325677954_8424387939180368658_n.jpg" alt="EArchitectureLOGO" className="img contain" />
+                            src="https://ucarecdn.com/6d12c010-269b-413a-9153-78feeedd37c7/galaxilogowhite.jpg" alt="EArchitectureLOGO" className="img contain" />
                         </Box>
 
-
-
-                           
-                       
-
-
-
-                      
 
                         <Box className="flex flex1 flex-end">
                             <Box

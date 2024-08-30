@@ -4,7 +4,7 @@ import ProductImageCarousel from '@/Components/ProductImageCarousel/ProductImage
 import SelectColor from '@/Components/SelectColor/SelectColor';
 import SelectWeight from '@/Components/SelectWeight/SelectWeight';
 import useCart from '@/Hooks/useCart';
-import { Box, Typography } from '@mui/material'
+import { Box, Grid, Typography } from '@mui/material'
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
@@ -18,13 +18,12 @@ interface Product {
   category: string;
   size?: string;
   newPrice?: number;
-  sizes?: { size: string; price: string }[];
+  sizes?: string[];
   colors ?: string[];
 }
 
 const Page = () => {
   const [product, setProduct] = useState<Product | null>(null);
-  console.log('product: ', product);
 
 
   const [error, setError] = useState<string | null>(null);
@@ -33,7 +32,7 @@ const Page = () => {
 
   const [currentPrice, setPrice] = useState<number>(0);
   const [selectedColor, setColor] = useState<string | null>(null);
-  console.log('selectedColor: ', selectedColor);
+  
   const [selectedSize, setSelectedSize] = useState<string>('');
 
 
@@ -58,8 +57,8 @@ const Page = () => {
       setPrice(typeof product.newPrice === 'number' && 
         Number(product.newPrice) >= 0 ? Number(product.newPrice) :  Number(product.price));
 
-        console.log('sizes ? ${sizes[0]?.size} ', sizes ? `${sizes[0]?.size}` : size || '');
-        setSelectedSize(sizes ? `${sizes[0]?.size}` : size || '');
+       
+        setSelectedSize(sizes ? `${sizes[0]}` : size || '');
         setColor(colors? colors[0] : null);
     }
   }, [product]);
@@ -86,17 +85,21 @@ const Page = () => {
   };
 
   return (
-    <Box sx={{ maxWidth: 'lg', pt: 2 }} className='lg auto'>
-      <Box sx={{ px: 1 }} className='flex row space-evenly wrap'>
-        <Box sx={{ width: { xs: '100%', md: '600px' } }}>
-          <ProductImageCarousel images={images} />
-        </Box>
+    <Box sx={{ maxWidth: 'xl', pt: {xs:15,md:22} ,px:1 }} className='auto '>
+   
+          <Grid container>
+            <Grid xs={12} md={6} item>
 
-        <Box sx={{ mt: 4, width: { xs: '100%', md: 'auto' } }}>
+          <ProductImageCarousel images={images} />
+          </Grid>
+
+
+          <Grid xs={12} md={6} item>
+        <Box sx={{ maxWidth:'600px', pt:2,mt: 4 }}>
           <Typography sx={{ fontSize: { xs: '.8em', sm: '1em' } }} component='h1'>
             {category}
           </Typography>
-          <Typography sx={{ fontSize: { xs: '1.3em', sm: '1.6em' } }} component='h1'>
+          <Typography sx={{ fontSize: { xs: '1.3em', sm: '2em' },fontWeight:900 }} component='h1'>
             {title}
           </Typography>
           <Typography sx={{ fontSize: { xs: '1.2em', sm: '1.2em', pt: 1 } }} component='p'>
@@ -104,15 +107,37 @@ const Page = () => {
           </Typography>
 
           <Box>
-          {sizes && sizes[0]?.size?.length > 0 &&  <SelectWeight  selectedSize={selectedSize} setSelectedSize={setSelectedSize} setPrice={setPrice} sizes={sizes} />}
-            <SelectColor setColor={setColor} colors={colors} />
+          {sizes && sizes[0]?.length > 0 &&  <SelectWeight 
+          
+          selectedSize={selectedSize} setSelectedSize={setSelectedSize}
+          
+           sizes={sizes} />}
+           { colors && colors?.length > 0 && <SelectColor setColor={setColor} colors={colors} />}
           </Box>
           <Box>
             
             <Btn 
+className='bg'
             onClick={()=>handleCart()}
-            sx={{width:'100%',my:1,border:'1px solid'}}>
+            sx={{
+              color:'white',
+              fontWeight:900,
+              py:1.5,
+              width:'100%',my:1,border:'1px solid',
+              ':hover':{color:'black',border:'1px solid'}
+              }}>
               ADD TO CART
+            </Btn>
+            <Btn 
+className=''
+onClick={() => window.open(`https://wa.me/+${process.env.NEXT_PUBLIC_wA}`, "_blank")}
+            sx={{
+              fontWeight:500,
+              py:1.25,
+              width:'100%',my:1,border:'1px solid',
+              ':hover':{color:'black',border:'1px solid'}
+              }}>
+              Order on Whatsapp
             </Btn>
 
      {size &&       <Box className='flex gap1' sx={{mt:4,borderBottom:'1px solid #00000025',px:1,py:.5}}>
@@ -155,7 +180,10 @@ const Page = () => {
             
           </Box>
         </Box>
-      </Box>
+       
+
+        </Grid>
+             </Grid>      
     </Box>
   )
 }

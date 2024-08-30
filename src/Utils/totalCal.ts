@@ -15,13 +15,12 @@ function totalCal(cartItems: ICartItem[]) {
         }
     }
 
-    let deliveryCharge = 4; // Base delivery charge for up to 5KG
-    if (totalWeight > 5) {
-        deliveryCharge += (totalWeight - 5) * 0.5; // Additional charge for weight over 5KG
-    }
+    let deliveryCharge = 3; // Base delivery charge for up to 5KG
+    // if (totalWeight > 5) {
+    //     deliveryCharge += (totalWeight - 5) * 0.5; // Additional charge for weight over 5KG
+    // }
 
     return { totalPrice: Number(totalPrice), deliveryCharge };
-    console.log('deliveryCharge: ', deliveryCharge);
 }
 
 export default totalCal;

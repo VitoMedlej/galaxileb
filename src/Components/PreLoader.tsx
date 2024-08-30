@@ -36,7 +36,8 @@ import ContactSection from './ContactSection/ContactSection'
 
 gsap.registerPlugin(ScrollTrigger);
 const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
-
+    console.log('secondSectionImage: ', secondSectionImage[0]);
+    
     const {setCategories} = useCategoriesContext()
     const router = useRouter();
     // const collection = data?.slice(0, Number(data?.length / 2))
@@ -122,7 +123,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
              delay={4000} Collectiontitle={'Latest Collections'}
               data={collection1}/>
 
-              <FullscreenPoster secondSectionImage={secondSectionImage}/>
+              <FullscreenPoster secondSectionImage={secondSectionImage  && secondSectionImage?.length > 0 ? secondSectionImage[0]?.img : ''}/>
 
                   {/* {
                     data && data.map((i:any)=> {

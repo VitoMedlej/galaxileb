@@ -2,17 +2,17 @@
 import { Box, MenuItem, Select, FormControl, InputLabel, SelectChangeEvent } from '@mui/material'
 import React, { useState } from 'react'
 
-const SelectWeight = ({sizes,selectedSize,setSelectedSize,setPrice} : {setSelectedSize:any,selectedSize:any,sizes:any,setPrice:any}) => {
+const SelectWeight = ({sizes,selectedSize,setSelectedSize} : {setSelectedSize:any,selectedSize:any,sizes:any}) => {
 
 
 
 
   const handleChange = (event: SelectChangeEvent<string>)  : any => {
-    const selected = sizes.find((size:{size:string}) => size.size === event.target.value);
+    const selected = sizes.find((size:string) => size === event.target.value);
     if (selected) {
-      setSelectedSize(selected.size);
+      setSelectedSize(selected);
       
-      setPrice(selected.price);
+      
     }
   };
   if (!sizes) return;
@@ -28,8 +28,8 @@ const SelectWeight = ({sizes,selectedSize,setSelectedSize,setPrice} : {setSelect
           label="Size"
         >
           {sizes.map((size: any, index : number) => (
-            <MenuItem key={index} value={size.size}>
-              {size.size}
+            <MenuItem key={index} value={size}>
+              {size}
             </MenuItem>
           ))}
         </Select>

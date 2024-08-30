@@ -23,7 +23,7 @@ const EmptyCartAlert = () => {
         <Box sx={{
             pb: 10,
             pt: 15,
-            mt:'7em',
+            mt:'9em',
         }}>
             <Box
                 className='flexed'
@@ -93,7 +93,7 @@ const Cart = () => {
             pt: 5,
             pb:12,
             maxWidth:'xl',
-            margin:'0 auto',
+            margin:'5em auto',
             px: 1
         }}>
       {cartItems?.length >0 &&      <Typography
