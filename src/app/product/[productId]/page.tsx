@@ -1,10 +1,11 @@
 "use client"
+import CustomOrder from '@/app/CustomOrder/CustomOrder';
 import Btn from '@/Components/Btn/Btn';
 import ProductImageCarousel from '@/Components/ProductImageCarousel/ProductImageCarousel'
 import SelectColor from '@/Components/SelectColor/SelectColor';
 import SelectWeight from '@/Components/SelectWeight/SelectWeight';
 import useCart from '@/Hooks/useCart';
-import { Box, Grid, Typography } from '@mui/material'
+import { Box, Divider, Grid, Typography } from '@mui/material'
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
@@ -20,10 +21,12 @@ interface Product {
   newPrice?: number;
   sizes?: string[];
   colors ?: string[];
+  isCustom ?: boolean;
 }
 
 const Page = () => {
   const [product, setProduct] = useState<Product | null>(null);
+  console.log('product: ', product);
 
 
   const [error, setError] = useState<string | null>(null);
@@ -31,10 +34,13 @@ const Page = () => {
   const { addToCart } = useCart();
 
   const [currentPrice, setPrice] = useState<number>(0);
+
   const [selectedColor, setColor] = useState<string | null>(null);
   
   const [selectedSize, setSelectedSize] = useState<string>('');
 
+  const [imgs, setImgs] = useState([''])
+  const [customDetails, setDetails] = useState('')
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -54,38 +60,39 @@ const Page = () => {
 
   useEffect(() => {
     if (product) {
+      console.log('newPrice: ', product.newPrice);
       setPrice(typeof product.newPrice === 'number' && 
         Number(product.newPrice) >= 0 ? Number(product.newPrice) :  Number(product.price));
-
-       
-        setSelectedSize(sizes ? `${sizes[0]}` : size || '');
-        setColor(colors? colors[0] : null);
+      
+      setSelectedSize(sizes ? `${sizes[0]}` : size || '');
+      setColor(colors? colors[0] : null);
     }
   }, [product]);
 
   if (error) return <Box sx={{height:'70vh',alignItems:'center'}} className='flex auto center text-center '>Something went wrong! {' '}  <span>  <Link href='/'>Go Home</Link></span></Box>;
   if (!product) return <Box sx={{height:'70vh',alignItems:'center'}} className=' flex auto center text-center '>Loading Product Details</Box>;
 
-  const {colors, size, weight, images, description, title, sizes, category } = product;
+  const {colors, size,newPrice,price,isCustom, weight, images, description, title, sizes, category } = product;
 
   const handleCart = () => {
-    console.log('selectedSize: ', size);
     const itemToAdd = {
       title,
       category,
       img: images?.length > 0 ? images[0] : '',
       _id: `${productId}`,
-      price: currentPrice,
+      price: newPrice ? newPrice : price,
       productselectedSize:selectedSize && selectedSize != 'undefined' ? selectedSize : size || '',
       productselectedColor: selectedColor,
-      weight: weight ? Number(weight) : 0
+      weight: weight ? Number(weight) : 0,
+      customImage: imgs && imgs?.length > 0 ? imgs[0] : null,
+      customDetails
     };
   
     addToCart(1, `${productId}`, itemToAdd);
   };
 
   return (
-    <Box sx={{ maxWidth: 'xl', pt: {xs:15,md:22} ,px:1 }} className='auto '>
+    <Box sx={{ maxWidth: 'xl', pt: {xs:15,md:20} ,px:1 }} className='auto '>
    
           <Grid container>
             <Grid xs={12} md={6} item>
@@ -102,11 +109,12 @@ const Page = () => {
           <Typography sx={{ fontSize: { xs: '1.3em', sm: '2em' },fontWeight:900 }} component='h1'>
             {title}
           </Typography>
-          <Typography sx={{ fontSize: { xs: '1.2em', sm: '1.2em', pt: 1 } }} component='p'>
-            ${currentPrice}
-          </Typography>
 
-          <Box>
+          <Typography sx={{ fontSize: { xs: '1.2em', sm: '1.2em', pt: 1 } }} component='p'>
+            ${newPrice ? newPrice : price}
+          </Typography>
+          <Divider></Divider>
+          <Box sx={{mt:2}}>
           {sizes && sizes[0]?.length > 0 &&  <SelectWeight 
           
           selectedSize={selectedSize} setSelectedSize={setSelectedSize}
@@ -114,8 +122,17 @@ const Page = () => {
            sizes={sizes} />}
            { colors && colors?.length > 0 && <SelectColor setColor={setColor} colors={colors} />}
           </Box>
+
+
+
           <Box>
-            
+            {Boolean(isCustom) === true &&
+              <CustomOrder
+              customDetails={customDetails}
+              setDetails={setDetails}
+              setImgs={setImgs}
+              />
+            }
             <Btn 
 className='bg'
             onClick={()=>handleCart()}
@@ -161,7 +178,7 @@ onClick={() => window.open(`https://wa.me/+${process.env.NEXT_PUBLIC_wA}`, "_bla
     sx={{maxWidth:'100%'}}
     component='h2'
   >
-    {weight}kg
+    {weight}
   </Typography>
    </Box>}
 

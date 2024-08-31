@@ -88,7 +88,7 @@ const Preloader2 = ({ data, totalPages, categories }: any) => {
     };
   
     return (
-      <Container sx={{ mt: {xs:'8em',md:'10em'} }} disableGutters maxWidth="lg">
+      <Container sx={{ mt: {xs:'8em',md:'11em'} }} disableGutters maxWidth="lg">
         <Box className="flex items-center wrap" sx={{ my: 2, width: "100%" }}>
           <FilterSection
             handleSubmit={handleSubmit}

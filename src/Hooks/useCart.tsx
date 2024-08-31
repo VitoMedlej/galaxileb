@@ -58,12 +58,13 @@ const useCart = () => {
             price: number,
             productselectedSize?: string,
             productselectedColor?: any,
-            weight: number
+            weight: number,
+            customImage?: string | null,    // Added customImage
+            customDetails?: string      // Added customDetails
         },
         open = true,
         replaceOld = false
     ) => {
-        // 1- Get the cart from local storage
         const increased = incrementQty(
             _id,
             selectedQuantity,
@@ -71,13 +72,12 @@ const useCart = () => {
             product?.productselectedColor,
             product.price
         );
-
+    
         if (increased) {
             setCartOpen(open ? true : false);
             return;
         }
-
-        // If we do not have the item in cart, insert it
+    
         pushState('VZJo2p4j1op2cgfG221zGG', {
             qty: selectedQuantity || 1,
             img: product.img,
@@ -87,9 +87,11 @@ const useCart = () => {
             price: product.price,
             productselectedSize: product?.productselectedSize || '',
             productselectedColor: product?.productselectedColor,
-            weight: product?.weight || 0
+            weight: product?.weight || 0,
+            customImage: product?.customImage,        // Save customImage
+            customDetails: product?.customDetails     // Save customDetails
         });
-
+    
         if (open) {
             setCartOpen(true);
         }

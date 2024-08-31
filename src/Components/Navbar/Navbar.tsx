@@ -87,7 +87,7 @@ export default function Navbar() {
                                 // position: { xs: 'absolute', sm: 'absolute' },
                                 // left: { xs: '50%' },
                                 // transform: { xs: 'translateX(-50%)' },
-                                width: { xs: '90px', sm: '140px' },
+                                width: { xs: '100px', sm: '140px' },
                                 height: { xs: '80px', sm: '90px' },
                             }}
                         >

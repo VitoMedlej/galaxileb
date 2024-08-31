@@ -16,6 +16,7 @@
     "@types/react": "18.2.11",
     "@types/react-dom": "18.2.4",
     "@types/swiper": "^6.0.0",
+    "@uploadcare/react-widget": "^2.4.7",
     "eslint": "8.42.0",
     "eslint-config-next": "13.4.5",
     "gsap": "^3.12.5",

@@ -11,7 +11,6 @@ import "swiper/css/pagination";
 
 import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css';
 // import ImageZoom from "react-image-zooom";
-import ImageZoom from "react-image-zooom";
 // import required modules
 import { Autoplay, Navigation, Pagination } from "swiper";
 import { Box } from "@mui/material";
@@ -19,7 +18,7 @@ import { Box } from "@mui/material";
 
 export default function App({images,index,setSwiper}:{setSwiper?:any,index?:number,images:string[] | []| undefined}) {
   return (
-    <Box sx={{width:'100%',maxWidth:'600px',maxHeight:'600px'}} className='auto'  >
+    <Box sx={{width:'100%',maxWidth:'600px',height:{xs:'100%'}}} className='auto'  >
       <Swiper
       onSwiper={setSwiper}
         spaceBetween={30}
@@ -41,7 +40,7 @@ export default function App({images,index,setSwiper}:{setSwiper?:any,index?:numb
 {
           images && images.map(img=>{
             return    <SwiperSlide key={img}>
-              <Box sx={{height:{xs:'100%',md:'600px'}}}>
+              <Box sx={{height:{xs:'500px',md:'600px'}}}>
 
             <img className='img contain' src={`${img}`} alt={'Product Image'} />
               </Box>

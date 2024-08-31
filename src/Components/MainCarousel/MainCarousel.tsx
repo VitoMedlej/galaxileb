@@ -72,7 +72,7 @@ const Preloader3 = ({resImages} : any) => {
           maxWidth:'none',
           height: {xs:'85vh',sm:'100%',md:'600px'},
           margin: '0 auto',
-          mt:'7em',
+          mt:{xs:'7em',md:'11em'},
           display: {xs: 'flex'}
       }}
   >
