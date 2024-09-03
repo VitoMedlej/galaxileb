@@ -5,7 +5,7 @@ import Btn from '../Btn/Btn'
 
 const Index = ({secondSectionImage} : {secondSectionImage:string}) => {
   return (
-    <Box className='relative' sx={{}}>
+    <Box className='relative animate-on-scroll' sx={{}}>
         <Box sx={{width:'100%', height:'600px',display:{xs:'flex'}}}>
             <img src={`${secondSectionImage}`} alt="" className="img"  />
         </Box>

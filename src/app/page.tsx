@@ -37,7 +37,8 @@ const Home = async () => {
       categories={categories}
       resImages={imagesArray1}
       secondSectionImage={imagesArray2}
-      data={productsResponse?.data?.featuredProducts}
+      featuredProducts={productsResponse?.data?.featuredProducts}
+      data={productsResponse?.data?.products}
     />
   )
 }

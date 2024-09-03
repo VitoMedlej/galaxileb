@@ -1,57 +1,30 @@
 import client from '@/database/mongodb';
-import type {NextApiResponse}
-from 'next';
-import {NextResponse} from 'next/server'
-import {type NextRequest} from 'next/server'
+import type { NextApiResponse } from 'next';
+import { NextResponse } from 'next/server';
+import { type NextRequest } from 'next/server';
 
-export async function GET(req : NextRequest, res : NextApiResponse) {
-try {
+export async function GET(req: NextRequest, res: NextApiResponse) {
+    try {
+        const ProductsCollection = await client.db("GLXI").collection("Products");
 
-    const ProductsCollection = await client
-        .db("GLXI")
-        .collection("Products");
-    let featuredProducts : any = [];
+        const featuredProducts = await ProductsCollection.find({ isFeatured: true }).limit(30).toArray();
+        const products = await ProductsCollection.find({ isFeatured: false }).limit(20).toArray();
 
-    const featuredProductsQuery = await ProductsCollection
-        // .find({isFeatured: true})
-        .find({})
-        .limit(30)
-    // const ProductsQuery = await ProductsCollection
-    //     // .find({isFeatured: false})
-    //     .find({})
-    //     .sort({_id: -1})
-    //     .limit(20)
-
-    // await ProductsQuery.forEach((doc : any) => {
-
-    //     products.push(doc)
-
-    // });
-
-    await featuredProductsQuery.forEach((doc : any) => {
-
-        featuredProducts.push(doc)
-
-    })
-
-    if (!featuredProducts  || featuredProducts.length < 0) {
-        // if (!featuredProducts || !products || featuredProducts.length < 0 || products.length < 0) {
-        return NextResponse.json({success: false});
-    }
-
-    return NextResponse.json({
-        success: true,
-        data: {
-            // products,
-            featuredProducts
+        if (!featuredProducts.length && !products.length) {
+            return NextResponse.json({ success: false });
         }
-    });
+
+        return NextResponse.json({
+            success: true,
+            data: {
+                products,
+                featuredProducts
+            }
+        });
+    } catch (error : any) {
+        console.log('error get-data: ', error);
+        return NextResponse.json({ success: false, error: error?.message });
+    }
 }
 
-catch (error) {
-    console.log('error get-data: ', error);
-
-}
-}
-
-export const revalidate = 0
+export const revalidate = 0;

@@ -66,6 +66,7 @@ const Preloader3 = ({resImages} : any) => {
         
     return (
       <Box
+      className='animate-on-scroll'
       sx={{
           width:'100%',
           transform:'translateY(-1px)',

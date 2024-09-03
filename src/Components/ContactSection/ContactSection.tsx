@@ -9,7 +9,7 @@ import {AiOutlineWhatsApp,AiOutlineInstagram} from 'react-icons/ai'
 const Perks = () => {
     return (
         <Box
-            className='flexed '
+            className='flexed animate-on-scroll'
             sx={{
                 mt: '5em',
                 flexWrap: 'wrap',

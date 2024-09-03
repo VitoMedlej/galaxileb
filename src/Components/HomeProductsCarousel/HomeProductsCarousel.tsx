@@ -35,7 +35,7 @@ const ProductCollection = ({sx,delay,text,Collectiontitle,data,setQuickView} : {
             mb:'3em',
             ...sx,
         }}>
-             <Box className="flex center auto justify-between col   "
+             <Box className="flex center auto justify-between col    "
               sx={{pb:0,maxWidth:'lg'}}>
 
 {/* <Typography sx={{

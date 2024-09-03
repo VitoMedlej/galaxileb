@@ -35,43 +35,40 @@ import ContactSection from './ContactSection/ContactSection'
 
 
 gsap.registerPlugin(ScrollTrigger);
-const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
+const PreLoader = ({data, resImages, featuredProducts, secondSectionImage} : any) => {
     console.log('secondSectionImage: ', secondSectionImage[0]);
     
     const {setCategories} = useCategoriesContext()
     const router = useRouter();
     // const collection = data?.slice(0, Number(data?.length / 2))
-    const collection1 = data?.slice(0, 4)
-    const collection2 = data?.slice(4, 100)
+ 
     // const carouselProducts = data?.slice(Number(data?.length / 2), 50)
 
 
     // const categorizedProducts = getCategorizedProducts(excludedProducts, categories);
 
 
-    // useEffect(() => {
+    useEffect(() => {
 
-    //     if (categories) {
-    //         setCategories(categories)
-    //     }
-    //     gsap.utils.toArray('.animate-on-scroll').forEach((element: any)  => {
-    //       gsap.fromTo(element,
-    //         {
-    //           opacity: 0,
-    //           y:20,
-    //         },
-    //         {
-    //           opacity: 1,
-    //           y: 0,
-    //           duration: 1,
-    //           scrollTrigger: {
-    //               trigger: element,
-    //               start: 'top 70%',
-    //               markers:false,
-    //           },
-    //       });
-    //   });
-    // }, [])
+     
+        gsap.utils.toArray('.animate-on-scroll').forEach((element: any)  => {
+          gsap.fromTo(element,
+            {
+              opacity: 0,
+              y:20,
+            },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 1,
+              scrollTrigger: {
+                  trigger: element,
+                  start: 'top 70%',
+                  markers:false,
+              },
+          });
+      });
+    }, [])
 
     return (
 
@@ -120,8 +117,8 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
 
             <HomeProductsCarousel
             text=''
-             delay={4000} Collectiontitle={'Latest Collections'}
-              data={collection1}/>
+             delay={4000} Collectiontitle={'Best Sellers'}
+              data={featuredProducts}/>
 
               <FullscreenPoster secondSectionImage={secondSectionImage  && secondSectionImage?.length > 0 ? secondSectionImage[0]?.img : ''}/>
 
@@ -137,8 +134,8 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
 
             <HomeProductsCarousel
             text=''
-             delay={4000} Collectiontitle={'Best Sellers'}
-              data={collection1}/>
+             delay={3700} Collectiontitle={'Latest Collections'}
+              data={data}/>
 
 
         <ContactSection/>
