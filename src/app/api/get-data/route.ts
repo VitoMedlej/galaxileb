@@ -8,7 +8,7 @@ export async function GET(req: NextRequest, res: NextApiResponse) {
         const ProductsCollection = await client.db("GLXI").collection("Products");
 
         const featuredProducts = await ProductsCollection.find({ isFeatured: true }).limit(30).toArray();
-        const products = await ProductsCollection.find({ isFeatured: false }).limit(20).toArray();
+        const products = await ProductsCollection.find({ isFeatured2: true }).limit(20).toArray();
 
         if (!featuredProducts.length && !products.length) {
             return NextResponse.json({ success: false });
