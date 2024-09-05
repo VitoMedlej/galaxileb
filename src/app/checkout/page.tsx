@@ -97,10 +97,8 @@ export default function Checkout() {
             body: JSON.stringify({order:{info,products,totalPrice,isFirstOrder}})
         });
   const content = await rawResponse.json();
-        setOrderNumber(content?.orderNumber)
     saveState('VZJo2p4j1op2cgfG221zGG',null)
   saveState('Vjq2zFFF1Z',null)
-  localStorage.setItem('isFirstOrder1', 'false');
 
 
 }
@@ -139,7 +137,7 @@ export default function Checkout() {
                 Thank you for your order.
               </Typography>
               <Typography variant="subtitle1">
-              {`Your order has been recorded! Your order number is ${orderNumber}. We will message you soon, so please stay alert.`}
+              {`Your order has been recorded! We will message you soon, so please stay alert.`}
               </Typography>
             </React.Fragment>
           ) : (
