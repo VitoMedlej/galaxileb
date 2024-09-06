@@ -147,7 +147,7 @@ className='bg'
             </Btn>
             <Btn 
 className=''
-onClick={() => window.open(`https://wa.me/+${process.env.NEXT_PUBLIC_wA}`, "_blank")}
+onClick={() => window.open(`https://wa.me/+${process.env.NEXT_PUBLIC_WA}`, "_blank")}
             sx={{
               fontWeight:500,
               py:1.25,
